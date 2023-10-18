@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 
 import models.Usuario;
+import models.Conta;
 
 public class DB {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Conta> contas;
 
-    public adicionarUsuario(Usuario novoUsuario){
+    public void adicionarUsuario(Usuario novoUsuario){
         this.usuarios.add(novoUsuario);
     }
 

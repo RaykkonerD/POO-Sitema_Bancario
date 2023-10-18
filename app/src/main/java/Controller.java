@@ -13,7 +13,7 @@ public class Controller {
     }
 
     public void criarConta(Usuario usuario, int senha){
-        user.criarConta(senha);
+        usuario.criarConta(senha);
     }
 
 }

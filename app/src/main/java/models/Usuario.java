@@ -33,7 +33,7 @@ public class Usuario {
     }
 
     public void addConta(Conta conta) {
-        this.contas.add(contaonta);
+        this.contas.add(conta);
     }
 
     public void criarConta(int senha){

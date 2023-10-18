@@ -18,7 +18,7 @@ public class Conta implements ContaIF {
 
     @Override
     public double verSaldo(){
-        return this.saldo / 100;
+        return this.saldo / 100.0;
     }
 
     @Override
