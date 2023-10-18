@@ -15,6 +15,41 @@ public class Conta implements ContaIF {
         this.usuario = usuario;
         this.senhaDeAcesso = senhaDeAcesso;
     }
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Usuario getUsuario() {
+        return this.usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public int getSaldo() {
+        return this.saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getSenha() {
+        return this.senhaDeAcesso;
+    }
+
+    public void setSenha(int senhaDeAcesso) {
+        this.senhaDeAcesso = senhaDeAcesso;
+    }
+
+    public Extrato getExtrato() {
+        return this.extrato;
+    }
+
+    public void setExtrato(Extrato extrato) {
+        this.extrato = extrato;
+    }
 
     @Override
     public double verSaldo(){

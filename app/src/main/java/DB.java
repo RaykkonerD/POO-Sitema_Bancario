@@ -1,15 +1,29 @@
 import java.util.ArrayList;
 
-import models.Usuario;
-import models.Conta;
+import models.Banco;
 
 public class DB {
-    private ArrayList<Usuario> usuarios;
-    private ArrayList<Conta> contas;
+    private ArrayList<Banco> bancos;
 
-    public void adicionarUsuario(Usuario novoUsuario){
-        this.usuarios.add(novoUsuario);
+    public DB(){
+        this.bancos = new ArrayList<>();
     }
 
-    //
+    public Banco getBanco(String nome){
+        for(Banco banco : bancos){
+            if(banco.getNome() == nome){
+                return banco;
+            }
+        }
+
+        return null;
+    }
+
+    public ArrayList<Banco> getBancos() {
+        return this.bancos;
+    }
+
+    public void adicionarBanco(Banco novoBanco){
+        this.bancos.add(novoBanco);
+    }
 }

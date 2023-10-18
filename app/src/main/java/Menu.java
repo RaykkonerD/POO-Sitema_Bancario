@@ -1,137 +1,93 @@
 import java.util.Scanner;
 
-public class Menu {
-
-    public static void login(Controller controlador){
-        Scanner entrada = new Scanner(System.in);
-
-        System.out.println("=== Login ===");
-        System.out.println("1 - Criar novo usuário");
-        System.out.println("2 - Entrar com usuário existente");
-        System.out.print("Opção: ");
-        int opcao = entrada.nextInt();
-
-        if(opcao == 1){
-            System.out.print("Nome: ");
-            String nome = entrada.next();
-            System.out.println("CPF: ");
-            String cpf = entrada.next();
-
-            controlador.criarUsuario(nome, cpf);
-            System.out.println("Usuário criado com sucesso!");
-        } else if(opcao == 2){
-
-        }
-
-    }
-
-    public static void main(String[] args) {
-        Controller controlador = new Controller();
-        login(controlador);
-
-    }
-    
-}
-
-/* import java.util.Scanner;
-
+import models.Banco;
 import models.Usuario;
 
 public class Menu {
-    public static Usuario logarUsuario(Controller controlador) {
-        // ::: Verificar se usuário existe :::
-        System.out.println("=== Login de Usuário ===");
-        System.out.print("Nome: ");
-        String nome = entrada.next();
-        System.out.print("CPF: ");
-        String cpf = entrada.next();
 
-        while (controlador.getUsuario(nome, cpf) == null) {
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("[ERRO]: Usuário inválido.");
-            System.out.println("Cadastrar novo usuário? (1 - sim/[outro] - não)");
-            int opcao = entrada.nextInt();
-
-            if(opcao == 1){
-                return registrarUsuario();
-            }
-
-            System.out.println("=== Login de Usuário ===");
-            System.out.print("Nome: ");
-            nome = entrada.next();
-            System.out.print("CPF: ");
-            cpf = entrada.next();
-        }
-        return new Usuario(nome, cpf);
-    }
-
-    public static Usuario registrarUsuario() {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("=== Cadastro de Usuário ===");
-        System.out.print("Nome: ");
-        String nome = entrada.next();
-        System.out.print("CPF: ");
-        String cpf = entrada.next();
-
-        return new Usuario(nome, cpf);
-    }
-
-    public static Usuario menuInicial(Controller controlador){
+    public static int menu(String titulo, String... opcoes) {
         Scanner entrada = new Scanner(System.in);
         int opcao = 0;
 
-        while (opcao != 1 && opcao != 2) {
-            System.out.println("=== Menu ===");
-            System.out.println("1 - Criar novo usuário");
-            System.out.println("2 - Entrar com usuário existente");
+        while (opcao < 1 || opcao > opcoes.length) {
+            System.out.printf("%n=== %s ===%n", titulo);
+
+            for (int i = 1; i <= opcoes.length; i++) {
+                System.out.printf("%d - %s%n", i, opcoes[i - 1]);
+            }
+
             System.out.print("Opção: ");
             opcao = entrada.nextInt();
 
-            if (opcao == 1) {
-                return registrarUsuario();
-            } else if (opcao == 2) {
-                return logarUsuario(controlador);
-            } else {
-                System.out.println("[ERRO]: Entrada inválida.");
+            if (opcao < 1 || opcao > opcoes.length) {
+                System.out.println("[ERRO]: Opção inválida.");
             }
+        }
+
+        return opcao;
+    }
+
+    public static Usuario login(String banco, Controller controlador) {
+        int opcao = menu("Login", "Criar novo usuário", "Entrar com usuário existente");
+        Scanner entrada = new Scanner(System.in);
+
+        if (opcao == 1) {
+            System.out.print("Nome: ");
+            String nome = entrada.next();
+            System.out.print("CPF: ");
+            String cpf = entrada.next();
+
+            System.out.println("Usuário criado com sucesso!");
+            return controlador.criarUsuario(banco, nome, cpf);
+        } else {
+            System.out.print("CPF: ");
+            String cpf = entrada.next();
+
+            System.out.println("Usuário logado com sucesso!");
+            return controlador.getUsuario(banco, cpf);
+        }
+    }
+
+    public static void conta(String banco, Usuario usuario, Controller controlador) {
+        int opcao = menu("Contas", "Criar conta", "Acessar conta");
+        Scanner entrada = new Scanner(System.in);
+
+        if(opcao == 1){
+            System.out.print("Senha: ");
+            int senha = entrada.nextInt();
+
+            controlador.criarConta(usuario, senha);
+        } else {
+            System.out.print("Número da conta: ");
+            int numero = entrada.nextInt();
+            System.out.print("Senha: ");
+            int senha = entrada.nextInt();
+
+            controlador.getConta(banco, numero, senha);
         }
     }
 
     public static void main(String[] args) {
         Controller controlador = new Controller();
-        Scanner entrada = new Scanner(System.in);
-        Usuario usuario = menuInicial(controlador);
-        
-        System.out.printf("Seja bem-vindo(a), %s%n", usuario.getNome());
-        int opcao = 0;
+        Banco banco = null;
+        int iBanco = menu("Banco", "Banco do Brasil", "Nubank", "Bradesco");
 
-        while (opcao != 1 && opcao != 2 && opcao != 3) {
-            System.out.println("=== Menu ===");
-            System.out.println("1 - Criar nova conta");
-            System.out.println("2 - Consultar conta existente");
-            System.out.println("3 - Voltar");
-            System.out.print("Opção: ");
-            opcao = entrada.nextInt();
-
-            if (opcao == 1) {
-                System.out.print("Senha da conta: ");
-                int senha = entrada.nextInt();
-                controlador.criarConta(usuario, senha);
-
-                System.out.println("Conta criada com sucesso!");
-                opcao = 0;
-            } else if (opcao == 2) {
-                System.out.print("Senha da conta: ");
-                int senha = entrada.nextInt();
-                controlador.getConta(usuario, senha);
-
-                // menu de acões na conta
-            } else if(opcao == 3){
-                usuario = menuInicial();
-            } else {
-                System.out.println("[ERRO]: Entrada inválida.");
-            }
+        switch (iBanco) {
+            case 1:
+                banco = new Banco("Banco do Brasil");
+                break;
+            case 2:
+                banco = new Banco("Nubank");
+                break;
+            case 3:
+                banco = new Banco("Bradesco");
+                break;
         }
+
+        controlador.adicionarBanco(banco);
+        Usuario usuario = login(banco.getNome(), controlador);
+        conta(banco.getNome(), usuario, controlador);
+
     }
 
-}*/
+}
