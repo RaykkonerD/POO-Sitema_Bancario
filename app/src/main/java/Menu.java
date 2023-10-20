@@ -48,7 +48,7 @@ public class Menu {
         }
     }
 
-    public static void conta(String banco, Usuario usuario, Controller controlador) {
+    public static void conta(Banco banco, Usuario usuario, Controller controlador) {
         int opcao = menu("Contas", "Criar conta", "Acessar conta");
         Scanner entrada = new Scanner(System.in);
 
@@ -56,14 +56,14 @@ public class Menu {
             System.out.print("Senha: ");
             int senha = entrada.nextInt();
 
-            controlador.criarConta(usuario, senha);
+            controlador.criarConta(banco, usuario, senha);
         } else {
             System.out.print("Número da conta: ");
             int numero = entrada.nextInt();
             System.out.print("Senha: ");
             int senha = entrada.nextInt();
 
-            controlador.getConta(banco, numero, senha);
+            controlador.getConta(banco.getNome(), numero, senha);
         }
     }
 
@@ -86,7 +86,7 @@ public class Menu {
 
         controlador.adicionarBanco(banco);
         Usuario usuario = login(banco.getNome(), controlador);
-        conta(banco.getNome(), usuario, controlador);
+        conta(banco, usuario, controlador);
 
     }
 

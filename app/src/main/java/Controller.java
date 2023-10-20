@@ -19,8 +19,10 @@ public class Controller {
         return novoUsuario;
     }
 
-    public void criarConta(Usuario usuario, int senha){
-        usuario.criarConta(senha);
+    public void criarConta(Banco banco, Usuario usuario, int senha){
+        // Excecao caso senha inválida
+        Conta novaConta = new Conta(usuario, senha);
+        banco.adicionarConta(novaConta);
     }
 
     public Banco getBanco(String nome){
