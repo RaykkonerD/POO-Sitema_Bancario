@@ -37,7 +37,7 @@ public class Menu {
             System.out.print("CPF: ");
             String cpf = entrada.next();
 
-            System.out.println("Usuário criado com sucesso!");
+            System.out.println("\nUsuário criado com sucesso!");
             return controlador.criarUsuario(banco, nome, cpf);
         } else {
             System.out.print("CPF: ");
@@ -49,6 +49,7 @@ public class Menu {
     }
 
     public static void conta(Banco banco, Usuario usuario, Controller controlador) {
+        System.out.printf("Bem-Vindo, %s\n", usuario.getNome());
         int opcao = menu("Contas", "Criar conta", "Acessar conta");
         Scanner entrada = new Scanner(System.in);
 
