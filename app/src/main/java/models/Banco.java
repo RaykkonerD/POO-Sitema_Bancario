@@ -17,8 +17,9 @@ public class Banco {
     }
     
     public Usuario getUsuario(String cpf){
+        System.out.println(getNome());
         for(Usuario usuario : getUsuarios()){
-            if(usuario.getCPF() == cpf){
+            if(usuario.getCPF().equals(cpf)){
                 return usuario;
             }
         }
@@ -37,10 +38,11 @@ public class Banco {
     }
 
     public ArrayList<Usuario> getUsuarios() {
-        return usuarios;
+        return this.usuarios;
     }
 
     public void adicionarUsuario(Usuario novoUsuario){
+        System.out.println(getNome());
         this.usuarios.add(novoUsuario);
     }
 

@@ -7,6 +7,9 @@ public class DB {
 
     public DB(){
         this.bancos = new ArrayList<>();
+        adicionarBanco(new Banco("Banco do Brasil"));
+        adicionarBanco(new Banco("Nubank"));
+        adicionarBanco(new Banco("Bradesco"));
     }
 
     public Banco getBanco(String nome){
