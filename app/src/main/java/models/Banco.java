@@ -17,7 +17,7 @@ public class Banco {
     }
     
     public Usuario getUsuario(String cpf){
-        System.out.println(getNome());
+        System.out.println(this);
         for(Usuario usuario : getUsuarios()){
             if(usuario.getCPF().equals(cpf)){
                 return usuario;
@@ -42,7 +42,7 @@ public class Banco {
     }
 
     public void adicionarUsuario(Usuario novoUsuario){
-        System.out.println(getNome());
+        System.out.println(this);
         this.usuarios.add(novoUsuario);
     }
 

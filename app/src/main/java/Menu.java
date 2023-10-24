@@ -61,7 +61,7 @@ public class Menu {
                 String cpf = entrada.next();
                 System.out.print("Senha: ");
                 senha = entrada.next();
-                usuario = this.controlador.getUsuario(this.controlador.getBanco().getNome(), cpf);
+                usuario = this.controlador.getUsuario(cpf);
             }
 
             System.out.println("Usuário logado com sucesso!");
@@ -102,7 +102,7 @@ public class Menu {
             Banco novBanco = new Banco(listaDeBancos[i]);
             menu.controlador.adicionarBanco(novBanco);
             if(iBanco == (i+1)){
-                menu.controlador.setBanco(novBanco);
+                menu.controlador.setBanco(listaDeBancos[i]);
             }
         }
 

@@ -4,7 +4,7 @@ import models.Conta;
 
 public class Controller {
     private DB bancoDeDados;
-    private Banco banco;
+    private String banco;
     private Usuario usuario;
 
     public Controller() {
@@ -20,27 +20,27 @@ public class Controller {
     }
 
     public Banco getBanco(){
-        return this.banco;
+        return getBanco(this.banco);
     }
 
-    public void setBanco(Banco banco){
+    public void setBanco(String banco){
         this.banco = banco;
     }
 
-    public Usuario getUsuario(String banco, String cpf){
-        return getBancoDeDados().getBanco(banco).getUsuario(cpf);
+    public Usuario getUsuario(String cpf){
+        return getBanco(this.banco).getUsuario(cpf);
     }
 
     public Usuario criarUsuario(String nome, String CPF, String senha){
         Usuario novoUsuario = new Usuario(nome, CPF, senha);
-        this.banco.adicionarUsuario(novoUsuario);
+        getBanco().adicionarUsuario(novoUsuario);
         return novoUsuario;
     }
 
     public void criarConta(int senha){
         // Excecao caso senha inválida
         Conta novaConta = new Conta(getUsuario(), senha);
-        this.banco.adicionarConta(novaConta);
+        getBanco().adicionarConta(novaConta);
     }
 
     public Banco getBanco(String nome){
