@@ -3,7 +3,6 @@ import java.util.Objects;
 import java.util.Scanner;
 
 import models.Banco;
-import models.ContaPolpanca;
 import models.Usuario;
 
 public class Menu {
