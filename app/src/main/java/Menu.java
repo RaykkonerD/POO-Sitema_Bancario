@@ -1,6 +1,8 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 import models.Banco;
+import models.ContaPolpanca;
 import models.Usuario;
 
 public class Menu {
@@ -69,25 +71,40 @@ public class Menu {
     }
 
     public static void main(String[] args) {
-        Controller controlador = new Controller();
-        Banco banco = null;
-        int iBanco = menu("Banco", "Banco do Brasil", "Nubank", "Bradesco");
 
-        switch (iBanco) {
-            case 1:
-                banco = new Banco("Banco do Brasil");
-                break;
-            case 2:
-                banco = new Banco("Nubank");
-                break;
-            case 3:
-                banco = new Banco("Bradesco");
-                break;
+        ContaPolpanca conta = new ContaPolpanca(new Usuario("Lucas", "123"), 123);
+         conta.setSaldo(10000);
+
+
+
+        while (true) {
+            Scanner scan = new Scanner(System.in);
+            String opc = scan.next();
+
+            if(Objects.equals(opc, "1")) {
+                System.out.printf("Saldo: %d\n", conta.getSaldo() / 100);
+            }
         }
 
-        controlador.adicionarBanco(banco);
-        Usuario usuario = login(banco.getNome(), controlador);
-        conta(banco, usuario, controlador);
+//        Controller controlador = new Controller();
+//        Banco banco = null;
+//        int iBanco = menu("Banco", "Banco do Brasil", "Nubank", "Bradesco");
+//
+//        switch (iBanco) {
+//            case 1:
+//                banco = new Banco("Banco do Brasil");
+//                break;
+//            case 2:
+//                banco = new Banco("Nubank");
+//                break;
+//            case 3:
+//                banco = new Banco("Bradesco");
+//                break;
+//        }
+//
+//        controlador.adicionarBanco(banco);
+//        Usuario usuario = login(banco.getNome(), controlador);
+//        conta(banco, usuario, controlador);
 
     }
 
