@@ -8,6 +8,7 @@ import models.Usuario;
 
 public class Menu {
     private Controller controlador;
+	private String[] listaDeBancos = {"Banco do Brasil", "Bradesco", "Nubank"};
 
     public Controller getControlador(){
         return this.controlador;
@@ -39,7 +40,21 @@ public class Menu {
         return opcao;
     }
 
-    public Usuario login() {
+    public void bancos(){
+		int iBanco = menu("Banco", this.listaDeBancos);
+
+        for (int i = 0; i < this.listaDeBancos.length; i++) {
+	
+            if(iBanco == (i+1)){
+                 this.controlador.setBanco(this.listaDeBancos[i]);
+                
+		    }
+		}
+		
+		login();
+	}
+
+    public void login() {
         int opcao = menu("Login", "Criar novo usuário", "Entrar com usuário existente", "Voltar");
         Scanner entrada = new Scanner(System.in);
 
@@ -52,7 +67,8 @@ public class Menu {
             String senha = entrada.next();
 
             System.out.println("Usuário criado com sucesso!");
-            return this.controlador.criarUsuario(nome, cpf, senha);
+            this.controlador.setUsuario(this.controlador.criarUsuario(nome, cpf, senha));
+			conta();
         } else if (opcao == 2) {
             Usuario usuario = null;
             String senha = null;
@@ -64,12 +80,20 @@ public class Menu {
                 System.out.print("Senha: ");
                 senha = entrada.next();
                 usuario = this.controlador.getUsuario(cpf);
+				
+				if(usuario == null){
+					System.out.println("[ERRO]: Usuário não encontrado.");
+				}
+				
+				System.out.println();
             }
 
             System.out.println("Usuário logado com sucesso!");
-            return usuario;
+            this.controlador.setUsuario(usuario);
+			conta();
         } else {
-            return null;
+			this.controlador.setUsuario(null);
+			bancos();
         }
     }
 
@@ -98,19 +122,17 @@ public class Menu {
     public static void main(String[] args) {
         Menu menu = new Menu();
         menu.controlador = new Controller();
-        String[] listaDeBancos = {"Banco do Brasil", "Bradesco", "Nubank"};
-        int iBanco = menu.menu("Banco", listaDeBancos);
+        int iBanco = menu.menu("Banco", menu.listaDeBancos);
 
-        for (int i = 0; i < listaDeBancos.length; i++) {
-            Banco novBanco = new Banco(listaDeBancos[i]);
-            menu.controlador.adicionarBanco(novBanco);
+        for (int i = 0; i < menu.listaDeBancos.length; i++) {
+            Banco novoBanco = new Banco(menu.listaDeBancos[i]);
+            menu.controlador.adicionarBanco(novoBanco);
             if(iBanco == (i+1)){
-                menu.controlador.setBanco(listaDeBancos[i]);
+                menu.controlador.setBanco(menu.listaDeBancos[i]);
             }
         }
 
-        menu.controlador.setUsuario(menu.login());
-        menu.conta();
+        menu.login();
 
     }
 
