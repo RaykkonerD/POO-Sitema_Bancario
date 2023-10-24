@@ -3,6 +3,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 import models.Banco;
+import models.Conta;
 import models.Usuario;
 
 public class Menu {
@@ -57,7 +58,7 @@ public class Menu {
             String senha = null;
             
 
-            while(usuario == null || senha != usuario.getSenha()){
+            while(usuario == null || !senha.equals(usuario.getSenha())){
                 System.out.print("CPF: ");
                 String cpf = entrada.next();
                 System.out.print("Senha: ");
@@ -86,6 +87,7 @@ public class Menu {
             int numero = entrada.nextInt();
             System.out.print("Senha: ");
             int senha = entrada.nextInt();
+            Conta conta = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
 
             // this.controlador.getConta(banco.getNome(), numero, senha);
         } else {

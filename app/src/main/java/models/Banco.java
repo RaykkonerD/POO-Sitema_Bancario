@@ -10,6 +10,7 @@ public class Banco {
         this.usuarios = new ArrayList<>();
         this.contas = new ArrayList<>();
         this.nome = nome;
+        adicionarUsuario(new Usuario("Cleber", "10210301456", "777"));
     }
 
     public String getNome(){
@@ -17,9 +18,10 @@ public class Banco {
     }
     
     public Usuario getUsuario(String cpf){
-        System.out.println(this);
+        getUsuarios().forEach(e -> System.out.println(e.getNome()));
         for(Usuario usuario : getUsuarios()){
             if(usuario.getCPF().equals(cpf)){
+                System.out.println(usuario.getCPF());
                 return usuario;
             }
         }
