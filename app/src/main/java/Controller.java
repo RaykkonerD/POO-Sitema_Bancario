@@ -55,8 +55,6 @@ public class Controller {
     }
 
     public Usuario getUsuario(String cpf){
-		// Teste
-		System.out.println(this.banco);
         return getBanco(this.banco).getUsuario(cpf);
     }
 

@@ -24,13 +24,13 @@ public class Menu {
 
         while (opcao < 1 || opcao > opcoes.length) {
             System.out.printf("%n=== %s ===%n", titulo);
-            System.out.println("|-----------------------------|");
+            System.out.println("|------------------------------------|");
 
             for (int i = 1; i <= opcoes.length; i++) {
                 System.out.printf("|  %d - %s%n", i, opcoes[i - 1]);
             }
 
-            System.out.println("|-----------------------------|\n");
+            System.out.println("|------------------------------------|\n");
 
             System.out.print("Opção: ");
             opcao = entrada.nextInt();
@@ -66,20 +66,27 @@ public class Menu {
             String nome = entrada.next();
             System.out.print("CPF: ");
             String cpf = entrada.next();
+            while(!(this.controlador.getUsuario(cpf) == null)) {
+                System.out.println("\n[Erro]: CPF já cadastrado!");
+                System.out.print("CPF: ");
+                cpf = entrada.next();
+            }
             System.out.print("Senha: ");
             String senha = entrada.next();
 
-            System.out.println("Usuário criado com sucesso!");
             this.controlador.setUsuario(this.controlador.criarUsuario(nome, cpf, senha));
+            System.out.println("\nUsuário criado com sucesso!");
+            System.out.printf("Bem-Vindo, %s!%n", this.controlador.getUsuario(cpf).getNome());
 			conta();
         } else if (opcao == 2) {
             Usuario usuario = null;
             String senha = null;
+            String cpf = null;
             
 
             while(usuario == null || !senha.equals(usuario.getSenha())){
                 System.out.print("CPF: ");
-                String cpf = entrada.next();
+                cpf = entrada.next();
                 System.out.print("Senha: ");
                 senha = entrada.next();
                 usuario = this.controlador.getUsuario(cpf);
@@ -92,6 +99,7 @@ public class Menu {
             }
 
             System.out.println("Usuário logado com sucesso!");
+            System.out.printf("Bem-Vindo de volta, %s!%n", this.controlador.getUsuario(cpf).getNome());
             this.controlador.setUsuario(usuario);
 			conta();
         } else {
