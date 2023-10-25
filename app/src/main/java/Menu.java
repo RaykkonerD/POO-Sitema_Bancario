@@ -24,10 +24,13 @@ public class Menu {
 
         while (opcao < 1 || opcao > opcoes.length) {
             System.out.printf("%n=== %s ===%n", titulo);
+            System.out.println("|-----------------------------|");
 
             for (int i = 1; i <= opcoes.length; i++) {
-                System.out.printf("%d - %s%n", i, opcoes[i - 1]);
+                System.out.printf("|  %d - %s%n", i, opcoes[i - 1]);
             }
+
+            System.out.println("|-----------------------------|\n");
 
             System.out.print("Opção: ");
             opcao = entrada.nextInt();
@@ -41,7 +44,7 @@ public class Menu {
     }
 
     public void bancos(){
-		int iBanco = menu("Banco", this.listaDeBancos);
+		int iBanco = menu("BANCO", this.listaDeBancos);
 
         for (int i = 0; i < this.listaDeBancos.length; i++) {
 	
