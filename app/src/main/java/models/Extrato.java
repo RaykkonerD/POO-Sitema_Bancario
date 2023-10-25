@@ -1,5 +1,4 @@
 package models;
-import java.util.ArrayList;
 
 public class Extrato {
     private String acoes;

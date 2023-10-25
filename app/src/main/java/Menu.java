@@ -142,11 +142,19 @@ public class Menu {
 		} else if(opcao == 4){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
-			System.out.print("Número da conta: ");
+
+            int iBanco = menu("Banco", this.listaDeBancos);
+
+			System.out.print("Número da conta destino: ");
 			int numero = entrada.nextInt();
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
-			Conta contaDestino = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
+
+            while(senha != this.controlador.getContaEmSessao().getSenha()){
+                System.out.println("[ERRO]: Senha inválida.");
+            }
+            
+            Conta contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
 			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor*100);
 		} else if(opcao == 5){
             System.out.println("--- Extrato ---");
