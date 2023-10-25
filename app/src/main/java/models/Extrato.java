@@ -8,15 +8,15 @@ public class Extrato {
     }
 
     public void addDeposito(int valor){
-        acoes += "- Depósito de R$ " + (valor / 100) + "\n";
+        acoes += String.format("- Depósito de R$ %.2f%n", (valor / 100.0));
     }
 
     public void addSaque(int valor){
-        acoes += "- Saque de R$ " + (valor / 100) + "\n";
+        acoes += String.format("- Saque de R$ %.2f%n", (valor / 100.0));
     }
 
     public void addTransacao(Conta destino, int valor){
-        acoes += "- Transação de R$ " + (valor / 100) + "\n";
+        acoes += String.format("- Transação de R$ %.2f%n", (valor / 100.0));
     }
 
     public String getExtrato(){

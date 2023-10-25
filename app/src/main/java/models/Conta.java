@@ -62,7 +62,7 @@ public class Conta implements ContaIF {
         if(valor > this.saldo){
             throw new SaldoInsuficienteException();
         } else {
-            this.sacar(valor);
+            this.saldo -= valor;
             contaDestino.depositar(valor);
             extrato.addTransacao(contaDestino, valor);
         }
