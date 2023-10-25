@@ -44,8 +44,8 @@ public class Conta implements ContaIF {
         this.senhaDeAcesso = senhaDeAcesso;
     }
 
-    public String getExtrato() {
-        return this.extrato.getExtrato();
+    public Extrato getExtrato() {
+        return this.extrato;
     }
 
     public void setExtrato(Extrato extrato) {
