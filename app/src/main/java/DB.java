@@ -5,7 +5,6 @@ import models.Conta;
 
 public class DB {
     private ArrayList<Banco> bancos;
-    private Conta contaEmSessao;
 
     public DB(){
         this.bancos = new ArrayList<>();
@@ -30,13 +29,5 @@ public class DB {
 
     public void adicionarBanco(Banco novoBanco){
         this.bancos.add(novoBanco);
-    }
-
-    public void setContaEmSessao(Conta conta) {
-        this.contaEmSessao = conta;
-    }
-
-    public Conta getContaEmSessao() {
-        return this.contaEmSessao;
     }
 }

@@ -8,6 +8,7 @@ public class Controller {
     private DB bancoDeDados;
     private String banco;
     private Usuario usuario;
+    private Conta contaEmSessao;
 
     public Controller() {
         this.bancoDeDados = new DB();
@@ -27,6 +28,14 @@ public class Controller {
 
     public void setBanco(String banco){
         this.banco = banco;
+    }
+
+    public void setContaEmSessao(Conta conta) {
+        this.contaEmSessao = conta;
+    }
+
+    public Conta getContaEmSessao() {
+        return this.contaEmSessao;
     }
 
     public Usuario getUsuario(String cpf){

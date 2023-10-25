@@ -107,7 +107,8 @@ public class Menu {
 
             Conta novaConta = this.controlador.criarConta(senha, opcao);
 			System.out.printf("Número da conta: %d%n", novaConta.getNumero());
-			acoes(novaConta);
+            this.controlador.setContaEmSessao(novaConta);
+			acoes();
         } else if(opcao == 2){
             System.out.print("Número da conta: ");
             int numero = entrada.nextInt();
@@ -115,26 +116,28 @@ public class Menu {
             int senha = entrada.nextInt();
             Conta conta = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
 
-            acoes(conta);
+            this.controlador.setContaEmSessao(conta);
+            acoes();
         } else {
             login();
         }
     }
 
-	public void acoes(Conta conta){
+	public void acoes(){
 		int opcao = menu("Ações na conta", "Ver saldo", "Depositar", "Sacar", "Transferir", "Ver extrato", "Voltar");
 		Scanner entrada = new Scanner(System.in);
 
+        System.out.println();
 		if(opcao == 1){
-			System.out.println("Saldo: " + conta.getSaldo()/100);
+			System.out.printf("Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 		} else if(opcao == 2){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
-			conta.depositar((int) valor*100);
+			this.controlador.getContaEmSessao().depositar((int) valor*100);
 		} else if(opcao == 3){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
-			conta.sacar((int) valor*100);
+			this.controlador.getContaEmSessao().sacar((int) valor*100);
 		
 		} else if(opcao == 4){
 			System.out.print("Valor: ");
@@ -144,16 +147,17 @@ public class Menu {
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
 			Conta contaDestino = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
-			conta.transferir(contaDestino, (int) valor*100);
+			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor*100);
 		} else if(opcao == 5){
-			conta.getExtrato();
+            System.out.println("--- Extrato ---");
+			System.out.println(this.controlador.getContaEmSessao().getExtrato());
 		
 		} else {
 			conta();
 			return ;
 		}
 		
-		acoes(conta);
+		acoes();
 	}
 
     public static void main(String[] args) {

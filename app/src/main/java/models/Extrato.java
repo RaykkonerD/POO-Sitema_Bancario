@@ -4,6 +4,10 @@ import java.util.ArrayList;
 public class Extrato {
     private String acoes;
 
+    public Extrato() {
+        this.acoes = "";
+    }
+
     public void addDeposito(int valor){
         acoes += "- Depósito de R$ " + (valor / 100) + "\n";
     }
@@ -14,5 +18,9 @@ public class Extrato {
 
     public void addTransacao(Conta destino, int valor){
         acoes += "- Transação de R$ " + (valor / 100) + "\n";
+    }
+
+    public String getExtrato(){
+        return this.acoes;
     }
 }
