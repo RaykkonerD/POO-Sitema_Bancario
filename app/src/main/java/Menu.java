@@ -145,6 +145,7 @@ public class Menu {
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
 			this.controlador.getContaEmSessao().depositar((int) valor*100);
+            System.out.printf("%nDeposito no valor de R$ %.2f realizado com sucesso!%n", valor);
 		} else if(opcao == 3){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
