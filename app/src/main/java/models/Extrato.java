@@ -16,7 +16,7 @@ public class Extrato {
     }
 
     public void addTransacao(Conta destino, int valor){
-        acoes += String.format("- Transação de R$ %.2f%n", (valor / 100.0));
+        acoes += String.format("- Tranferência de R$ %.2f para conta %d%n", (valor / 100.0), destino.getNumero());
     }
 
     public String getExtrato(){

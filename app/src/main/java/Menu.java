@@ -158,7 +158,7 @@ public class Menu {
 			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor*100);
 		} else if(opcao == 5){
             System.out.println("--- Extrato ---");
-			System.out.println(this.controlador.getContaEmSessao().getExtrato());
+			System.out.println(this.controlador.getContaEmSessao().getExtrato().getExtrato());
             System.out.printf("%n- Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 		
 		} else {

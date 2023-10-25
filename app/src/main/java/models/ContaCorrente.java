@@ -1,5 +1,7 @@
 package models;
 
+import exceptions.SaldoInsuficienteException;
+
 public class ContaCorrente extends Conta{
     public ContaCorrente(Usuario usuario, int senhaDeAcesso) {
         super(usuario, senhaDeAcesso);
@@ -10,5 +12,18 @@ public class ContaCorrente extends Conta{
         if(super.getSaldo() < 0){
             super.setSaldo(getSaldo() - 50);
         }
+    }
+    
+    @Override
+    public void transferir(Conta contaDestino, int valor) {
+        super.setSaldo(super.getSaldo() - valor);
+        contaDestino.depositar(valor);
+        super.getExtrato().addTransacao(contaDestino, valor);
+    }
+
+    @Override
+    public void sacar(int valor) {
+        super.setSaldo(super.getSaldo() - valor);
+        super.getExtrato().addSaque(valor);
     }
 }
