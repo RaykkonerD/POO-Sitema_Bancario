@@ -113,7 +113,7 @@ public class Menu {
     }
 
     public void conta() {
-        int opcao = menu("Contas", "Criar conta corrente", "Criar conta poupança", "Acessar conta", "Voltar");
+        int opcao = menu("Contas", "Criar conta corrente", "Criar conta poupança", "Acessar conta", "Listar minhas contas", "Voltar");
         Scanner entrada = new Scanner(System.in);
 
         if(opcao == 1 || opcao == 2){
@@ -133,7 +133,23 @@ public class Menu {
 
             this.controlador.setContaEmSessao(conta);
             acoes();
-        } else {
+        } else if(opcao == 4){
+			boolean encontrado = false;
+			System.out.printf("%n%n--- Minhas contas ---%n");
+			
+			for(Conta conta : this.controlador.getBanco().getContas()){
+				if(conta.getUsuario() == this.controlador.getUsuario()){
+					encontrado = true;
+					System.out.printf("%nNúmero: %d%nTipo: %s%nSaldo: R$ %.2f%n%n", conta.getNumero(), conta.getTipo(), conta.getSaldo()/100.0);
+				}
+			}
+
+			if(!encontrado){
+				System.out.printf("%n * Nenhuma conta encontrada * %n%n");
+			}
+
+			conta();
+		} else {
             login();
         }
     }
