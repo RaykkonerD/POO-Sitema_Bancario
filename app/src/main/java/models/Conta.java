@@ -11,7 +11,7 @@ public class Conta implements ContaIF {
     private Extrato extrato;
 
     public Conta(Usuario usuario, int senhaDeAcesso){
-        this.numero = new Random().nextInt(7);
+        this.numero = new Random().nextInt(9000) + 1000;
         this.usuario = usuario;
         this.senhaDeAcesso = senhaDeAcesso;
 		this.extrato = new Extrato();
@@ -62,7 +62,7 @@ public class Conta implements ContaIF {
         if(valor > this.saldo){
             throw new SaldoInsuficienteException();
         } else {
-            this.sacar(valor);
+            this.saldo -= valor;
             contaDestino.depositar(valor);
             extrato.addTransacao(contaDestino, valor);
         }
@@ -91,7 +91,7 @@ public class Conta implements ContaIF {
     public int getNumero(){
         return this.numero;
     }
-    
+
     @Override
     public void aplicarTaxa() {
         

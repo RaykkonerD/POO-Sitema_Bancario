@@ -36,6 +36,17 @@ public class Banco implements BancoIF {
         return null;
     }
 
+    public Conta getConta(int numero){
+        for(Conta conta : getContas()){
+            if(conta.getNumero() == numero){
+                System.out.println(conta.getNumero() + "   " + numero);
+                return conta;
+            }
+        }
+
+        return null;
+    }
+
     public ArrayList<Usuario> getUsuarios() {
         return this.usuarios;
     }

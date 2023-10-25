@@ -89,5 +89,9 @@ public class Controller {
     public Conta getConta(String banco, int numero, int senha){
         return getBanco(banco).getConta(numero, senha);
     }
+    
+    public Conta getConta(String banco, int numero){
+        return getBanco(banco).getConta(numero);
+    }
 
 }
