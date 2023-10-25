@@ -109,7 +109,7 @@ public class Menu {
 			System.out.printf("Número da conta: %d%n", novaConta.getNumero());
             this.controlador.setContaEmSessao(novaConta);
 			acoes();
-        } else if(opcao == 2){
+        } else if(opcao == 3){
             System.out.print("Número da conta: ");
             int numero = entrada.nextInt();
             System.out.print("Senha: ");
