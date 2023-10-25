@@ -98,14 +98,16 @@ public class Menu {
     }
 
     public void conta() {
-        int opcao = menu("Contas", "Criar conta", "Acessar conta", "Voltar");
+        int opcao = menu("Contas", "Criar conta corrente", "Criar conta poupança", "Acessar conta", "Voltar");
         Scanner entrada = new Scanner(System.in);
 
-        if(opcao == 1){
+        if(opcao == 1 || opcao == 2){
             System.out.print("Senha: ");
             int senha = entrada.nextInt();
 
-            this.controlador.criarConta(senha);
+            Conta novaConta = this.controlador.criarConta(senha, opcao);
+			System.out.printf("Número da conta: %d%n", novaConta.getNumero());
+			acoes(novaConta);
         } else if(opcao == 2){
             System.out.print("Número da conta: ");
             int numero = entrada.nextInt();
@@ -113,11 +115,46 @@ public class Menu {
             int senha = entrada.nextInt();
             Conta conta = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
 
-            // this.controlador.getConta(banco.getNome(), numero, senha);
+            acoes(conta);
         } else {
             login();
         }
     }
+
+	public void acoes(Conta conta){
+		int opcao = menu("Ações na conta", "Ver saldo", "Depositar", "Sacar", "Transferir", "Ver extrato", "Voltar");
+		Scanner entrada = new Scanner(System.in);
+
+		if(opcao == 1){
+			System.out.println("Saldo: " + conta.getSaldo()/100);
+		} else if(opcao == 2){
+			System.out.print("Valor: ");
+			double valor = entrada.nextDouble();
+			conta.depositar((int) valor*100);
+		} else if(opcao == 3){
+			System.out.print("Valor: ");
+			double valor = entrada.nextDouble();
+			conta.sacar((int) valor*100);
+		
+		} else if(opcao == 4){
+			System.out.print("Valor: ");
+			double valor = entrada.nextDouble();
+			System.out.print("Número da conta: ");
+			int numero = entrada.nextInt();
+			System.out.print("Senha: ");
+			int senha = entrada.nextInt();
+			Conta contaDestino = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
+			conta.transferir(contaDestino, (int) valor*100);
+		} else if(opcao == 5){
+			conta.getExtrato();
+		
+		} else {
+			conta();
+			return ;
+		}
+		
+		acoes(conta);
+	}
 
     public static void main(String[] args) {
         Menu menu = new Menu();

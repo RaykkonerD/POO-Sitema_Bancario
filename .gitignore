@@ -3,3 +3,12 @@
 
 # Ignore Gradle build output directory
 build
+*.class
+*.replit
+*.prefs
+*.nix
+*.jar
+pom.xml
+*.project
+.classpath
+.breakpoints

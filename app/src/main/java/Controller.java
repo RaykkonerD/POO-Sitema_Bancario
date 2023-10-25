@@ -1,6 +1,8 @@
 import models.Banco;
 import models.Usuario;
 import models.Conta;
+import models.ContaCorrente;
+import models.ContaPolpanca;
 
 public class Controller {
     private DB bancoDeDados;
@@ -39,10 +41,12 @@ public class Controller {
         return novoUsuario;
     }
 
-    public void criarConta(int senha){
+    public Conta criarConta(int senha, int opcao){
         // Excecao caso senha inválida
-        Conta novaConta = new Conta(getUsuario(), senha);
+		
+        Conta novaConta = (opcao == 1) ? new ContaCorrente(getUsuario(), senha) : new ContaPolpanca(getUsuario(), senha);
         getBanco().adicionarConta(novaConta);
+		return novaConta;
     }
 
     public Banco getBanco(String nome){

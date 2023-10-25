@@ -1,6 +1,6 @@
 package models;
 
-public class ContaPolpanca extends Conta{
+public class ContaPolpanca extends Conta {
     public ContaPolpanca(Usuario usuario, int senhaDeAcesso) {
         super(usuario, senhaDeAcesso);
     }

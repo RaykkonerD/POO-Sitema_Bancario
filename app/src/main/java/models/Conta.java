@@ -14,6 +14,7 @@ public class Conta implements ContaIF {
         this.numero = new Random().nextInt(7);
         this.usuario = usuario;
         this.senhaDeAcesso = senhaDeAcesso;
+		this.extrato = new Extrato();
     }
     public void setNumero(int numero) {
         this.numero = numero;
