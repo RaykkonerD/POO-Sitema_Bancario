@@ -2,7 +2,7 @@ import models.Banco;
 import models.Usuario;
 import models.Conta;
 import models.ContaCorrente;
-import models.ContaPolpanca;
+import models.ContaPoupanca;
 
 public class Controller {
     private DB bancoDeDados;
@@ -44,7 +44,7 @@ public class Controller {
     public Conta criarConta(int senha, int opcao){
         // Excecao caso senha inválida
 		
-        Conta novaConta = (opcao == 1) ? new ContaCorrente(getUsuario(), senha) : new ContaPolpanca(getUsuario(), senha);
+        Conta novaConta = (opcao == 1) ? new ContaCorrente(getUsuario(), senha) : new ContaPoupanca(getUsuario(), senha);
         getBanco().adicionarConta(novaConta);
 		return novaConta;
     }
