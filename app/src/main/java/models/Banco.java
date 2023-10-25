@@ -1,7 +1,7 @@
 package models;
 import java.util.ArrayList;
 
-public class Banco {
+public class Banco implements BancoIF {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Conta> contas;
     private String nome;
@@ -50,5 +50,12 @@ public class Banco {
 
     public void adicionarConta(Conta novaConta){
         this.contas.add(novaConta);
+    }
+
+    @Override
+    public void passouUmDia() {
+        for(Conta conta : getContas()){
+            conta.aplicarTaxa();
+        }
     }
 }

@@ -12,6 +12,22 @@ public class Controller {
 
     public Controller() {
         this.bancoDeDados = new DB();
+
+        Thread thread = new Thread(() -> {
+            while (true) {
+                for(Banco banco : this.bancoDeDados.getBancos()){
+                    banco.passouUmDia();
+                }
+
+                try {
+                    Thread.sleep(10000); // Aguarda 10 segundos
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    return;
+                }
+            }
+        });
+        thread.start();
     }
 
     public Usuario getUsuario(){

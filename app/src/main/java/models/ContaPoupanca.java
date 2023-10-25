@@ -6,24 +6,10 @@ public class ContaPoupanca extends Conta {
     }
 
     @Override
-    public void setSaldo(int saldo) {
-        super.setSaldo(saldo);
-        render();
-    }
-
-    public void render() {
-        Thread thread = new Thread(() -> {
-            while (true) {
-                double juros = super.getSaldo() * 0.02; // 2% do saldo em centavos
-                super.setSaldo(super.getSaldo() + (int) juros);
-                try {
-                    Thread.sleep(10000); // Aguarda 10 segundos
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    return;
-                }
-            }
-        });
-        thread.start();
+    public void aplicarTaxa(){
+        if(getSaldo() > 0){
+            double juros = super.getSaldo() * 0.02; // 2% do saldo em centavos
+            super.setSaldo(super.getSaldo() + (int) juros);
+        }
     }
 }

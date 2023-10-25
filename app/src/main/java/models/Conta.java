@@ -91,5 +91,10 @@ public class Conta implements ContaIF {
     public int getNumero(){
         return this.numero;
     }
+    
+    @Override
+    public void aplicarTaxa() {
+        
+    }
 
 }
