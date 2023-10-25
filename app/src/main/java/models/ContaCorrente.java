@@ -26,4 +26,9 @@ public class ContaCorrente extends Conta{
         super.setSaldo(super.getSaldo() - valor);
         super.getExtrato().addSaque(valor);
     }
+
+	@Override
+	public String getTipo(){
+		return "Conta corrente";
+	}
 }

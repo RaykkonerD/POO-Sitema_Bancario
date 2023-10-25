@@ -6,4 +6,5 @@ public interface ContaIF {
     public void depositar(int valor);
     public void sacar(int valor);
     public void aplicarTaxa();
+	public String getTipo();
 }

@@ -97,4 +97,9 @@ public class Conta implements ContaIF {
         
     }
 
+	@Override
+	public String getTipo(){
+		return null;
+	}
+
 }

@@ -23,7 +23,11 @@ public class Menu {
         int opcao = 0;
 
         while (opcao < 1 || opcao > opcoes.length) {
-            System.out.printf("%n=== %s ===%n", titulo);
+			String barra = "";
+			for(int i = 0; i < (37-titulo.length())/2; i++){
+				barra += "=";
+			}
+            System.out.printf("%n%s %s %s%n", barra, titulo, barra);
             System.out.println("|------------------------------------|");
 
             for (int i = 1; i <= opcoes.length; i++) {
@@ -159,15 +163,29 @@ public class Menu {
 
 			System.out.print("Número da conta destino: ");
 			int numero = entrada.nextInt();
+
+			Conta contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
+
+			while(contaDestino == null){
+				System.out.println("[ERRO]: Conta não encontrada.");
+
+				contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
+			}
+
+			System.out.println();
+			System.out.println("--- Conta-Destino ---");
+			System.out.printf("- Titular: %s%n", contaDestino.getUsuario().getNome());
+			System.out.printf("- Banco: %s%n", listaDeBancos[iBanco-1]);
+			System.out.printf("- Conta: %d (%s)%n%n", contaDestino.getNumero(), contaDestino .getTipo());
+				
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
 
             while(senha != this.controlador.getContaEmSessao().getSenha()){
                 System.out.println("[ERRO]: Senha inválida.");
             }
-            
-            Conta contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
 			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor*100);
+			System.out.printf("%nTransferência realizada com sucesso!%n%n");
 		} else if(opcao == 5){
             System.out.println("--- Extrato ---");
 			System.out.println(this.controlador.getContaEmSessao().getExtrato().getExtrato());

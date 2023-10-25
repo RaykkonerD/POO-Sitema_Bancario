@@ -12,4 +12,9 @@ public class ContaPoupanca extends Conta {
             super.setSaldo(super.getSaldo() + (int) juros);
         }
     }
+
+	@Override
+	public String getTipo(){
+		return "Conta poupança";
+	}
 }
