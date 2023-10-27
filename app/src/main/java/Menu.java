@@ -47,7 +47,7 @@ public class Menu {
         return opcao;
     }
 
-    public void bancos(){
+    public void bancos() throws Exception {
 		int iBanco = menu("BANCO", this.listaDeBancos);
 
         for (int i = 0; i < this.listaDeBancos.length; i++) {
@@ -61,7 +61,7 @@ public class Menu {
 		login();
 	}
 
-    public void login() {
+    public void login() throws Exception {
         int opcao = menu("Login", "Criar novo usuário", "Entrar com usuário existente", "Voltar");
         Scanner entrada = new Scanner(System.in);
 
@@ -70,18 +70,20 @@ public class Menu {
             String nome = entrada.next();
             System.out.print("CPF: ");
             String cpf = entrada.next();
-            while(!(this.controlador.getUsuario(cpf) == null)) {
-                System.out.println("\n[Erro]: CPF já cadastrado!");
-                System.out.print("CPF: ");
-                cpf = entrada.next();
-            }
-            System.out.print("Senha: ");
-            String senha = entrada.next();
 
-            this.controlador.setUsuario(this.controlador.criarUsuario(nome, cpf, senha));
-            System.out.println("\nUsuário criado com sucesso!");
-            System.out.printf("Bem-Vindo, %s!%n", this.controlador.getUsuario(cpf).getNome());
-			conta();
+            try {
+                System.out.print("Senha: ");
+                String senha = entrada.next();
+
+                this.controlador.setUsuario(this.controlador.criarUsuario(nome, cpf, senha));
+                System.out.println("\nUsuário criado com sucesso!");
+                System.out.printf("Bem-Vindo, %s!%n", this.controlador.getUsuario(cpf).getNome());
+                conta();
+            } catch (Exception e) {
+                System.out.println("\n[ERRO]: CPF já cadastrado!");
+                login();
+            }
+
         } else if (opcao == 2) {
             Usuario usuario = null;
             String senha = null;
@@ -112,7 +114,7 @@ public class Menu {
         }
     }
 
-    public void conta() {
+    public void conta() throws Exception {
         int opcao = menu("Contas", "Criar conta corrente", "Criar conta poupança", "Acessar conta", "Listar minhas contas", "Voltar");
         Scanner entrada = new Scanner(System.in);
 
@@ -154,7 +156,7 @@ public class Menu {
         }
     }
 
-	public void acoes(){
+	public void acoes() throws Exception {
 		int opcao = menu("Ações na conta", "Ver saldo", "Depositar", "Sacar", "Transferir", "Ver extrato", "Voltar");
 		Scanner entrada = new Scanner(System.in);
 
@@ -191,8 +193,10 @@ public class Menu {
 			System.out.println();
 			System.out.println("--- Conta-Destino ---");
 			System.out.printf("- Titular: %s%n", contaDestino.getUsuario().getNome());
+            System.out.printf("- CPF: %s%n", contaDestino.getUsuario().getCPF());
 			System.out.printf("- Banco: %s%n", listaDeBancos[iBanco-1]);
 			System.out.printf("- Conta: %d (%s)%n%n", contaDestino.getNumero(), contaDestino .getTipo());
+            System.out.printf("Digite sua senha para finalizar a transferência.%n");
 				
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
@@ -215,7 +219,7 @@ public class Menu {
 		acoes();
 	}
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Menu menu = new Menu();
         menu.controlador = new Controller();
         int iBanco = menu.menu("Banco", menu.listaDeBancos);

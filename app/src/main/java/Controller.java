@@ -1,3 +1,4 @@
+import exceptions.UsuarioExistenteException;
 import models.Banco;
 import models.Usuario;
 import models.Conta;
@@ -20,7 +21,7 @@ public class Controller {
                 }
 
                 try {
-                    Thread.sleep(10000); // Aguarda 10 segundos
+                    Thread.sleep(30000); // Aguarda 30 segundos
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     return;
@@ -58,7 +59,10 @@ public class Controller {
         return getBanco(this.banco).getUsuario(cpf);
     }
 
-    public Usuario criarUsuario(String nome, String CPF, String senha){
+    public Usuario criarUsuario(String nome, String CPF, String senha) throws Exception {
+        if(!(getUsuario(CPF) == null)) {
+           throw new UsuarioExistenteException();
+        }
         Usuario novoUsuario = new Usuario(nome, CPF, senha);
         getBanco().adicionarUsuario(novoUsuario);
         return novoUsuario;
