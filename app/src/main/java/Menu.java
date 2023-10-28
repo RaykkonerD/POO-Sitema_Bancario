@@ -182,29 +182,32 @@ public class Menu {
 			System.out.print("Número da conta destino: ");
 			int numero = entrada.nextInt();
 
-			Conta contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
-
-			while(contaDestino == null){
-				System.out.println("[ERRO]: Conta não encontrada.");
-
-				contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
+			while (controlador.getConta(listaDeBancos[iBanco-1], numero) == null){
+				System.out.println("\n[ERRO]: Conta não encontrada.\n");
+                System.out.print("Número da conta destino: ");
+                numero = entrada.nextInt();
 			}
+
+            Conta contaDestino = this.controlador.getConta(listaDeBancos[iBanco-1], numero);
 
 			System.out.println();
 			System.out.println("--- Conta-Destino ---");
 			System.out.printf("- Titular: %s%n", contaDestino.getUsuario().getNome());
             System.out.printf("- CPF: %s%n", contaDestino.getUsuario().getCPF());
 			System.out.printf("- Banco: %s%n", listaDeBancos[iBanco-1]);
-			System.out.printf("- Conta: %d (%s)%n%n", contaDestino.getNumero(), contaDestino .getTipo());
-            System.out.printf("Digite sua senha para finalizar a transferência.%n");
+			System.out.printf("- Conta: %d (%s)%n%n", contaDestino.getNumero(), contaDestino.getTipo());
+            System.out.printf("- Valor da Transferência: R$ %s", valor);
+            System.out.printf("\nDigite sua senha para finalizar a transferência.%n");
 				
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
 
-            while(senha != this.controlador.getContaEmSessao().getSenha()){
-                System.out.println("[ERRO]: Senha inválida.");
+            while (senha != this.controlador.getContaEmSessao().getSenha()){
+                System.out.println("\n[ERRO]: Senha inválida.");
+                System.out.print("Senha: ");
+                senha = entrada.nextInt();
             }
-			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor*100);
+			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor * 100);
 			System.out.printf("%nTransferência realizada com sucesso!%n%n");
 		} else if(opcao == 5){
             System.out.println("--- Extrato ---");
@@ -213,7 +216,7 @@ public class Menu {
 		
 		} else {
 			conta();
-			return ;
+			return;
 		}
 		
 		acoes();
