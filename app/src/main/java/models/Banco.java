@@ -63,6 +63,10 @@ public class Banco implements BancoIF {
         this.contas.add(novaConta);
     }
 
+	public void encerrarConta(int numero){
+		this.contas.removeIf(conta -> conta.getNumero() == numero);
+	}
+
     @Override
     public void passouUmDia() {
         for(Conta conta : getContas()){

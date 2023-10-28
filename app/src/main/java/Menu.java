@@ -157,7 +157,7 @@ public class Menu {
     }
 
 	public void acoes() throws Exception {
-		int opcao = menu("Ações na conta", "Ver saldo", "Depositar", "Sacar", "Transferir", "Ver extrato", "Voltar");
+		int opcao = menu("Ações na conta", "Ver saldo", "Depositar", "Sacar", "Transferir", "Ver extrato", "Encerrar conta", "Voltar");
 		Scanner entrada = new Scanner(System.in);
 
         System.out.println();
@@ -220,6 +220,17 @@ public class Menu {
 			System.out.println(this.controlador.getContaEmSessao().getExtrato().getExtrato());
             System.out.printf("%n- Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 		
+		} else if(opcao == 6){
+			System.out.print("[AVISO]: Encerrar conta? (1 - sim / 2 - não): ");
+			int confirmacao = entrada.nextInt();
+
+			if(confirmacao == 1){
+				this.controlador.getBanco().encerrarConta(this.controlador.getContaEmSessao().getNumero());
+				System.out.println("\nConta encerrada com sucesso!\n");
+				this.controlador.setContaEmSessao(null);
+				conta();
+				return;
+			}
 		} else {
 			conta();
 			return;

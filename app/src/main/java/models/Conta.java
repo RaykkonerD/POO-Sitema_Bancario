@@ -84,10 +84,6 @@ public class Conta implements ContaIF {
         }
     }
 
-    public void encerrarConta(){
-
-    }
-
     public int getNumero(){
         return this.numero;
     }
