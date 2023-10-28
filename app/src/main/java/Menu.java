@@ -207,8 +207,14 @@ public class Menu {
                 System.out.print("Senha: ");
                 senha = entrada.nextInt();
             }
-			this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor * 100);
-			System.out.printf("%nTransferência realizada com sucesso!%n%n");
+
+            try {
+                this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor * 100);
+                System.out.printf("%nTransferência realizada com sucesso!%n%n");
+            } catch (Exception e) {
+                System.out.println("\n[ERRO]: Saldo insuficiente!");
+                acoes();
+            }
 		} else if(opcao == 5){
             System.out.println("--- Extrato ---");
 			System.out.println(this.controlador.getContaEmSessao().getExtrato().getExtrato());
