@@ -17,42 +17,52 @@ public abstract class Conta implements ContaIF {
 		this.extrato = new Extrato();
     }
 
+	@Override
 	public int getNumero(){
 		return this.numero;
 	}
-	
+
+	@Override
     public void setNumero(int numero) {
         this.numero = numero;
     }
 
+	@Override
     public Usuario getUsuario() {
         return this.usuario;
     }
 
+	@Override
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
+	@Override
     public int getSaldo() {
         return this.saldo;
     }
 
+	@Override
     public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
 
+	@Override
     public int getSenha() {
         return this.senhaDeAcesso;
     }
 
+	@Override
     public void setSenha(int senhaDeAcesso) {
         this.senhaDeAcesso = senhaDeAcesso;
     }
 
+	@Override
     public Extrato getExtrato() {
         return this.extrato;
     }
 
+	@Override
     public void setExtrato(Extrato extrato) {
         this.extrato = extrato;
     }

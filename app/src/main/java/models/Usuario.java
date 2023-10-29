@@ -1,6 +1,6 @@
 package models;
 
-public class Usuario {
+public class Usuario implements UsuarioIF {
     private String nome;
     private String CPF;
     private String senha;
@@ -11,26 +11,32 @@ public class Usuario {
         this.senha = senha;
     }
 
+	@Override
     public String getNome() {
         return this.nome;
     }
 
+	@Override
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+	@Override
     public String getCPF() {
         return this.CPF;
     }
 
+	@Override
     public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
+	@Override
     public String getSenha() {
         return this.senha;
     }
 
+	@Override
     public void setSenha(String senha) {
         this.senha = senha;
     }
