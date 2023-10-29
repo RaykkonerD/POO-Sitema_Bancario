@@ -12,10 +12,12 @@ public class Banco implements BancoIF {
         this.nome = nome;
     }
 
+	@Override
     public String getNome(){
         return this.nome;
     }
-    
+
+	@Override
     public Usuario getUsuario(String cpf){
         for(Usuario usuario : getUsuarios()){
             if(usuario.getCPF().equals(cpf)){
@@ -26,6 +28,7 @@ public class Banco implements BancoIF {
         return null;
     }
 
+	@Override
     public Conta getConta(int numero, int senha){
         for(Conta conta : contas){
             if(conta.getNumero() == numero && conta.getSenha() == senha){
@@ -47,22 +50,27 @@ public class Banco implements BancoIF {
         return null;
     }
 
+	@Override
     public ArrayList<Usuario> getUsuarios() {
         return this.usuarios;
     }
 
+	@Override
     public void adicionarUsuario(Usuario novoUsuario){        
 		this.usuarios.add(novoUsuario);
     }
 
+	@Override
     public ArrayList<Conta> getContas() {
         return contas;
     }
 
+	@Override
     public void adicionarConta(Conta novaConta){
         this.contas.add(novaConta);
     }
 
+	@Override
 	public void encerrarConta(int numero){
 		this.contas.removeIf(conta -> conta.getNumero() == numero);
 	}

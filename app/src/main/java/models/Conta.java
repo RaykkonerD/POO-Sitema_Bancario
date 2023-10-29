@@ -3,7 +3,7 @@ import java.util.Random;
 
 import exceptions.SaldoInsuficienteException;
 
-public class Conta implements ContaIF {
+public abstract class Conta implements ContaIF {
     private int numero;
     private Usuario usuario;
     private int saldo;
@@ -16,6 +16,11 @@ public class Conta implements ContaIF {
         this.senhaDeAcesso = senhaDeAcesso;
 		this.extrato = new Extrato();
     }
+
+	public int getNumero(){
+		return this.numero;
+	}
+	
     public void setNumero(int numero) {
         this.numero = numero;
     }
@@ -58,17 +63,6 @@ public class Conta implements ContaIF {
     }
 
     @Override
-    public void transferir(Conta contaDestino, int valor) throws SaldoInsuficienteException {
-        if(valor > this.saldo){
-            throw new SaldoInsuficienteException();
-        } else {
-            this.saldo -= valor;
-            contaDestino.depositar(valor);
-            extrato.addTransacao(contaDestino, valor);
-        }
-    }
-
-    @Override
     public void depositar(int valor){
         this.saldo += valor;
         extrato.addDeposito(valor);
@@ -84,18 +78,13 @@ public class Conta implements ContaIF {
         }
     }
 
-    public int getNumero(){
-        return this.numero;
-    }
+	@Override
+	public abstract void transferir(Conta contaDestino, int valor);
 
     @Override
-    public void aplicarTaxa() {
-        
-    }
+    public abstract void aplicarTaxa();
 
 	@Override
-	public String getTipo(){
-		return null;
-	}
+	public abstract String getTipo();
 
 }

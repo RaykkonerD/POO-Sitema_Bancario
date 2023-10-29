@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 import models.Banco;
@@ -129,6 +127,13 @@ public class Menu {
         } else if(opcao == 3){
             System.out.print("Número da conta: ");
             int numero = entrada.nextInt();
+
+			while(this.controlador.getConta(this.controlador.getBanco().getNome(), numero) == null){
+				System.out.println("[ERRO]: Conta não encontrada.\n");
+
+				System.out.print("Número da conta: ");
+				numero = entrada.nextInt();
+			}
             System.out.print("Senha: ");
             int senha = entrada.nextInt();
             Conta conta = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
@@ -166,16 +171,34 @@ public class Menu {
 		} else if(opcao == 2){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
-			this.controlador.getContaEmSessao().depositar((int) valor*100);
+
+			while(valor <= 0){
+				System.out.println("[ERRO]: Valor inválido.\n");
+				System.out.print("Valor: ");
+				valor = entrada.nextDouble();
+			}
+			this.controlador.getContaEmSessao().depositar((int) (valor * 100));
             System.out.printf("%nDeposito no valor de R$ %.2f realizado com sucesso!%n", valor);
 		} else if(opcao == 3){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
-			this.controlador.getContaEmSessao().sacar((int) valor*100);
+
+			while(valor <= 0){
+				System.out.println("[ERRO]: Valor inválido.\n");
+				System.out.print("Valor: ");
+				valor = entrada.nextDouble();
+			}
+			this.controlador.getContaEmSessao().sacar((int) (valor * 100));
 		
 		} else if(opcao == 4){
 			System.out.print("Valor: ");
 			double valor = entrada.nextDouble();
+
+			while(valor <= 0){
+				System.out.println("[ERRO]: Valor inválido.\n");
+				System.out.print("Valor: ");
+				valor = entrada.nextDouble();
+			}
 
             int iBanco = menu("Banco", this.listaDeBancos);
 
@@ -209,7 +232,7 @@ public class Menu {
             }
 
             try {
-                this.controlador.getContaEmSessao().transferir(contaDestino, (int) valor * 100);
+                this.controlador.getContaEmSessao().transferir(contaDestino, (int) (valor * 100));
                 System.out.printf("%nTransferência realizada com sucesso!%n%n");
             } catch (Exception e) {
                 System.out.println("\n[ERRO]: Saldo insuficiente!");
@@ -221,9 +244,14 @@ public class Menu {
             System.out.printf("%n- Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 		
 		} else if(opcao == 6){
-			System.out.print("[AVISO]: Encerrar conta? (1 - sim / 2 - não): ");
+			System.out.print("[AVISO]: Encerrar conta? (1 - sim / 2 - voltar): ");
 			int confirmacao = entrada.nextInt();
 
+			while(confirmacao != 1 && confirmacao != 2){
+				System.out.println("[ERRO]: Opção inválida.");
+				confirmacao = entrada.nextInt();
+			}
+			
 			if(confirmacao == 1){
 				this.controlador.getBanco().encerrarConta(this.controlador.getContaEmSessao().getNumero());
 				System.out.println("\nConta encerrada com sucesso!\n");
