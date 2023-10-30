@@ -10,5 +10,5 @@ public interface BancoIF {
 	public ArrayList<Conta> getContas();
 	public void adicionarConta(Conta novaConta);
 	public void encerrarConta(int nunero);
-    public void passouUmDia();
+	void passouUmMes();
 }

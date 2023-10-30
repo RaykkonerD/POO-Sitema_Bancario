@@ -76,7 +76,7 @@ public class Banco implements BancoIF {
 	}
 
     @Override
-    public void passouUmDia() {
+    public void passouUmMes() {
         for(Conta conta : getContas()){
             conta.aplicarTaxa();
         }

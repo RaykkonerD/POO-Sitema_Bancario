@@ -17,7 +17,7 @@ public class Controller {
         Thread thread = new Thread(() -> {
             while (true) {
                 for(Banco banco : this.bancoDeDados.getBancos()){
-                    banco.passouUmDia();
+                    banco.passouUmMes();
                 }
 
                 try {
