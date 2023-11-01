@@ -70,6 +70,12 @@ public class Menu {
             System.out.print("CPF: ");
             String cpf = entrada.next();
 
+			while(!this.controlador.isCpfValido(cpf)){
+				System.out.println("[ERRO]: CPF inválido.\n");
+				System.out.print("CPF: ");
+				cpf = entrada.next();
+			}
+
             try {
                 System.out.print("Senha: ");
                 String senha = entrada.next();
