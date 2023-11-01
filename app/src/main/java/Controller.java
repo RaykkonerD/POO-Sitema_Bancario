@@ -4,6 +4,7 @@ import models.Usuario;
 import models.Conta;
 import models.ContaCorrente;
 import models.ContaPoupanca;
+import java.util.Random;
 
 public class Controller {
     private DB bancoDeDados;
@@ -71,11 +72,11 @@ public class Controller {
     public Conta criarConta(int senha, int opcao){
 		int numeroDeConta = 0;
 		
-		while(getBanco().getConta(numero) != null){
+		while(getBanco().getConta(numeroDeConta) != null){
 			numeroDeConta = new Random().nextInt(9000) + 1000;
 		}
 		
-        Conta novaConta = (opcao == 1) ? new ContaCorrente(numero, getUsuario(), senha) : new ContaPoupanca(numero, getUsuario(), senha);
+        Conta novaConta = (opcao == 1) ? new ContaCorrente(numeroDeConta, getUsuario(), senha) : new ContaPoupanca(numeroDeConta, getUsuario(), senha);
         getBanco().adicionarConta(novaConta);
 		
 		return novaConta;
