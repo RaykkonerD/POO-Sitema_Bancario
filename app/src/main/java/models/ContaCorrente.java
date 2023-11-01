@@ -1,8 +1,8 @@
 package models;
 
 public class ContaCorrente extends Conta{
-    public ContaCorrente(Usuario usuario, int senhaDeAcesso) {
-        super(usuario, senhaDeAcesso);
+    public ContaCorrente(int numero, Usuario usuario, int senhaDeAcesso) {
+        super(numero, usuario, senhaDeAcesso);
     }
 
     @Override

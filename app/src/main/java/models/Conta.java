@@ -10,8 +10,8 @@ public abstract class Conta implements ContaIF {
     private int senhaDeAcesso;
     private Extrato extrato;
 
-    public Conta(Usuario usuario, int senhaDeAcesso){
-        this.numero = new Random().nextInt(9000) + 1000;
+    public Conta(int numero, Usuario usuario, int senhaDeAcesso){
+        this.numero = numero;
         this.usuario = usuario;
         this.senhaDeAcesso = senhaDeAcesso;
 		this.extrato = new Extrato();

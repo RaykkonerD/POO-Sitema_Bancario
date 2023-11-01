@@ -69,10 +69,15 @@ public class Controller {
     }
 
     public Conta criarConta(int senha, int opcao){
-        // Excecao caso senha inválida
+		int numeroDeConta = 0;
 		
-        Conta novaConta = (opcao == 1) ? new ContaCorrente(getUsuario(), senha) : new ContaPoupanca(getUsuario(), senha);
+		while(getBanco().getConta(numero) != null){
+			numeroDeConta = new Random().nextInt(9000) + 1000;
+		}
+		
+        Conta novaConta = (opcao == 1) ? new ContaCorrente(numero, getUsuario(), senha) : new ContaPoupanca(numero, getUsuario(), senha);
         getBanco().adicionarConta(novaConta);
+		
 		return novaConta;
     }
 

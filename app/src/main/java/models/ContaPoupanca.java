@@ -3,8 +3,8 @@ package models;
 import exceptions.SaldoInsuficienteException;
 
 public class ContaPoupanca extends Conta {
-    public ContaPoupanca(Usuario usuario, int senhaDeAcesso) {
-        super(usuario, senhaDeAcesso);
+    public ContaPoupanca(int numero, Usuario usuario, int senhaDeAcesso) {
+        super(numero, usuario, senhaDeAcesso);
     }
 
     @Override
