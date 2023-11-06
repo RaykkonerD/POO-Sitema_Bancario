@@ -67,6 +67,8 @@ public class Controller {
         }
         Usuario novoUsuario = new Usuario(nome, CPF, senha);
         getBanco().adicionarUsuario(novoUsuario);
+
+		this.bancoDeDados.write();
         return novoUsuario;
     }
 
@@ -79,7 +81,8 @@ public class Controller {
 		
         Conta novaConta = (opcao == 1) ? new ContaCorrente(numeroDeConta, getUsuario(), senha) : new ContaPoupanca(numeroDeConta, getUsuario(), senha);
         getBanco().adicionarConta(novaConta);
-		
+
+		this.bancoDeDados.write();
 		return novaConta;
     }
 
@@ -89,6 +92,7 @@ public class Controller {
 
     public void adicionarBanco(Banco banco){
         this.bancoDeDados.adicionarBanco(banco);
+		this.bancoDeDados.write();
     }
 
     public DB getBancoDeDados() {
@@ -102,6 +106,26 @@ public class Controller {
     public Conta getConta(String banco, int numero){
         return getBanco(banco).getConta(numero);
     }
+
+	public void depositar(Double valor) {
+		getContaEmSessao().depositar((int) (valor * 100));
+		this.bancoDeDados.write();
+	} 
+
+	public void sacar(Double valor) {
+		getContaEmSessao().sacar((int) (valor * 100));
+		this.bancoDeDados.write();
+	} 
+
+	public void transferencia(Conta contaDestino, Double valor) {
+		getContaEmSessao().transferir(contaDestino, (int) (valor * 100));
+		this.bancoDeDados.write();
+	}
+
+	public void encerrarConta() {
+		getBanco().encerrarConta(getContaEmSessao().getNumero());
+		this.bancoDeDados.write();
+	}
 
 	public boolean isCpfValido(String cpf){
 		if(cpf.length() != 14 || !Pattern.matches("[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}\\-[0-9]{2}", cpf)){

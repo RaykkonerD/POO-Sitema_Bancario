@@ -1,7 +1,8 @@
 package models;
 import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Banco implements BancoIF {
+public class Banco implements BancoIF, Serializable {
     private ArrayList<Usuario> usuarios;
     private ArrayList<Conta> contas;
     private String nome;
@@ -42,7 +43,6 @@ public class Banco implements BancoIF {
     public Conta getConta(int numero){
         for(Conta conta : getContas()){
             if(conta.getNumero() == numero){
-                System.out.println(conta.getNumero() + "   " + numero);
                 return conta;
             }
         }

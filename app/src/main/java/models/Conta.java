@@ -1,8 +1,9 @@
 package models;
 
 import exceptions.SaldoInsuficienteException;
+import java.io.Serializable;
 
-public abstract class Conta implements ContaIF {
+public abstract class Conta implements ContaIF, Serializable {
     private int numero;
     private Usuario usuario;
     private int saldo;

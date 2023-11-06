@@ -1,6 +1,7 @@
 package models;
+import java.io.Serializable;
 
-public class Usuario implements UsuarioIF {
+public class Usuario implements UsuarioIF, Serializable {
     private String nome;
     private String CPF;
     private String senha;

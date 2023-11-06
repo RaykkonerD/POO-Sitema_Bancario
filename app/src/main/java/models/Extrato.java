@@ -1,6 +1,7 @@
 package models;
+import java.io.Serializable;
 
-public class Extrato {
+public class Extrato implements Serializable {
     private String acoes;
 
     public Extrato() {
