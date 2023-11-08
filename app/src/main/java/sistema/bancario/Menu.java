@@ -225,15 +225,22 @@ public class Menu {
 			System.out.printf("%n- Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 
 		} else if(opcao == 6){
-			ValidationContext<Integer> vcSenha = new ValidationContext(new IntervalValidator(1, 2));
-			int confirmacao = vcSenha.getValidValue("[AVISO]: Encerrar conta? (1 - sim / 2 - voltar): ", "[ERRO]: Opção inválida.\n", Integer.class);
-
-			if(confirmacao == 1){
-				this.controlador.encerrarConta();
-				System.out.println("\nConta encerrada com sucesso!\n");
-				this.controlador.setContaEmSessao(null);
-				conta();
-				return;
+			if(this.controlador.getContaEmSessao().getSaldo() != 0){
+				System.out.println("[ERRO]: Conta tem saldo diferente de 0.");
+			} else {
+				ValidationContext<Integer> vcConfirmacao = new ValidationContext(new IntervalValidator(1, 2));
+				int confirmacao = vcConfirmacao.getValidValue("[AVISO]: Encerrar conta? (1 - sim / 2 - voltar): ", "[ERRO]: Opção inválida.\n", Integer.class);
+	
+				if(confirmacao == 1){
+					ValidationContext<Integer> vcSenha = new ValidationContext(new AccountPasswordValidator(this.controlador.getContaEmSessao()));
+					int senha = vcSenha.getValidValue("Senha: ", "[ERRO]: Senha inválida.\n", Integer.class);
+					
+					this.controlador.encerrarConta();
+					System.out.println("\nConta encerrada com sucesso!\n");
+					this.controlador.setContaEmSessao(null);
+					conta();
+					return;
+				}
 			}
 		} else {
 			conta();
