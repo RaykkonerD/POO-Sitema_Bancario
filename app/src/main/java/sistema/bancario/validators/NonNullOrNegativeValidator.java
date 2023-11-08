@@ -1,4 +1,4 @@
-package validators;
+package sistema.bancario.validators;
 
 public class NonNullOrNegativeValidator implements Validator<Double> {
 	@Override

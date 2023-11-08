@@ -1,4 +1,4 @@
-package models;
+package sistema.bancario.models;
 
 public class ContaCorrente extends Conta{
     public ContaCorrente(int numero, Usuario usuario, int senhaDeAcesso) {

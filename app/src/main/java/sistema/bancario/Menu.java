@@ -1,4 +1,13 @@
+package sistema.bancario;
 import java.util.Scanner;
+
+import validators.ValidationContext;
+import validators.CPFValidator;
+import validators.UserPasswordValidator;
+import validators.UserValidator;
+import validators.AccountPasswordValidator;
+import validators.NonEmptyValidator;
+import validators.NonNullOrNegativeValidator;
 
 import exceptions.SaldoInsuficienteException;
 import exceptions.UsuarioExistenteException;
@@ -65,16 +74,10 @@ public class Menu {
 		Scanner entrada = new Scanner(System.in);
 
 		if (opcao == 1) {
-			System.out.print("Nome: ");
-			String nome = entrada.next();
-			System.out.print("CPF: ");
-			String cpf = entrada.next();
-
-			while(!this.controlador.isCpfValido(cpf)){
-				System.out.println("[ERRO]: CPF inválido.\n");
-				System.out.print("CPF: ");
-				cpf = entrada.next();
-			}
+			ValidationContext<String> vcNome = new ValidationContext(new NonEmptyValidator());
+			String nome = vcNome.getValidValue("Nome: ", "[ERRO]: Nome inválido.\n", String.class);
+			ValidationContext<String> vcCPF = new ValidationContext(new CPFValidator());
+			String cpf = vcCPF.getValidValue("CPF: ", "[ERRO]: CPF inválido.\n", String.class);
 
 			try {
 				System.out.print("Senha: ");
@@ -90,24 +93,11 @@ public class Menu {
 			}
 
 		} else if (opcao == 2) {
-			Usuario usuario = null;
-			String senha = null;
-			String cpf = null;
-
-
-			while(usuario == null || !senha.equals(usuario.getSenha())){
-				System.out.print("CPF: ");
-				cpf = entrada.next();
-				System.out.print("Senha: ");
-				senha = entrada.next();
-				usuario = this.controlador.getUsuario(cpf);
-
-				if(usuario == null){
-					System.out.println("[ERRO]: Usuário não encontrado.");
-				}
-
-				System.out.println();
-			}
+			ValidationContext<String> vcCPF = new ValidationContext(new UserValidator(this.controlador));
+			String cpf = vcCPF.getValidValue("CPF: ", "[ERRO]: Usuário não encontrado.\n", String.class);
+			Usuario usuario = this.controlador.getUsuario(cpf);
+			ValidationContext<String> vcSenha = new ValidationContext(new UserPasswordValidator(usuario));
+			String senha = vcSenha.getValidValue("Senha: ", "[ERRO]: Senha inválida.\n", String.class);
 
 			System.out.println("Usuário logado com sucesso!");
 			System.out.printf("Bem-Vindo de volta, %s!%n", this.controlador.getUsuario(cpf).getNome());
@@ -177,14 +167,9 @@ public class Menu {
 		if(opcao == 1){
 			System.out.printf("Saldo: R$ %.2f%n", this.controlador.getContaEmSessao().getSaldo()/100.0);
 		} else if(opcao == 2){
-			System.out.print("Valor: ");
-			double valor = entrada.nextDouble();
-
-			while(valor <= 0){
-				System.out.println("[ERRO]: Valor inválido.\n");
-				System.out.print("Valor: ");
-				valor = entrada.nextDouble();
-			}
+			ValidationContext<Double> vcValor = new ValidationContext(new NonNullOrNegativeValidator());
+			double valor = vcValor.getValidValue("Valor: ", "[ERRO]: Valor inválido.\n", Double.class);
+			
 			this.controlador.depositar(valor);
 			System.out.printf("%nDeposito no valor de R$ %.2f realizado com sucesso!%n", valor);
 		} else if(opcao == 3){
@@ -203,20 +188,18 @@ public class Menu {
 				acoes();
 			}
 		} else if(opcao == 4){
-			System.out.print("Valor: ");
-			double valor = entrada.nextDouble();
-
-			while(valor <= 0){
-				System.out.println("[ERRO]: Valor inválido.\n");
-				System.out.print("Valor: ");
-				valor = entrada.nextDouble();
-			}
+			ValidationContext<Double> vcValor = new ValidationContext(new NonNullOrNegativeValidator());
+			double valor = vcValor.getValidValue("Valor: ", "[ERRO]: Valor inválido.\n", Double.class);
 
 			int iBanco = menu("Banco", this.controlador.getBancoDeDados().getBancos().stream().map(Banco::getNome).toArray(String[]::new));
 
 			System.out.print("Número da conta destino: ");
 			int numero = entrada.nextInt();
 
+			// 0000000000000000000000000000000
+			// ADICIONAR VALIDADOR PARA CONTA
+			// 0000000000000000000000000000000
+			
 			while (this.controlador.getConta(this.controlador.getBancoDeDados().getBancos().get(iBanco - 1).getNome(), numero) == null){
 				System.out.println("\n[ERRO]: Conta não encontrada.\n");
 				System.out.print("Número da conta destino: ");
@@ -237,6 +220,9 @@ public class Menu {
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
 
+			// 0000000000000000000000000000000
+			// ADICIONAR VALIDADOR PARA SENHA
+			// 0000000000000000000000000000000
 			while (senha != this.controlador.getContaEmSessao().getSenha()){
 				System.out.println("\n[ERRO]: Senha inválida.");
 				System.out.print("Senha: ");
@@ -259,6 +245,9 @@ public class Menu {
 			System.out.print("[AVISO]: Encerrar conta? (1 - sim / 2 - voltar): ");
 			int confirmacao = entrada.nextInt();
 
+			// 0000000000000000000000000000000
+			// ADICIONAR VALIDADOR PARA INTERVALO
+			// 0000000000000000000000000000000
 			while(confirmacao != 1 && confirmacao != 2){
 				System.out.println("[ERRO]: Opção inválida.");
 				confirmacao = entrada.nextInt();
@@ -286,7 +275,7 @@ public class Menu {
 		int iBanco = menu.menu("Banco", menu.controlador.getBancoDeDados().getBancos().stream().map(Banco::getNome).toArray(String[]::new));
 
 		for (int i = 0; i < menu.controlador.getBancoDeDados().getBancos().size(); i++) {
-		   //Banco novoBanco = new Banco(menu.listaDeBancos[i]);
+		   // Banco novoBanco = new Banco(menu.listaDeBancos[i]);
 		   //  menu.controlador.adicionarBanco(novoBanco);
 			if(iBanco == (i+1)){
 				menu.controlador.setBanco(menu.controlador.getBancoDeDados().getBancos().get(i).getNome());

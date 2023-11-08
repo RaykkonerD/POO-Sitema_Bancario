@@ -1,4 +1,4 @@
-package models;
+package sistema.bancario.models;
 
 import exceptions.SaldoInsuficienteException;
 import java.io.Serializable;

@@ -1,3 +1,4 @@
+package sistema.bancario;
 import exceptions.UsuarioExistenteException;
 import models.Banco;
 import models.Usuario;

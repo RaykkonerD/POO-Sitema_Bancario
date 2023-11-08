@@ -1,4 +1,4 @@
-package models;
+package sistema.bancario.models;
 import java.io.Serializable;
 
 public class Extrato implements Serializable {

@@ -1,4 +1,4 @@
-package models;
+package sistema.bancario.models;
 import java.util.ArrayList;
 import java.io.Serializable;
 

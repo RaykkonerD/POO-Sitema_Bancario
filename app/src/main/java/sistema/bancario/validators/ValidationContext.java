@@ -1,7 +1,5 @@
-package validators;
-
+package sistema.bancario.validators;
 import java.util.Scanner;
-
 
 public class ValidationContext<T> {
 	private Validator<T> validator;

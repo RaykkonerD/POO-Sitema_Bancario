@@ -1,11 +1,11 @@
-package validators;
+package sistema.bancario.validators;
 import java.util.regex.Pattern;
 
 public class CPFValidator implements Validator<String> {
     private final boolean checkIfExists;
 
-    public CPFValidator(boolean checkIfExists) {
-        this.checkIfExists = checkIfExists;
+    public CPFValidator() {
+        this.checkIfExists = true;
     }
 
     @Override

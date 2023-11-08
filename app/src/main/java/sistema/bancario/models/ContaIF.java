@@ -1,4 +1,4 @@
-package models;
+package sistema.bancario.models;
 
 public interface ContaIF {
 	public int getNumero();
