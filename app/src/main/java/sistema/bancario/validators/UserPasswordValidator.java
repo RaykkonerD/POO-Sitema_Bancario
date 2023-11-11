@@ -1,5 +1,5 @@
-package validators;
-import models.Usuario;
+package sistema.bancario.validators;
+import sistema.bancario.models.Usuario;
 
 public class UserPasswordValidator implements Validator<String> {
 	private final Usuario usuario;

@@ -1,6 +1,6 @@
 package sistema.bancario.models;
 
-import exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.SaldoInsuficienteException;
 import java.io.Serializable;
 
 public abstract class Conta implements ContaIF, Serializable {

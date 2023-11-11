@@ -1,4 +1,4 @@
-package validators;
+package sistema.bancario.validators;
 
 public class IntervalValidator implements Validator<Integer> {
 	private Integer min;

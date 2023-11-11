@@ -30,6 +30,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/SitemaBancario.app.main.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/SitemaBancario.app.test.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/models/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/models/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/models/ContaPoupanca.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/models/ContaPoupanca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/AccountPasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/AccountPasswordValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/AccountValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/AccountValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/IntervalValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/IntervalValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/UserPasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/UserPasswordValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/sistema/bancario/validators/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/data.bin" afterDir="false" />
+>>>>>>> 04022eb5d7a3c81f8a25a0cd57c6d3de7c3517bf
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +86,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -83,6 +98,18 @@
   }
 }]]></component>
   <component name="RunManager" selected="Application.Menu">
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lucas/OneDrive/Área de Trabalho/Programação/Projetos/POO-Sitema_Bancario&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.sistema.bancario.Menu">
+>>>>>>> 04022eb5d7a3c81f8a25a0cd57c6d3de7c3517bf
     <configuration name="ContaPoupanca" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="models.ContaPoupanca" />
       <module name="SitemaBancario.app.main" />
@@ -103,6 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="JetRunConfigurationType">
       <module name="SitemaBancario.app.main" />
       <method v="2">
@@ -112,12 +140,24 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="SitemaBancario.app.main" />
       <option name="filePath" />
+=======
+    <configuration name="sistema.bancario.Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sistema.bancario.Menu" />
+      <module name="SitemaBancario.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sistema.bancario.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+>>>>>>> 04022eb5d7a3c81f8a25a0cd57c6d3de7c3517bf
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.sistema.bancario.Menu" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.ContaPoupanca" />
       </list>
