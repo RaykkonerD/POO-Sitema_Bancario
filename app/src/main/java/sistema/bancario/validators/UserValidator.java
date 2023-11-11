@@ -1,4 +1,4 @@
-package validators;
+package sistema.bancario.validators;
 import sistema.bancario.Controller;
 
 public class UserValidator implements Validator<String> {

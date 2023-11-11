@@ -1,10 +1,10 @@
 package sistema.bancario;
-import exceptions.UsuarioExistenteException;
-import models.Banco;
-import models.Usuario;
-import models.Conta;
-import models.ContaCorrente;
-import models.ContaPoupanca;
+import sistema.bancario.exceptions.UsuarioExistenteException;
+import sistema.bancario.models.Banco;
+import sistema.bancario.models.Usuario;
+import sistema.bancario.models.Conta;
+import sistema.bancario.models.ContaCorrente;
+import sistema.bancario.models.ContaPoupanca;
 import java.util.Random;
 import java.util.regex.Pattern;
 

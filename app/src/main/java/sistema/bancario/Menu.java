@@ -1,21 +1,21 @@
 package sistema.bancario;
 import java.util.Scanner;
 
-import validators.ValidationContext;
-import validators.CPFValidator;
-import validators.UserPasswordValidator;
-import validators.UserValidator;
-import validators.AccountValidator;
-import validators.AccountPasswordValidator;
-import validators.NonEmptyValidator;
-import validators.NonNullOrNegativeValidator;
-import validators.IntervalValidator;
+import sistema.bancario.validators.ValidationContext;
+import sistema.bancario.validators.CPFValidator;
+import sistema.bancario.validators.UserPasswordValidator;
+import sistema.bancario.validators.UserValidator;
+import sistema.bancario.validators.AccountValidator;
+import sistema.bancario.validators.AccountPasswordValidator;
+import sistema.bancario.validators.NonEmptyValidator;
+import sistema.bancario.validators.NonNullOrNegativeValidator;
+import sistema.bancario.validators.IntervalValidator;
 
-import exceptions.SaldoInsuficienteException;
-import exceptions.UsuarioExistenteException;
-import models.Banco;
-import models.Conta;
-import models.Usuario;
+import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.UsuarioExistenteException;
+import sistema.bancario.models.Banco;
+import sistema.bancario.models.Conta;
+import sistema.bancario.models.Usuario;
 
 public class Menu {
 	private Controller controlador;

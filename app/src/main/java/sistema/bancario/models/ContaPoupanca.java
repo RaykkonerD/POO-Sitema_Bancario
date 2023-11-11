@@ -1,6 +1,6 @@
 package sistema.bancario.models;
 
-import exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.SaldoInsuficienteException;
 
 public class ContaPoupanca extends Conta {
 	public ContaPoupanca(int numero, Usuario usuario, int senhaDeAcesso) {

@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.List;
 
-import models.Banco;
-import models.Conta;
+import sistema.bancario.models.Banco;
+import sistema.bancario.models.Conta;
 
 public class DB {
     protected ArrayList<Banco> bancos;

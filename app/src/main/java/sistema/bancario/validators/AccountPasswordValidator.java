@@ -1,5 +1,5 @@
-package validators;
-import models.Conta;
+package sistema.bancario.validators;
+import sistema.bancario.models.Conta;
 
 public class AccountPasswordValidator implements Validator<Integer> {
 	private final Conta conta;
