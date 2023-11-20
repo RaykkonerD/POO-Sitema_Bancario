@@ -1,5 +1,6 @@
 package sistema.bancario.GUI.screens;
 
+import sistema.bancario.GUI.screens.*;
 import sistema.bancario.Controller;
 import javax.swing.*;
 import java.awt.*;
@@ -18,8 +19,14 @@ public class Login {
     private JLabel jLabel3;
     private JLabel jLabel5;
     private JPanel jPanel1;
+    private JFrame mainWindow;
 
     public Login() {
+        initComponents();
+    }
+
+    public Login(JFrame mainWindow) {
+        this.mainWindow = mainWindow;
         initComponents();
     }
 
@@ -173,6 +180,8 @@ public class Login {
     }
 
     private void jButtonVoltarActionPerformed(ActionEvent evt) {
+        this.frame.setVisible(false);
+        this.mainWindow.setVisible(true);
         // TODO add your handling code here:
     }
 
@@ -187,8 +196,8 @@ public class Login {
         });
     }
 
-    public static void main(String[] args) {
-        Login login = new Login();
+    public static void main(JFrame window) {
+        Login login = new Login(window);
         login.showLoginFrame();
     }
 }
