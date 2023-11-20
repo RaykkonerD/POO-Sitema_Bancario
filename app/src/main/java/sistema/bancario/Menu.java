@@ -19,7 +19,6 @@ import sistema.bancario.models.Usuario;
 
 public class Menu {
 	private Controller controlador;
-	private String[] listaDeBancos = {"Banco do Brasil", "Bradesco", "Nubank"};
 
 	public Controller getControlador(){
 		return this.controlador;
@@ -185,7 +184,7 @@ public class Menu {
 				}
 				this.controlador.sacar(valor);
 				System.out.printf("%nSaque no valor de R$ %.2f realizado com sucesso!%n", valor);
-			} catch (Exception e) {
+			} catch (SaldoInsuficienteException e) {
 				System.out.println("\n[ERRO]: Saldo insuficiente!");
 				acoes();
 			}

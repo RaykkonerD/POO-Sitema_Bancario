@@ -2,140 +2,187 @@ package sistema.bancario.GUI.screens;
 
 import sistema.bancario.Controller;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
 
-public class Login extends JPanel {
-
-    private JButton BbButton;
-    private JButton BradescoButton;
-    private JButton NubankButton1;
-    private JEditorPane jEditorPane1;
+public class Login extends JFrame {
+    private JTextField ContaTextField;
+    private JTextField SenhaTextField;
+    private JButton jButton1;
+    private JButton jButton2;
+    private JButton jButtonVoltar;
     private JLabel jLabel1;
     private JLabel jLabel2;
+    private JLabel jLabel3;
+    private JLabel jLabel5;
     private JPanel jPanel1;
-    private JProgressBar jProgressBar1;
-    private JProgressBar jProgressBar2;
-    private JScrollPane jScrollPane1;
 
     public Login() {
         initComponents();
     }
 
     private void initComponents() {
-        jProgressBar1 = new JProgressBar();
-        jProgressBar2 = new JProgressBar();
-        jScrollPane1 = new JScrollPane();
-        jEditorPane1 = new JEditorPane();
         jLabel1 = new JLabel();
-        BradescoButton = new JButton();
-        NubankButton1 = new JButton();
-        BbButton = new JButton();
         jPanel1 = new JPanel();
+        jLabel5 = new JLabel();
+        jButtonVoltar = new JButton();
+        ContaTextField = new JTextField();
         jLabel2 = new JLabel();
+        SenhaTextField = new JTextField();
+        jLabel3 = new JLabel();
+        jButton1 = new JButton();
+        jButton2 = new JButton();
 
-        jScrollPane1.setViewportView(jEditorPane1);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Número da conta");
+        setPreferredSize(new Dimension(871, 547));
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setForeground(new java.awt.Color(51, 255, 153));
+        jLabel1.setFont(new Font("Segoe UI", Font.BOLD, 36));
+        jLabel1.setText("Login");
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24));
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Selecione seu banco");
+        jPanel1.setBackground(new Color(51, 51, 51));
 
-        BradescoButton.setBackground(new java.awt.Color(255, 51, 51));
-        BradescoButton.setFont(new java.awt.Font("Segoe UI", 1, 14));
-        BradescoButton.setForeground(new java.awt.Color(255, 255, 255));
-        BradescoButton.setText("Bradesco");
-        BradescoButton.setToolTipText("");
-        BradescoButton.addActionListener(this::BradescoButtonActionPerformed);
+        ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("Bank.png")));
+        jLabel5.setIcon(bankIcon);
 
-        NubankButton1.setBackground(new java.awt.Color(102, 0, 204));
-        NubankButton1.setFont(new java.awt.Font("Segoe UI", 1, 14));
-        NubankButton1.setForeground(new java.awt.Color(255, 255, 255));
-        NubankButton1.setText("Nubank");
-        NubankButton1.addActionListener(this::NubankButton1ActionPerformed);
-
-        BbButton.setBackground(new java.awt.Color(255, 255, 102));
-        BbButton.setFont(new java.awt.Font("Segoe UI", 1, 14));
-        BbButton.setForeground(new java.awt.Color(51, 102, 255));
-        BbButton.setText("Banco do Brasil");
-        BbButton.addActionListener(this::BbButtonActionPerformed);
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-
-        jLabel2.setIcon(new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("Bank.png"))));
+        jButtonVoltar.setBackground(new Color(51, 51, 51));
+        jButtonVoltar.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        jButtonVoltar.setForeground(new Color(255, 255, 255));
+        jButtonVoltar.setText("Voltar");
+        jButtonVoltar.setBorder(null);
+        jButtonVoltar.addActionListener(this::jButtonVoltarActionPerformed);
 
         GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
-                                .addComponent(jLabel2)
+                                .addGroup(jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(61, 61, 61)
+                                                .addComponent(jLabel5))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(jButtonVoltar)))
                                 .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(118, 118, 118)
-                                .addComponent(jLabel2)
-                                .addContainerGap(157, Short.MAX_VALUE))
+                                .addGap(14, 14, 14)
+                                .addComponent(jButtonVoltar)
+                                .addGap(81, 81, 81)
+                                .addComponent(jLabel5)
+                                .addContainerGap(190, Short.MAX_VALUE))
         );
 
-        GroupLayout layout = new GroupLayout(this);
-        this.setLayout(layout);
+        ContaTextField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        ContaTextField.setToolTipText("Número da conta");
+        ContaTextField.addActionListener(this::ContaTextFieldActionPerformed);
+
+        jLabel2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        jLabel2.setText("CPF");
+
+        SenhaTextField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        SenhaTextField.setToolTipText("Número da conta");
+        SenhaTextField.addActionListener(this::SenhaTextFieldActionPerformed);
+
+        jLabel3.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        jLabel3.setText("Senha");
+
+        jButton1.setBackground(new Color(51, 51, 51));
+        jButton1.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        jButton1.setForeground(new Color(255, 255, 255));
+        jButton1.setText("Entrar");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        jButton2.setBackground(SystemColor.control);
+        jButton2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        jButton2.setForeground(new Color(102, 102, 102));
+        jButton2.setText("Criar conta");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+
+        GroupLayout layout = new GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(114, 114, 114)
-                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(NubankButton1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(BbButton, GroupLayout.PREFERRED_SIZE, 238, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(BradescoButton, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(118, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(44, 44, 44)
+                                                .addComponent(jLabel1)
+                                                .addContainerGap())
+                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(ContaTextField, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel2)
+                                                                        .addComponent(SenhaTextField, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(jLabel3))
+                                                                .addGap(146, 146, 146))
+                                                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                                .addComponent(jButton2)
+                                                                .addGap(203, 203, 203))))))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(124, 124, 124)
+                                .addGap(28, 28, 28)
                                 .addComponent(jLabel1)
-                                .addGap(38, 38, 38)
-                                .addComponent(NubankButton1, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(BbButton, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(BradescoButton, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ContaTextField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SenhaTextField, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
                                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        pack();
     }
 
-    private void BradescoButtonActionPerformed(ActionEvent evt) {
+    private void ContaTextFieldActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void NubankButton1ActionPerformed(ActionEvent evt) {
+    private void SenhaTextFieldActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void BbButtonActionPerformed(ActionEvent evt) {
+    private void jButton1ActionPerformed(ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jButton2ActionPerformed(ActionEvent evt) {
+        // TODO add your handling code here:
+    }
+
+    private void jButtonVoltarActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Login");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.getContentPane().add(new Login());
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
+            Login loginFrame = new Login();
+            loginFrame.setTitle("Login");
+            loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            loginFrame.setSize(871, 547);
+            loginFrame.setResizable(false);
+            loginFrame.setLocationRelativeTo(null);
+            loginFrame.setVisible(true);
         });
     }
 }
