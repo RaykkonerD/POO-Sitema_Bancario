@@ -6,7 +6,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
 
-public class Login extends JFrame {
+public class Login {
+    private JFrame frame;
     private JTextField ContaTextField;
     private JTextField SenhaTextField;
     private JButton jButton1;
@@ -23,6 +24,7 @@ public class Login extends JFrame {
     }
 
     private void initComponents() {
+        frame = new JFrame();
         jLabel1 = new JLabel();
         jPanel1 = new JPanel();
         jLabel5 = new JLabel();
@@ -34,9 +36,9 @@ public class Login extends JFrame {
         jButton1 = new JButton();
         jButton2 = new JButton();
 
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Número da conta");
-        setPreferredSize(new Dimension(871, 547));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setTitle("Número da conta");
+        frame.setPreferredSize(new Dimension(871, 547));
 
         jLabel1.setFont(new Font("Segoe UI", Font.BOLD, 36));
         jLabel1.setText("Login");
@@ -104,8 +106,8 @@ public class Login extends JFrame {
         jButton2.setBorder(null);
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
-        GroupLayout layout = new GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        GroupLayout layout = new GroupLayout(frame.getContentPane());
+        frame.getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
@@ -151,7 +153,7 @@ public class Login extends JFrame {
                                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        frame.pack();
     }
 
     private void ContaTextFieldActionPerformed(ActionEvent evt) {
@@ -174,15 +176,19 @@ public class Login extends JFrame {
         // TODO add your handling code here:
     }
 
-    public static void main(String[] args) {
+    public void showLoginFrame() {
         SwingUtilities.invokeLater(() -> {
-            Login loginFrame = new Login();
-            loginFrame.setTitle("Login");
-            loginFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            loginFrame.setSize(871, 547);
-            loginFrame.setResizable(false);
-            loginFrame.setLocationRelativeTo(null);
-            loginFrame.setVisible(true);
+            frame.setTitle("Login");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(871, 547);
+            frame.setResizable(false);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
         });
+    }
+
+    public static void main(String[] args) {
+        Login login = new Login();
+        login.showLoginFrame();
     }
 }

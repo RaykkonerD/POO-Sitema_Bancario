@@ -4,28 +4,23 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
 
-public class ChooseBank extends JPanel {
-
+public class ChooseBank {
+    private JFrame frame;
+    private JPanel mainPanel;
     private JButton BbButton;
     private JButton BradescoButton;
     private JButton NubankButton1;
-    private JEditorPane jEditorPane1;
     private JLabel jLabel1;
     private JLabel jLabel2;
     private JPanel jPanel1;
-    private JProgressBar jProgressBar1;
-    private JProgressBar jProgressBar2;
-    private JScrollPane jScrollPane1;
 
     public ChooseBank() {
         initComponents();
     }
 
     private void initComponents() {
-        jProgressBar1 = new JProgressBar();
-        jProgressBar2 = new JProgressBar();
-        jScrollPane1 = new JScrollPane();
-        jEditorPane1 = new JEditorPane();
+        frame = new JFrame();
+        mainPanel = new JPanel();
         jLabel1 = new JLabel();
         BradescoButton = new JButton();
         NubankButton1 = new JButton();
@@ -33,10 +28,8 @@ public class ChooseBank extends JPanel {
         jPanel1 = new JPanel();
         jLabel2 = new JLabel();
 
-        jScrollPane1.setViewportView(jEditorPane1);
-
-        setBackground(new java.awt.Color(255, 255, 255));
-        setForeground(new java.awt.Color(51, 255, 153));
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setForeground(new java.awt.Color(51, 255, 153));
 
         jLabel1.setBackground(new java.awt.Color(51, 51, 51));
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24));
@@ -83,8 +76,8 @@ public class ChooseBank extends JPanel {
                                 .addContainerGap(157, Short.MAX_VALUE))
         );
 
-        GroupLayout layout = new GroupLayout(this);
-        this.setLayout(layout);
+        GroupLayout layout = new GroupLayout(mainPanel);
+        mainPanel.setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -113,6 +106,14 @@ public class ChooseBank extends JPanel {
                                 .addComponent(BradescoButton, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Choose Bank");
+        frame.getContentPane().add(mainPanel);
+        frame.setSize(870, 570);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
 
     private void BradescoButtonActionPerformed(ActionEvent evt) {
@@ -128,14 +129,6 @@ public class ChooseBank extends JPanel {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Login");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.getContentPane().add(new ChooseBank());
-            frame.setSize(870, 570);
-            frame.setResizable(false);
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
+        SwingUtilities.invokeLater(() -> new ChooseBank());
     }
 }
