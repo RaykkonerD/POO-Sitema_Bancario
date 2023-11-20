@@ -1,5 +1,6 @@
 package sistema.bancario.GUI.screens;
 
+import sistema.bancario.GUI.screens.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -12,8 +13,21 @@ public class Cadastro {
     private JTextField senhaTextField;
     private JButton cadastrarButton;
     private JButton backLoginButton;
+    private JFrame mainWindow;
 
     public Cadastro() {
+        frame = new JFrame();
+        nomeTextField = new JTextField();
+        cpfTextField = new JTextField();
+        senhaTextField = new JTextField();
+        cadastrarButton = new JButton();
+        backLoginButton = new JButton();
+
+        initComponents();
+    }
+
+    public Cadastro(JFrame mainWindow) {
+        this.mainWindow = mainWindow;
         frame = new JFrame();
         nomeTextField = new JTextField();
         cpfTextField = new JTextField();
@@ -152,10 +166,11 @@ public class Cadastro {
     }
 
     private void jButtonBackLoginActionPerformed(ActionEvent evt) {
+        new Login().main(this.mainWindow);
         // TODO add your handling code here
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Cadastro());
+    public static void main(JFrame mainWindow) {
+        SwingUtilities.invokeLater(() -> new Cadastro(mainWindow));
     }
 }

@@ -176,6 +176,8 @@ public class Login {
     }
 
     private void jButton2ActionPerformed(ActionEvent evt) {
+        this.frame.setVisible(false);
+        new Cadastro(this.mainWindow);
         // TODO add your handling code here:
     }
 
