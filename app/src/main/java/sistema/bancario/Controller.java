@@ -13,8 +13,9 @@ public class Controller {
     private String banco;
     private Usuario usuario;
     private Conta contaEmSessao;
+    private static Controller instance;
 
-    public Controller() {
+    private Controller() {
         this.bancoDeDados = new DB();
 
         Thread thread = new Thread(() -> {
@@ -33,6 +34,14 @@ public class Controller {
             }
         });
         thread.start();
+    }
+
+    public static Controller getInstance(){
+        if (instance == null) {
+            instance = new Controller();
+        }
+        
+        return instance;
     }
 
     public Usuario getUsuario(){

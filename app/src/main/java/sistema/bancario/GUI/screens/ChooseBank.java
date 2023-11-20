@@ -1,5 +1,6 @@
 package sistema.bancario.GUI.screens;
 
+import sistema.bancario.GUI.screens.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -117,15 +118,21 @@ public class ChooseBank {
     }
 
     private void BradescoButtonActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        // Set banco no controlador
+        this.frame.setVisible(false);
+        new Login().main(this.frame);
     }
 
     private void NubankButton1ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        // Set banco no controlador
+        this.frame.setVisible(false);
+        new Login().main(this.frame);
     }
 
     private void BbButtonActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
+        // Set banco no controlador
+        this.frame.setVisible(false);
+        new Login().main(this.frame);
     }
 
     public static void main(String[] args) {
