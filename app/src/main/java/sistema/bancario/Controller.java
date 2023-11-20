@@ -21,6 +21,7 @@ public class Controller {
             while (true) {
                 for(Banco banco : this.bancoDeDados.getBancos()){
                     banco.passouUmMes();
+                    this.bancoDeDados.write();
                 }
 
                 try {
