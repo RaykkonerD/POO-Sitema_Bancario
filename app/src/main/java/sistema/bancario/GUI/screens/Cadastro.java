@@ -1,6 +1,9 @@
 package sistema.bancario.GUI.screens;
 
+import sistema.bancario.Controller;
 import sistema.bancario.GUI.screens.*;
+import sistema.bancario.exceptions.UsuarioExistenteException;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -94,7 +97,14 @@ public class Cadastro {
         cadastrarButton.setFont(new java.awt.Font("Segoe UI", 1, 14));
         cadastrarButton.setForeground(new java.awt.Color(255, 255, 255));
         cadastrarButton.setText("Cadastrar");
-        cadastrarButton.addActionListener(this::jButtonCadastrarActionPerformed);
+        cadastrarButton.addActionListener(e -> {
+                try {
+                        jButtonCadastrarActionPerformed(e);
+                } catch (Exception exception) {
+                        // TODO Auto-generated catch block
+                        exception.printStackTrace();
+                }
+        });
 
         backLoginButton.setBackground(java.awt.SystemColor.control);
         backLoginButton.setFont(new java.awt.Font("Segoe UI", 0, 14));
@@ -161,8 +171,14 @@ public class Cadastro {
         frame.setVisible(true);
     }
 
-    private void jButtonCadastrarActionPerformed(ActionEvent evt) {
+    private void jButtonCadastrarActionPerformed(ActionEvent evt) throws Exception {
         // TODO add your handling code here
+        try {
+                Controller.getInstance().setUsuario(Controller.getInstance().criarUsuario(this.nomeTextField.getText(), this.cpfTextField.getText(), this.senhaTextField.getText()));
+                new Banco();
+        } catch (UsuarioExistenteException e){
+                System.out.println("ERRO: Usuário já existe");
+        }
     }
 
     private void jButtonBackLoginActionPerformed(ActionEvent evt) {
