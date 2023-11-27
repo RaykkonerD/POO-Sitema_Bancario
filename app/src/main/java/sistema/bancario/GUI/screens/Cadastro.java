@@ -166,6 +166,7 @@ public class Cadastro {
     }
 
     private void jButtonBackLoginActionPerformed(ActionEvent evt) {
+        this.frame.setVisible(false);
         new Login().main(this.mainWindow);
         // TODO add your handling code here
     }

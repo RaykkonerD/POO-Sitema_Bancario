@@ -119,19 +119,19 @@ public class ChooseBank {
     }
 
     private void BradescoButtonActionPerformed(ActionEvent evt) {
-        // Set banco no controlador
+        Controller.getInstance().setBanco("Bradesco");
         this.frame.setVisible(false);
         new Login().main(this.frame);
     }
 
     private void NubankButton1ActionPerformed(ActionEvent evt) {
-        // Set banco no controlador
+        Controller.getInstance().setBanco("Nubank");
         this.frame.setVisible(false);
         new Login().main(this.frame);
     }
 
     private void BbButtonActionPerformed(ActionEvent evt) {
-        // Set banco no controlador
+        Controller.getInstance().setBanco("Banco do Brasil");
         this.frame.setVisible(false);
         new Login().main(this.frame);
     }

@@ -1,6 +1,7 @@
 package sistema.bancario.GUI.screens;
 
 import sistema.bancario.GUI.screens.*;
+import sistema.bancario.models.Usuario;
 import sistema.bancario.Controller;
 import javax.swing.*;
 import java.awt.*;
@@ -173,6 +174,16 @@ public class Login {
 
     private void jButton1ActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
+        Usuario user = Controller.getInstance().getUsuario(this.ContaTextField.getText());
+        if(user == null || !user.getSenha().equals(this.SenhaTextField.getText())){
+                System.out.println("Usuário inválido!");
+                System.out.println(user.getNome());
+                System.out.println(user.getSenha() + "/" + this.SenhaTextField.getText());
+        } else {
+                Controller.getInstance().setUsuario(user);
+                System.out.println(user.getNome());
+                System.out.println(Controller.getInstance().getUsuario().getNome());
+        }
     }
 
     private void jButton2ActionPerformed(ActionEvent evt) {
