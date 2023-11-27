@@ -1,6 +1,9 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
+
+import sistema.bancario.Controller;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -18,7 +21,7 @@ public class Banco {
     private JButton jButton5;
     private JButton jButton2;
     private JButton jButton6;
-
+    
     public Banco() {
         initComponents();
     }
@@ -69,12 +72,12 @@ public class Banco {
 
         jLabel4.setFont(new Font("Segoe UI", Font.PLAIN, 18));
         jLabel4.setForeground(new Color(51, 51, 51));
-        jLabel4.setText("Bem Vindo, " + "Lucas" + "!");
+        jLabel4.setText("Bem Vindo, " + Controller.getInstance().getUsuario().getNome() + "!");
 
         jLabel8.setBackground(new Color(51, 51, 51));
         jLabel8.setFont(new Font("Segoe UI", Font.BOLD, 24));
         jLabel8.setForeground(new Color(51, 51, 51));
-        jLabel8.setText("Banco do Brasil");
+        jLabel8.setText(Controller.getInstance().getBanco().getNome());
 
         jButton5.setBackground(new Color(51, 51, 51));
         jButton5.setFont(new Font("Segoe UI", Font.BOLD, 18));

@@ -181,8 +181,8 @@ public class Login {
                 System.out.println(user.getSenha() + "/" + this.SenhaTextField.getText());
         } else {
                 Controller.getInstance().setUsuario(user);
-                System.out.println(user.getNome());
-                System.out.println(Controller.getInstance().getUsuario().getNome());
+                this.frame.setVisible(false);
+                new Banco();
         }
     }
 
