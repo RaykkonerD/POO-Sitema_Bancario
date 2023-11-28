@@ -189,13 +189,11 @@ public class Login {
     private void jButton2ActionPerformed(ActionEvent evt) {
         this.frame.setVisible(false);
         new Cadastro(this.mainWindow);
-        // TODO add your handling code here:
     }
 
     private void jButtonVoltarActionPerformed(ActionEvent evt) {
         this.frame.setVisible(false);
         this.mainWindow.setVisible(true);
-        // TODO add your handling code here:
     }
 
     public void showLoginFrame() {
