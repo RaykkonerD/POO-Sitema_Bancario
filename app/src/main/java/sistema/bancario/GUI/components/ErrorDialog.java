@@ -11,14 +11,15 @@ public class ErrorDialog {
 		UIManager.put("Button.background", Color.WHITE);
 
 		JLabel messageLabel = new JLabel(message);
-		messageLabel.setHorizontalAlignment(JLabel.CENTER);
-		messageLabel.setVerticalAlignment(JLabel.CENTER);
+		messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		messageLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
 		messageLabel.setForeground(Color.WHITE); 
 
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 		panel.add(messageLabel);
-		panel.add(Box.createVerticalStrut(10));
+        // panel.setPreferredSize(new Dimension(150, 75));
 
 		JOptionPane.showMessageDialog(frame, panel, "Erro", JOptionPane.ERROR_MESSAGE);
 	}

@@ -1,6 +1,7 @@
 package sistema.bancario.GUI.screens;
 
 import sistema.bancario.Controller;
+import sistema.bancario.GUI.components.ErrorDialog;
 
 import javax.swing.*;
 import java.awt.*;
@@ -158,11 +159,20 @@ public class CriarConta {
     }
 
     private void CriarConta(ActionEvent evt) {
-        // TODO add your handling code here
+        if(NomeTextField1.getText().equals("") || !NomeTextField1.getText().matches("[0-9]*")){
+            new ErrorDialog(this.frame, "A senha deve conter apenas números");
+        } else {
+            String tipoDeConta = jComboBox1.getSelectedItem().toString();
+            int opcao = (tipoDeConta == "Corrente") ? 1 : 0;
+            Integer senha = Integer.parseInt(NomeTextField1.getText());
+
+            Controller.getInstance().setContaEmSessao(Controller.getInstance().criarConta(senha, opcao));
+        }
     }
 
     private void Cancelar(ActionEvent evt) {
-        // TODO add your handling code for Cancelar button
+        this.frame.setVisible(false);
+        SwingUtilities.invokeLater(Banco::new);
     }
 
     public static void main(String args[]) {
