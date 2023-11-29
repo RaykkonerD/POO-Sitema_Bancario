@@ -1,8 +1,9 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
+import sistema.bancario.Controller;
 
-public class Conta {
+public class ContaScreen {
 
     private JFrame frame;
     private JPasswordField jPasswordField1;
@@ -29,7 +30,7 @@ public class Conta {
     private JLabel jLabel12;
     private JButton jButton5;
 
-    public Conta() {
+    public ContaScreen() {
         initComponents();
     }
 
@@ -70,7 +71,7 @@ public class Conta {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("R$ 50,00");
+        jLabel3.setText("R$ " + (Controller.getInstance().getContaEmSessao().getSaldo()/100.0));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14));
@@ -81,11 +82,11 @@ public class Conta {
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Olá, João Lucas!");
+        jLabel4.setText("Olá, " + Controller.getInstance().getUsuario().getNome() + "!");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Banco do Brasil");
+        jLabel8.setText(Controller.getInstance().getBanco().getNome());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,11 +167,11 @@ public class Conta {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("0,2%");
+        jLabel9.setText((Controller.getInstance().getContaEmSessao().getTipo() == "Conta Corrente") ? "0%" : "0,2%");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("9567");
+        jLabel10.setText(Controller.getInstance().getContaEmSessao().getNumero() + "");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,7 +179,7 @@ public class Conta {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("132.166.934-81");
+        jLabel12.setText(Controller.getInstance().getUsuario().getCPF());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -294,12 +295,13 @@ public class Conta {
     }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        this.frame.setVisible(false);
+        new Banco();
     }
 
     public static void main(String args[]) {
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Conta());
+        java.awt.EventQueue.invokeLater(() -> new ContaScreen());
     }
 
 }

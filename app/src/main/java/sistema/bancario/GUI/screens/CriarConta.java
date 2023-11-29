@@ -167,6 +167,8 @@ public class CriarConta {
             Integer senha = Integer.parseInt(NomeTextField1.getText());
 
             Controller.getInstance().setContaEmSessao(Controller.getInstance().criarConta(senha, opcao));
+            this.frame.setVisible(false);
+            new ContaScreen();
         }
     }
 

@@ -1,7 +1,6 @@
 package sistema.bancario.GUI.screens;
 
 import sistema.bancario.Controller;
-import sistema.bancario.GUI.screens.*;
 import sistema.bancario.exceptions.UsuarioExistenteException;
 
 import javax.swing.*;
