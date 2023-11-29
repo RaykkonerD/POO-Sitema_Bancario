@@ -15,6 +15,7 @@ public class CriarConta {
     private JLabel jLabel8;
     private JLabel jLabel4;
     private JButton jButton2;
+    private JButton jButtonCancelar; // New Cancelar button
     private JTextField NomeTextField1;
     private JLabel jLabel9;
     private JComboBox<String> jComboBox1;
@@ -35,6 +36,7 @@ public class CriarConta {
         jLabel8 = new JLabel();
         jLabel4 = new JLabel();
         jButton2 = new JButton();
+        jButtonCancelar = new JButton(); // Initialize Cancelar button
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -64,8 +66,9 @@ public class CriarConta {
         jLabel10.setText("Senha da conta");
 
         jPanel1.setBackground(new Color(51, 51, 51));
-        ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("Bank.png")));
-        jLabel7.setIcon(bankIcon);
+        ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("CONTA.png")));
+        Image image = bankIcon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+        jLabel7.setIcon(new ImageIcon(image));
 
         GroupLayout jPanel1Layout = new GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,6 +103,12 @@ public class CriarConta {
         jButton2.setText("Criar conta");
         jButton2.addActionListener(this::CriarConta);
 
+        jButtonCancelar.setBackground(new Color(51, 51, 51));
+        jButtonCancelar.setFont(new Font("Segoe UI", Font.BOLD, 18));
+        jButtonCancelar.setForeground(new Color(255, 255, 255));
+        jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.addActionListener(this::Cancelar);
+
         GroupLayout layout = new GroupLayout(frame.getContentPane());
         frame.getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,6 +121,7 @@ public class CriarConta {
                                         .addComponent(jLabel9)
                                         .addComponent(jLabel10)
                                         .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonCancelar, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(2, 2, 2)
                                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -137,7 +147,9 @@ public class CriarConta {
                                 .addComponent(jComboBox1, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE)
-                                .addGap(42, 42, 42))
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonCancelar, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24))
                         .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -146,7 +158,11 @@ public class CriarConta {
     }
 
     private void CriarConta(ActionEvent evt) {
-        // TODO add your handling code here:
+        // TODO add your handling code here
+    }
+
+    private void Cancelar(ActionEvent evt) {
+        // TODO add your handling code for Cancelar button
     }
 
     public static void main(String args[]) {
