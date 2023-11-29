@@ -1,5 +1,6 @@
 package sistema.bancario.GUI.screens;
 
+import sistema.bancario.GUI.components.ErrorDialog;
 import sistema.bancario.GUI.screens.*;
 import sistema.bancario.models.Usuario;
 import sistema.bancario.Controller;
@@ -176,9 +177,7 @@ public class Login {
         // TODO add your handling code here:
         Usuario user = Controller.getInstance().getUsuario(this.ContaTextField.getText());
         if(user == null || !user.getSenha().equals(this.SenhaTextField.getText())){
-                System.out.println("Usuário inválido!");
-                System.out.println(user.getNome());
-                System.out.println(user.getSenha() + "/" + this.SenhaTextField.getText());
+                new ErrorDialog(this.frame, "CPF ou senha incorretos");
         } else {
                 Controller.getInstance().setUsuario(user);
                 this.frame.setVisible(false);
