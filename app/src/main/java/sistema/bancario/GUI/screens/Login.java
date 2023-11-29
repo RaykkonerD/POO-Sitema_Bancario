@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class Login {
     private JFrame frame;
-    private JFormattedTextField ContaTextField; // Alteração para JFormattedTextField
+    private JFormattedTextField ContaTextField;
     private JTextField SenhaTextField;
     private JButton jButton1;
     private JButton jButton2;
