@@ -11,7 +11,7 @@ public class ErrorDialog {
 		UIManager.put("Button.background", Color.WHITE);
 
 		JLabel messageLabel = new JLabel(message);
-		messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		// messageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		messageLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
 		messageLabel.setForeground(Color.WHITE); 
 
