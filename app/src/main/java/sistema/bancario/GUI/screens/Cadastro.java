@@ -175,6 +175,7 @@ public class Cadastro {
         // TODO add your handling code here
         try {
                 Controller.getInstance().setUsuario(Controller.getInstance().criarUsuario(this.nomeTextField.getText(), this.cpfTextField.getText(), this.senhaTextField.getText()));
+                this.frame.setVisible(false);
                 new Banco();
         } catch (UsuarioExistenteException e){
                 System.out.println("ERRO: Usuário já existe");
@@ -184,7 +185,6 @@ public class Cadastro {
     private void jButtonBackLoginActionPerformed(ActionEvent evt) {
         this.frame.setVisible(false);
         new Login().main(this.mainWindow);
-        // TODO add your handling code here
     }
 
     public static void main(JFrame mainWindow) {

@@ -1,9 +1,7 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
-
 import sistema.bancario.Controller;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -16,26 +14,26 @@ public class Banco {
     private JTable jTable1;
     private JPanel jPanel1;
     private JLabel jLabel7;
-    private JLabel jLabel4;
     private JLabel jLabel8;
+    private JLabel jLabel4;  // Adicionando jLabel4 ao código
     private JButton jButton5;
     private JButton jButton2;
     private JButton jButton6;
-    
+    private JFrame mainWindow;
+
     public Banco() {
         initComponents();
     }
 
     private void initComponents() {
         frame = new JFrame();
-
         jButton1 = new JButton();
         jScrollPane1 = new JScrollPane();
         jTable1 = new JTable();
         jPanel1 = new JPanel();
         jLabel7 = new JLabel();
-        jLabel4 = new JLabel();
         jLabel8 = new JLabel();
+        jLabel4 = new JLabel();  // Inicializando jLabel4
         jButton5 = new JButton();
         jButton2 = new JButton();
         jButton6 = new JButton();
@@ -70,10 +68,6 @@ public class Banco {
                                 .addGap(145, 145, 145))
         );
 
-        jLabel4.setFont(new Font("Segoe UI", Font.PLAIN, 18));
-        jLabel4.setForeground(new Color(51, 51, 51));
-        jLabel4.setText("Bem Vindo, " + Controller.getInstance().getUsuario().getNome() + "!");
-
         jLabel8.setBackground(new Color(51, 51, 51));
         jLabel8.setFont(new Font("Segoe UI", Font.BOLD, 24));
         jLabel8.setForeground(new Color(51, 51, 51));
@@ -97,6 +91,12 @@ public class Banco {
         jButton6.setText("Acessar conta");
         jButton6.addActionListener(this::jButton6ActionPerformed);
 
+        // Usando HTML para quebrar linha no JLabel
+        String welcomeText = "<html>Bem Vindo, " + Controller.getInstance().getUsuario().getNome() + "!</html>";
+        jLabel4.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+        jLabel4.setForeground(new Color(51, 51, 51));
+        jLabel4.setText(welcomeText);
+
         GroupLayout layout = new GroupLayout(frame.getContentPane());
         frame.getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,8 +108,8 @@ public class Banco {
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(2, 2, 2)
                                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel4, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel8)))
+                                                        .addComponent(jLabel8)
+                                                        .addComponent(jLabel4)))
                                         .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton6, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
@@ -119,7 +119,7 @@ public class Banco {
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
-                                .addComponent(jLabel8, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel8)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addGap(73, 73, 73)
@@ -141,18 +141,25 @@ public class Banco {
     }
 
     private void jButton5ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here
+        // SAIR
+        this.frame.setVisible(false);
+        SwingUtilities.invokeLater(ChooseBank::new);
     }
 
     private void jButton2ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here
+        this.frame.setVisible(false);
+        new CriarConta();
     }
 
     private void jButton6ActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here
+        // ACESSAR CONTA
     }
 
     public static void main(String args[]) {
         SwingUtilities.invokeLater(() -> new Banco());
     }
 }
+
+
+
+

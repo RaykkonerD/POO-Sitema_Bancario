@@ -1,17 +1,17 @@
 package sistema.bancario.GUI.screens;
 
-import sistema.bancario.GUI.components.ErrorDialog;
-import sistema.bancario.GUI.screens.*;
 import sistema.bancario.models.Usuario;
 import sistema.bancario.Controller;
+
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
 
 public class Login {
     private JFrame frame;
-    private JTextField ContaTextField;
+    private JFormattedTextField ContaTextField;
     private JTextField SenhaTextField;
     private JButton jButton1;
     private JButton jButton2;
@@ -38,7 +38,13 @@ public class Login {
         jPanel1 = new JPanel();
         jLabel5 = new JLabel();
         jButtonVoltar = new JButton();
-        ContaTextField = new JTextField();
+        try {
+            MaskFormatter cpfFormatter = new MaskFormatter("###.###.###-##");
+            cpfFormatter.setPlaceholderCharacter('0');
+            ContaTextField = new JFormattedTextField(cpfFormatter);
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
         jLabel2 = new JLabel();
         SenhaTextField = new JTextField();
         jLabel3 = new JLabel();
@@ -90,7 +96,6 @@ public class Login {
 
         ContaTextField.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         ContaTextField.setToolTipText("Número da conta");
-        ContaTextField.addActionListener(this::ContaTextFieldActionPerformed);
 
         jLabel2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
         jLabel2.setText("CPF");
@@ -165,10 +170,6 @@ public class Login {
         frame.pack();
     }
 
-    private void ContaTextFieldActionPerformed(ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
     private void SenhaTextFieldActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
     }
@@ -176,25 +177,26 @@ public class Login {
     private void jButton1ActionPerformed(ActionEvent evt) {
         // TODO add your handling code here:
         Usuario user = Controller.getInstance().getUsuario(this.ContaTextField.getText());
-        if(user == null || !user.getSenha().equals(this.SenhaTextField.getText())){
-                new ErrorDialog(this.frame, "CPF ou senha incorretos");
+        if (user == null || !user.getSenha().equals(this.SenhaTextField.getText())) {
+            System.out.println("Usuário inválido!");
+            System.out.println(this.ContaTextField.getText());
+            System.out.println(user != null ? user.getNome() : "null");
+            System.out.println(user != null ? user.getSenha() + "/" + this.SenhaTextField.getText() : "null");
         } else {
-                Controller.getInstance().setUsuario(user);
-                this.frame.setVisible(false);
-                new Banco();
+            Controller.getInstance().setUsuario(user);
+            this.frame.setVisible(false);
+            new Banco();
         }
     }
 
     private void jButton2ActionPerformed(ActionEvent evt) {
         this.frame.setVisible(false);
         new Cadastro(this.mainWindow);
-        // TODO add your handling code here:
     }
 
     private void jButtonVoltarActionPerformed(ActionEvent evt) {
         this.frame.setVisible(false);
         this.mainWindow.setVisible(true);
-        // TODO add your handling code here:
     }
 
     public void showLoginFrame() {
