@@ -1,6 +1,7 @@
 package sistema.bancario.GUI.screens;
 
 import sistema.bancario.Controller;
+import sistema.bancario.GUI.components.ErrorDialog;
 import sistema.bancario.exceptions.UsuarioExistenteException;
 
 import javax.swing.*;
@@ -173,11 +174,19 @@ public class Cadastro {
     private void jButtonCadastrarActionPerformed(ActionEvent evt) throws Exception {
         // TODO add your handling code here
         try {
-                Controller.getInstance().setUsuario(Controller.getInstance().criarUsuario(this.nomeTextField.getText(), this.cpfTextField.getText(), this.senhaTextField.getText()));
-                this.frame.setVisible(false);
-                new Banco();
+                if(this.nomeTextField.getText().equals("")){
+                        new ErrorDialog(frame, "Nome inválido!");
+                } else if(!Controller.getInstance().isCpfValido(this.cpfTextField.getText())){
+                        new ErrorDialog(frame, "CPF inválido!");
+                } else if(this.senhaTextField.getText().equals("")){
+                        new ErrorDialog(frame, "Senha inválida!");
+                } else {
+                        Controller.getInstance().setUsuario(Controller.getInstance().criarUsuario(this.nomeTextField.getText(), this.cpfTextField.getText(), this.senhaTextField.getText()));
+                        this.frame.setVisible(false);
+                        new Banco();
+                }
         } catch (UsuarioExistenteException e){
-                System.out.println("ERRO: Usuário já existe");
+                new ErrorDialog(this.frame, "Usuário já existe!");
         }
     }
 
