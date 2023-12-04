@@ -4,16 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-<<<<<<< HEAD
-public class Transferencia extends javax.swing.JFrame {
-=======
 public class Transferencia {
     private JFrame frame;
 
-    /**
-     * Creates new form Transferencia
-     */
->>>>>>> b744d78b903d83260cfe9e78dfa9e11179a988ea
     public Transferencia() {
         initComponents();
     }
