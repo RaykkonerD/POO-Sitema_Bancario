@@ -153,6 +153,8 @@ public class Banco {
 
     private void jButton6ActionPerformed(ActionEvent evt) {
         // ACESSAR CONTA
+        this.frame.setVisible(false);
+        new AcessarConta();
     }
 
     public static void main(String args[]) {

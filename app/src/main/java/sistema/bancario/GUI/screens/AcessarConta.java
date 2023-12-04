@@ -1,7 +1,14 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
+import sistema.bancario.Controller;
+import sistema.bancario.models.Conta;
 
 public class AcessarConta {
 
@@ -168,8 +175,12 @@ public class AcessarConta {
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel13.setText("Selecione a conta");
+        List<String> contas = Controller.getInstance().getBanco().getContas().stream()
+        .filter(c -> c.getUsuario().getCPF().equals(Controller.getInstance().getUsuario().getCPF()))
+        .map(c -> "Conta: " + c.getNumero() + " (" + c.getTipo() + ")")
+        .collect(Collectors.toList());
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Conta: 1324 (Poupança)", "Conta: 7554 (Poupança)", "Conta: 9609 (Corrente)", "Conta: 6433 (Corrente)"}));
+        jComboBox2.setModel(new DefaultComboBoxModel<>(contas.toArray(new String[0])));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel14.setText("Senha da conta");
@@ -253,6 +264,8 @@ public class AcessarConta {
 
     private void jButtonVoltar1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        this.frame.setVisible(false);
+        new Banco();
     }
 
     public static void main(String args[]) {

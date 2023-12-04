@@ -288,6 +288,8 @@ public class ContaScreen {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        this.frame.setVisible(false);
+        new Transferencia();
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
