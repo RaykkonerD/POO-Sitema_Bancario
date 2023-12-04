@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import sistema.bancario.Controller;
+import sistema.bancario.exceptions.SaldoInsuficienteException;
+
 public class Sacar {
 
     private JFrame frame;
@@ -24,6 +27,7 @@ public class Sacar {
         jTextField1 = new JTextField();
 
         frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -68,7 +72,15 @@ public class Sacar {
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        try {
+            double valor = Double.parseDouble(jTextField1.getText());
+            Controller.getInstance().sacar(valor);
+            this.frame.dispose();
+        } catch (NumberFormatException e){
+            new ErrorDialog(frame, "Valor inválido!");
+        } catch (SaldoInsuficienteException e){
+            new ErrorDialog(frame, "Saldo insuficiente!");
+        }
     }
 
     public static void main(String[] args) {

@@ -2,6 +2,8 @@ package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
 import sistema.bancario.Controller;
+import sistema.bancario.GUI.components.Depositar;
+import sistema.bancario.GUI.components.Sacar;
 
 public class ContaScreen {
 
@@ -284,6 +286,7 @@ public class ContaScreen {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        new Sacar();
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,7 +296,7 @@ public class ContaScreen {
     }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        new Depositar();
     }
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {

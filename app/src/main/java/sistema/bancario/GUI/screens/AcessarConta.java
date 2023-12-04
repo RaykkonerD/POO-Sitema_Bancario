@@ -8,6 +8,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import sistema.bancario.Controller;
+import sistema.bancario.GUI.components.ErrorDialog;
 import sistema.bancario.models.Conta;
 
 public class AcessarConta {
@@ -69,16 +70,16 @@ public class AcessarConta {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(82, 82, 82)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(86, 86, 86))
-        );
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(86, 86, 86)));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(124, 124, 124)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(145, 145, 145))
-        );
+                                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(145, 145, 145)));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
@@ -112,7 +113,8 @@ public class AcessarConta {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel9.setText("Tipo da conta");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Conta: 1324 (Poupança)", "Item 2", "Item 3", "Item 4"}));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(
+                new String[] { "Conta: 1324 (Poupança)", "Item 2", "Item 3", "Item 4" }));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel10.setText("Senha da conta");
@@ -141,16 +143,15 @@ public class AcessarConta {
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(82, 82, 82)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(86, 86, 86))
-        );
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(86, 86, 86)));
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(124, 124, 124)
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                                .addGap(145, 145, 145))
-        );
+                                .addGap(145, 145, 145)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -176,9 +177,9 @@ public class AcessarConta {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel13.setText("Selecione a conta");
         List<String> contas = Controller.getInstance().getBanco().getContas().stream()
-        .filter(c -> c.getUsuario().getCPF().equals(Controller.getInstance().getUsuario().getCPF()))
-        .map(c -> "Conta: " + c.getNumero() + " (" + c.getTipo() + ")")
-        .collect(Collectors.toList());
+                .filter(c -> c.getUsuario().getCPF().equals(Controller.getInstance().getUsuario().getCPF()))
+                .map(c -> "Conta: " + c.getNumero() + " (" + c.getTipo() + ")")
+                .collect(Collectors.toList());
 
         jComboBox2.setModel(new DefaultComboBoxModel<>(contas.toArray(new String[0])));
 
@@ -204,43 +205,63 @@ public class AcessarConta {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(50, 50, 50)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                334, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jLabel12)
                                                         .addComponent(jLabel13)
                                                         .addComponent(jLabel14)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                .addComponent(jPasswordField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))))
+                                                        .addGroup(layout
+                                                                .createParallelGroup(
+                                                                        javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                        false)
+                                                                .addComponent(jComboBox2,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING, 0,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        Short.MAX_VALUE)
+                                                                .addComponent(jPasswordField1,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jButton6,
+                                                                        javax.swing.GroupLayout.Alignment.LEADING,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE, 236,
+                                                                        Short.MAX_VALUE))))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(132, 132, 132)
-                                                .addComponent(jButtonVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                                                .addComponent(jButtonVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5)
                                 .addGap(66, 66, 66)
                                 .addComponent(jLabel13)
                                 .addGap(5, 5, 5)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 37,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 54,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButtonVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48))
-        );
+                                .addComponent(jButtonVoltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 26,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(48, 48, 48)));
 
         frame.pack();
         frame.setVisible(true);
@@ -256,6 +277,20 @@ public class AcessarConta {
 
     private void jButton6CriarConta(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        try {
+            int numero = Integer.parseInt(jComboBox2.getSelectedItem().toString().split(" ")[1]);
+            int senha = Integer.parseInt(jPasswordField1.getText());
+
+            if(Controller.getInstance().getBanco().getConta(numero, senha) == null){
+                new ErrorDialog(frame, "Senha inválida!");
+            } else {
+                Controller.getInstance().setContaEmSessao(Controller.getInstance().getBanco().getConta(numero, senha));
+                this.frame.setVisible(false);
+                new ContaScreen();
+            }
+        } catch (Exception e) {
+            new ErrorDialog(frame, "Valores inválidos foram lidos!");
+        }
     }
 
     private void jButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {

@@ -131,7 +131,7 @@ public class Banco {
                                 .addGap(42, 42, 42))
                         .addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
+        
         frame.pack();
         frame.setVisible(true);
     }

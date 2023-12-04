@@ -1,6 +1,11 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
+
+import sistema.bancario.Controller;
+import sistema.bancario.GUI.components.ErrorDialog;
+import sistema.bancario.models.Conta;
+
 import java.awt.*;
 import java.util.Objects;
 
@@ -68,7 +73,7 @@ public class Transferencia {
         jButton5.setText("Continuar");
         jButton5.setToolTipText("");
         jButton5.setActionCommand("CriarConta");
-        jButton5.setContentAreaFilled(false); 
+        jButton5.setContentAreaFilled(false);
         jButton5.setOpaque(true);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,15 +108,21 @@ public class Transferencia {
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14));
         jLabel11.setText("Banco da conta destino");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(
+                new javax.swing.DefaultComboBoxModel<>(new String[] { "Bradesco", "Banco do Brasil", "Nubank" }));
         jComboBox1.setOpaque(true);
 
         jButtonVoltar3.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jButtonVoltar3.setForeground(new java.awt.Color(51, 51, 51));
         jButtonVoltar3.setText("Cancelar");
         jButtonVoltar3.setBorder(null);
-        jButtonVoltar3.setContentAreaFilled(false); 
+        jButtonVoltar3.setContentAreaFilled(false);
         jButtonVoltar3.setOpaque(true);
+        jButtonVoltar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltar3(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this.frame.getContentPane());
         this.frame.getContentPane().setLayout(layout);
@@ -193,6 +204,14 @@ public class Transferencia {
 
     private void jButton5CriarConta(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        Conta conta = Controller.getInstance().getBanco(jComboBox1.getSelectedItem().toString())
+                .getConta(Integer.parseInt(NomeTextField2.getText()));
+        if (conta == null) {
+            new ErrorDialog(frame, "Conta não encontrada." + NomeTextField2.getText());
+        } else {
+            this.frame.setVisible(false);
+            new ConfirmacaoTransferencia(conta, jComboBox1.getSelectedItem().toString());
+        }
     }
 
     private void NomeTextField1senha(java.awt.event.ActionEvent evt) {
@@ -201,6 +220,11 @@ public class Transferencia {
 
     private void NomeTextField2senha(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
+
+    private void jButtonVoltar3(java.awt.event.ActionEvent evt) {
+        this.frame.setVisible(false);
+        new ContaScreen();
     }
 
     /**

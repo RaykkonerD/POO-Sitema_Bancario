@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import sistema.bancario.Controller;
+import sistema.bancario.exceptions.SaldoInsuficienteException;
+
 public class Depositar {
 
     private JFrame frame;
@@ -63,7 +66,13 @@ public class Depositar {
     }
 
     private void depositarButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here
+        try {
+            double valor = Double.parseDouble(valorTextField.getText());
+            Controller.getInstance().depositar(valor);
+            this.frame.dispose();
+        } catch (NumberFormatException e){
+            new ErrorDialog(frame, "Valor inválido!");
+        }
     }
 
     public static void main(String[] args) {
