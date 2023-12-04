@@ -1,6 +1,10 @@
 package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
+
+import sistema.bancario.models.Conta;
+
+import java.awt.event.ActionEvent;
 import java.util.Objects;
 
 public class ConfirmacaoTransferencia {
@@ -31,11 +35,15 @@ public class ConfirmacaoTransferencia {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+    private Conta contaDestino;
+    private String bancoDestino;
 
     /**
      * Creates new form ConfirmaçãoTransferencia
      */
-    public ConfirmacaoTransferencia() {
+    public ConfirmacaoTransferencia(Conta contaDestino, String banco) {
+        this.contaDestino = contaDestino;
+        this.bancoDestino = banco;
         initComponents();
     }
 
@@ -71,6 +79,12 @@ public class ConfirmacaoTransferencia {
         jButtonVoltar4.setForeground(new java.awt.Color(51, 51, 51));
         jButtonVoltar4.setText("Cancelar");
         jButtonVoltar4.setBorder(null);
+        jButtonVoltar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVoltar4(evt);
+            }
+
+        });
 
         jButton6.setBackground(new java.awt.Color(51, 51, 51));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -115,19 +129,19 @@ public class ConfirmacaoTransferencia {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Nº da conta: 1332");
+        jLabel14.setText("Nº da conta: " + this.contaDestino.getNumero());
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel15.setText("Nome: João Lucas");
+        jLabel15.setText("Nome: " + this.contaDestino.getUsuario().getNome());
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel17.setText("CPF: 111.111.111-11");
+        jLabel17.setText("CPF: " + this.contaDestino.getUsuario().getCPF());
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel18.setText("Banco: Nubank");
+        jLabel18.setText("Banco: " + this.bancoDestino);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(frame.getContentPane());
         frame.getContentPane().setLayout(layout);
@@ -189,12 +203,9 @@ public class ConfirmacaoTransferencia {
     private void jButton6CriarConta(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
-
-    public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ConfirmacaoTransferencia();
-            }
-        });
+    
+    private void jButtonVoltar4(ActionEvent evt) {
+        this.frame.setVisible(false);
+        new ContaScreen();
     }
 }
