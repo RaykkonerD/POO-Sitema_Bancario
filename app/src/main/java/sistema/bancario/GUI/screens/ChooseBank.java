@@ -19,6 +19,7 @@ public class ChooseBank {
     public ChooseBank() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     private void initComponents() {

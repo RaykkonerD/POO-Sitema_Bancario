@@ -19,7 +19,6 @@ public class Cadastro {
     private JFrame mainWindow;
 
     public Cadastro() {
-        this.frame.setLocationRelativeTo(null);
         frame = new JFrame();
         nomeTextField = new JTextField();
         cpfTextField = new JTextField();
@@ -28,6 +27,8 @@ public class Cadastro {
         backLoginButton = new JButton();
 
         initComponents();
+        frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     public Cadastro(JFrame mainWindow) {

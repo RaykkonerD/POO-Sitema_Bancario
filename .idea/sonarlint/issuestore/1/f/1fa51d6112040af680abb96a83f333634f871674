@@ -1,0 +1,84 @@
+
+g
+java:S1192H"JDefine a constant instead of duplicating this literal "Segoe UI" 17 times.(¼ƒÚ“8åï±²Ã1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’8éï±²Ã1
+s
+java:S1450"WRemove the "jButton1" field and declare it as a local variable in the relevant methods.(©ÛÓo8‰ğ±²Ã1
+y
+java:S1450"WRemove the "jButton2" field and declare it as a local variable in the relevant methods.(éâá‘ıÿÿÿÿ8‰ğ±²Ã1
+t
+java:S1450"WRemove the "jButton3" field and declare it as a local variable in the relevant methods.(¼®ş«8‰ğ±²Ã1
+y
+java:S1450"WRemove the "jButton4" field and declare it as a local variable in the relevant methods.(¡è®âùÿÿÿÿ8‰ğ±²Ã1
+s
+java:S1450!"WRemove the "jButton5" field and declare it as a local variable in the relevant methods.(î­ª18Šğ±²Ã1
+y
+java:S1450"WRemove the "jDialog1" field and declare it as a local variable in the relevant methods.(ç‹Çûÿÿÿÿ8Šğ±²Ã1
+y
+java:S1450"WRemove the "jDialog2" field and declare it as a local variable in the relevant methods.(Î½ùâøÿÿÿÿ8Šğ±²Ã1
+t
+java:S1450"WRemove the "jDialog3" field and declare it as a local variable in the relevant methods.(é©•¦8Šğ±²Ã1
+x
+java:S1450"VRemove the "jLabel1" field and declare it as a local variable in the relevant methods.(Ó“©©ıÿÿÿÿ8Šğ±²Ã1
+y
+java:S1450"WRemove the "jLabel10" field and declare it as a local variable in the relevant methods.(ï¨™îúÿÿÿÿ8Šğ±²Ã1
+y
+java:S1450"WRemove the "jLabel11" field and declare it as a local variable in the relevant methods.(Šï´ÿÿÿÿÿ8‹ğ±²Ã1
+s
+java:S1450 "WRemove the "jLabel12" field and declare it as a local variable in the relevant methods.(Ğ¼ˆB8‹ğ±²Ã1
+s
+java:S1450"VRemove the "jLabel2" field and declare it as a local variable in the relevant methods.(¹ñÌ8‹ğ±²Ã1
+s
+java:S1450"VRemove the "jLabel3" field and declare it as a local variable in the relevant methods.(­®è’8‹ğ±²Ã1
+s
+java:S1450"VRemove the "jLabel4" field and declare it as a local variable in the relevant methods.(Œ“®ñ8‹ğ±²Ã1
+x
+java:S1450"VRemove the "jLabel5" field and declare it as a local variable in the relevant methods.(Œ÷ì•úÿÿÿÿ8‹ğ±²Ã1
+x
+java:S1450"VRemove the "jLabel6" field and declare it as a local variable in the relevant methods.(¸«æÁşÿÿÿÿ8Œğ±²Ã1
+x
+java:S1450"VRemove the "jLabel7" field and declare it as a local variable in the relevant methods.(ı“†üÿÿÿÿ8Œğ±²Ã1
+s
+java:S1450"VRemove the "jLabel8" field and declare it as a local variable in the relevant methods.(£É´»8Œğ±²Ã1
+r
+java:S1450"VRemove the "jLabel9" field and declare it as a local variable in the relevant methods.(éûÒ.8Œğ±²Ã1
+x
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(Áµ¡¹ıÿÿÿÿ8Œğ±²Ã1
+x
+java:S1450"VRemove the "jPanel2" field and declare it as a local variable in the relevant methods.(‰´ºúÿÿÿÿ8Œğ±²Ã1
+€
+java:S1450"^Remove the "jPasswordField1" field and declare it as a local variable in the relevant methods.(¡Àğûÿÿÿÿ8ğ±²Ã1
+{
+java:S2142S"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8•ğ±²Ã1
+l
+java:S1612_"JReplace this lambda with method reference 'this::jButton1ActionPerformed'.(§ûó¬ÿÿÿÿÿ8–ğ±²Ã1
+m
+java:S1612”"JReplace this lambda with method reference 'this::jButton2ActionPerformed'.(Ã«ƒ¹øÿÿÿÿ8šğ±²Ã1
+h
+java:S1612›"JReplace this lambda with method reference 'this::jButton3ActionPerformed'.(Ğõ¼ş8›ğ±²Ã1
+h
+java:S1612¢"JReplace this lambda with method reference 'this::jButton4ActionPerformed'.(À¿˜Ÿ8›ğ±²Ã1
+m
+java:S1612ü"JReplace this lambda with method reference 'this::jButton5ActionPerformed'.(á‡¾…úÿÿÿÿ8 ğ±²Ã1
+M
+java:S1172§"*Remove this unused method parameter "evt".(‘ òôøÿÿÿÿ8£ğ±²Ã1
+M
+java:S1172«"*Remove this unused method parameter "evt".(ÿŞÿĞøÿÿÿÿ8¤ğ±²Ã1
+M
+java:S1172¯"*Remove this unused method parameter "evt".(½êéşıÿÿÿÿ8¥ğ±²Ã1
+H
+java:S1172´"*Remove this unused method parameter "evt".(ëúµ8¦ğ±²Ã1
+M
+java:S1172¸"*Remove this unused method parameter "evt".(ô®¶«üÿÿÿÿ8¦ğ±²Ã1
+M
+java:S1197½"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ8§ğ±²Ã1
+`
+java:S1612¿"=Replace this lambda with method reference 'ContaScreen::new'.(Ïû©ºÿÿÿÿÿ8§ğ±²Ã1
+U
+java:S1068"3Remove this unused "jPasswordField1" private field.(¡Àğûÿÿÿÿ8¨ğ±²Ã1
+N
+java:S1068",Remove this unused "jDialog1" private field.(ç‹Çûÿÿÿÿ8¨ğ±²Ã1
+N
+java:S1068",Remove this unused "jDialog2" private field.(Î½ùâøÿÿÿÿ8¨ğ±²Ã1
+I
+java:S1068",Remove this unused "jDialog3" private field.(é©•¦8¨ğ±²Ã1

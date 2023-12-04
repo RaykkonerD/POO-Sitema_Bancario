@@ -24,6 +24,7 @@ public class Banco {
     public Banco() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
 

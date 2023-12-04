@@ -1,0 +1,60 @@
+
+_
+java:S1192&"IDefine a constant instead of duplicating this literal "Segoe UI" 9 times.(ØÇ¦Ù
+C
+java:S1604P"(Make this anonymous inner class a lambda(‹ıÉ¼üÿÿÿÿ
+C
+java:S1604X"(Make this anonymous inner class a lambda(„ØÒ²ûÿÿÿÿ
+C
+java:S1604g"(Make this anonymous inner class a lambda(¸üµ¯üÿÿÿÿ
+>
+java:S1604{"(Make this anonymous inner class a lambda(—ˆ—„
+D
+java:S1604‘"(Make this anonymous inner class a lambda(¨í¡§úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+o	java:S116™"YRename this field "NomeTextField1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù“¥
+o	java:S116š"YRename this field "NomeTextField2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üÿ½á
+s
+java:S1450›"WRemove the "jButton5" field and declare it as a local variable in the relevant methods.(â¦Î©ûÿÿÿÿ
+y
+java:S1450œ"]Remove the "jButtonVoltar2" field and declare it as a local variable in the relevant methods.(ÂÔçÊüÿÿÿÿ
+y
+java:S1450"]Remove the "jButtonVoltar3" field and declare it as a local variable in the relevant methods.(ï‚ôıÿÿÿÿ
+s
+java:S1450Ÿ"WRemove the "jLabel10" field and declare it as a local variable in the relevant methods.(¼õò†şÿÿÿÿ
+s
+java:S1450 "WRemove the "jLabel11" field and declare it as a local variable in the relevant methods.(‰Ó‚©øÿÿÿÿ
+m
+java:S1450¡"VRemove the "jLabel7" field and declare it as a local variable in the relevant methods.(×ê˜Ÿ
+m
+java:S1450¢"VRemove the "jLabel8" field and declare it as a local variable in the relevant methods.(å»«¢
+r
+java:S1450£"VRemove the "jLabel9" field and declare it as a local variable in the relevant methods.(Ì’óĞşÿÿÿÿ
+r
+java:S1450¤"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(´œ½ÿÿÿÿÿ
+F
+java:S1172Ï"*Remove this unused method parameter "evt".(ßÀ—œùÿÿÿÿ
+N
+java:S1135Ğ"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+d	java:S100à"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»üÏ¡
+A
+java:S1172à"*Remove this unused method parameter "evt".(»üÏ¡
+N
+java:S1135á"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+c	java:S100ä"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹“´
+@
+java:S1172ä"*Remove this unused method parameter "evt".(‹“´
+N
+java:S1135å"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+A
+java:S1172è"*Remove this unused method parameter "evt".(ÓÀÀÚ
+F
+java:S1197ğ"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+\
+java:S2147„"ECombine this catch with the one at line 257, which has the same body.(¨¦Š½
+\
+java:S2147‡"ECombine this catch with the one at line 260, which has the same body.(ã€ 
+[
+java:S2147Š"ECombine this catch with the one at line 263, which has the same body.(ñÎ¯%
+;
+java:S1128	"%Remove this unused import 'java.awt'.(ï´µ©

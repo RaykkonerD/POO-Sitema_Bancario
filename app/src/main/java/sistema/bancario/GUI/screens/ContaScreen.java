@@ -35,6 +35,7 @@ public class ContaScreen {
     public ContaScreen() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     private void initComponents() {
@@ -168,7 +169,7 @@ public class ContaScreen {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Conta poupança");
+        jLabel5.setText(Controller.getInstance().getContaEmSessao().getTipo());
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,7 +181,7 @@ public class ContaScreen {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText((Controller.getInstance().getContaEmSessao().getTipo() == "Conta Corrente") ? "0%" : "0,2%");
+        jLabel9.setText((Controller.getInstance().getContaEmSessao().getTipo().equals("Conta corrente")) ? "0%" : "0,2%");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));

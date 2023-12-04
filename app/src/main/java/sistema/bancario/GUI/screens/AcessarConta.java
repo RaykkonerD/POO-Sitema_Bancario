@@ -2,6 +2,7 @@ package sistema.bancario.GUI.screens;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -38,6 +39,7 @@ public class AcessarConta {
     public AcessarConta() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     private void initComponents() {
@@ -135,8 +137,9 @@ public class AcessarConta {
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
-        ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("Bank.png")));
-        jLabel11.setIcon(bankIcon);
+        ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("cofre.png")));
+        Image image = bankIcon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+        jLabel11.setIcon(new ImageIcon(image));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

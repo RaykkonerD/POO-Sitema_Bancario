@@ -25,6 +25,7 @@ public class CriarConta {
     public CriarConta() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     private void initComponents() {
@@ -69,7 +70,7 @@ public class CriarConta {
 
         jPanel1.setBackground(new Color(51, 51, 51));
         ImageIcon bankIcon = new ImageIcon(Objects.requireNonNull(getClass().getClassLoader().getResource("CONTA.png")));
-        Image image = bankIcon.getImage().getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+        Image image = bankIcon.getImage().getScaledInstance(400, 400, Image.SCALE_SMOOTH);
         jLabel7.setIcon(new ImageIcon(image));
 
         GroupLayout jPanel1Layout = new GroupLayout(jPanel1);

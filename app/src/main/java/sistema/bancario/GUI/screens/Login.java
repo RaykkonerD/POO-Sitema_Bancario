@@ -27,6 +27,7 @@ public class Login {
     public Login() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     public Login(JFrame mainWindow) {

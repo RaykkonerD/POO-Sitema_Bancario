@@ -17,6 +17,7 @@ public class Sacar {
 
     public Sacar() {
         initComponents();
+        frame.setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +27,8 @@ public class Sacar {
         jLabel1 = new JLabel();
         jTextField1 = new JTextField();
 
-        frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
         frame.setLocationRelativeTo(null);
 
         jButton2.setBackground(new java.awt.Color(51, 51, 51));

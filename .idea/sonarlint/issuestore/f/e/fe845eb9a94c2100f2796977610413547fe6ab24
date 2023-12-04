@@ -1,0 +1,97 @@
+
+J
+java:S3740N"/Provide the parametrized type for this generic.(‘ğÏÎúÿÿÿÿ
+J
+java:S3740P"/Provide the parametrized type for this generic.(¬Ü Ãıÿÿÿÿ
+E
+java:S3740a"/Provide the parametrized type for this generic.(Œ½úŞ
+E
+java:S3740d"/Provide the parametrized type for this generic.(ÚÁ—›
+M
+java:S3740«"/Provide the parametrized type for this generic.(û¨Æ¤8èØ±Ã1
+M
+java:S3740À"/Provide the parametrized type for this generic.(û¨Æ¤8èØ±Ã1
+R
+java:S3740Å"/Provide the parametrized type for this generic.(ÑÕôüÿÿÿÿ8èØ±Ã1
+R
+java:S3740Ó"/Provide the parametrized type for this generic.(–Ş´ûÿÿÿÿ8èØ±Ã1
+R
+java:S3740æ"/Provide the parametrized type for this generic.(¤Ø¥çùÿÿÿÿ8èØ±Ã1
+R
+java:S3740ê"/Provide the parametrized type for this generic.(–Ş´ûÿÿÿÿ8éØ±Ã1
+]
+java:S1192J"GDefine a constant instead of duplicating this literal "Voltar" 3 times.(ÒÆ­û
+c
+java:S1192T"HDefine a constant instead of duplicating this literal "Senha: " 6 times.(Á¨×™şÿÿÿÿ
+f
+java:S1192¬"HDefine a constant instead of duplicating this literal "Valor: " 4 times.(ßğİø8êØ±Ã1
+[
+java:S1192="FDefine a constant instead of duplicating this literal "Banco" 3 times.(øÔb
+p
+java:S1192e"ZDefine a constant instead of duplicating this literal "[ERRO]: Senha invÃ¡lida.
+" 3 times.(ƒà„–
+7
+java:S1643&"Use a StringBuilder instead.(Şœšûÿÿÿÿ
+@	java:S106("+Replace this use of System.out by a logger.(Ãù’Å
+E	java:S106)"+Replace this use of System.out by a logger.(şşñŞşÿÿÿÿ
+E	java:S106,"+Replace this use of System.out by a logger.(ãŸ…”şÿÿÿÿ
+@	java:S106/"+Replace this use of System.out by a logger.(ØÃ¤“
+@	java:S1061"+Replace this use of System.out by a logger.(òï‰Õ
+E	java:S1065"+Replace this use of System.out by a logger.(¾é…›ûÿÿÿÿ
+O
+java:S1854e"9Remove this useless assignment to local variable "senha".(ƒà„–
+E	java:S106T"+Replace this use of System.out by a logger.(Á¨×™şÿÿÿÿ
+E	java:S106X"+Replace this use of System.out by a logger.(¢ßÚüúÿÿÿÿ
+@	java:S106Y"+Replace this use of System.out by a logger.(Ö°Î
+E	java:S106\"+Replace this use of System.out by a logger.(ŸæŠ¾ùÿÿÿÿ
+@
+java:S1481e"*Remove this unused "senha" local variable.(ƒà„–
+@	java:S106g"+Replace this use of System.out by a logger.(“·êİ
+E	java:S106h"+Replace this use of System.out by a logger.(Ö–îÅøÿÿÿÿ
+E	java:S106v"+Replace this use of System.out by a logger.(Á¨×™şÿÿÿÿ
+E	java:S106z"+Replace this use of System.out by a logger.(ƒçÑÙşÿÿÿÿ
+E	java:S106~"+Replace this use of System.out by a logger.(õš†ªûÿÿÿÿ
+F	java:S106‚"+Replace this use of System.out by a logger.(á¸—¸ùÿÿÿÿ
+F	java:S106„"+Replace this use of System.out by a logger.(õš†ªûÿÿÿÿ
+F	java:S106ˆ"+Replace this use of System.out by a logger.(Á¨×™şÿÿÿÿ
+F	java:S106"+Replace this use of System.out by a logger.(¾ÌÁÆûÿÿÿÿ
+A	java:S106•"+Replace this use of System.out by a logger.(¸õ¸µ
+A	java:S106š"+Replace this use of System.out by a logger.(²û¦£
+n
+java:S3776£"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(×€İúøÿÿÿÿ
+\
+java:S1854Ô"9Remove this useless assignment to local variable "senha".(Ê²Ë°üÿÿÿÿ8Ø±Ã1
+\
+java:S1854ë"9Remove this useless assignment to local variable "senha".(Ê²Ë°üÿÿÿÿ8Ø±Ã1
+F	java:S106§"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ
+H	java:S106©"+Replace this use of System.out by a logger.(øÉ‡Ï8Ø±Ã1
+H	java:S106¯"+Replace this use of System.out by a logger.(©’ıÆ8‘Ø±Ã1
+H	java:S106±"+Replace this use of System.out by a logger.(Ò—‰’8’Ø±Ã1
+H	java:S106µ"+Replace this use of System.out by a logger.(Şöğç8’Ø±Ã1
+H	java:S106¶"+Replace this use of System.out by a logger.(Ò—‰’8“Ø±Ã1
+M	java:S106º"+Replace this use of System.out by a logger.(ñÂ˜Éüÿÿÿÿ8“Ø±Ã1
+H	java:S106¼"+Replace this use of System.out by a logger.(…Ã å8“Ø±Ã1
+M	java:S106Ê"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8•Ø±Ã1
+H	java:S106Ë"+Replace this use of System.out by a logger.( €ëå8–Ø±Ã1
+H	java:S106Ì"+Replace this use of System.out by a logger.(Ëª¿£8–Ø±Ã1
+M	java:S106Í"+Replace this use of System.out by a logger.(Ó‹€ôùÿÿÿÿ8–Ø±Ã1
+M	java:S106Î"+Replace this use of System.out by a logger.(¿ˆ¥¯şÿÿÿÿ8–Ø±Ã1
+M	java:S106Ï"+Replace this use of System.out by a logger.(¡‘Éøûÿÿÿÿ8—Ø±Ã1
+M	java:S106Ğ"+Replace this use of System.out by a logger.(Ï‹§Ãúÿÿÿÿ8—Ø±Ã1
+t
+java:S3457Ñ"Q%n should be used in place of \n to produce the platform-specific line separator.(ãŒæšüÿÿÿÿ8—Ø±Ã1
+M	java:S106Ñ"+Replace this use of System.out by a logger.(ãŒæšüÿÿÿÿ8—Ø±Ã1
+M
+java:S1481Ô"*Remove this unused "senha" local variable.(Ê²Ë°üÿÿÿÿ8˜Ø±Ã1
+:
+java:S1116×"Remove this empty statement.(×¼Ø•8™Ø±Ã1
+H	java:S106Ø"+Replace this use of System.out by a logger.(Â¸±Ã8™Ø±Ã1
+H	java:S106Ú"+Replace this use of System.out by a logger.(…Ã å8™Ø±Ã1
+G	java:S106Ş"+Replace this use of System.out by a logger.( ãÌ8šØ±Ã1
+M	java:S106ß"+Replace this use of System.out by a logger.(™«˜˜úÿÿÿÿ8šØ±Ã1
+H	java:S106à"+Replace this use of System.out by a logger.(–Ä¥â8šØ±Ã1
+M	java:S106ä"+Replace this use of System.out by a logger.(±‚™ùÿÿÿÿ8›Ø±Ã1
+M
+java:S1481ë"*Remove this unused "senha" local variable.(Ê²Ë°üÿÿÿÿ8œØ±Ã1
+M	java:S106î"+Replace this use of System.out by a logger.(Š†ôøùÿÿÿÿ8œØ±Ã1
+W	java:S125ƒ"<This block of commented-out lines of code should be removed.(áãš¸ÿÿÿÿÿ

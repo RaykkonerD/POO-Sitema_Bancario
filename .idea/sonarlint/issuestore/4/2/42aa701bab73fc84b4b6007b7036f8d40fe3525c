@@ -1,0 +1,14 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(âÎÜ
+t
+java:S1450"^Remove the "depositarButton" field and declare it as a local variable in the relevant methods.(ÑíÕØ
+t
+java:S1450"YRemove the "valorLabel" field and declare it as a local variable in the relevant methods.(Ñâò¸ûÿÿÿÿ
+i
+java:S3252"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(×Ğ‘÷8ß¹Ş±Ã1
+B
+java:S1602P",Remove useless curly braces around statement(¤çšÜ
+Q
+java:S1612P";Replace this lambda with method reference 'Depositar::new'.(¤çšÜ
+u
+java:S1128	"SRemove this unused import 'sistema.bancario.exceptions.SaldoInsuficienteException'.(àëû³ÿÿÿÿÿ8æ¹Ş±Ã1

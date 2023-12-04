@@ -17,6 +17,7 @@ public class Depositar {
 
     public Depositar() {
         initComponents();
+        frame.setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +27,7 @@ public class Depositar {
         valorLabel = new JLabel();
         valorTextField = new JTextField();
 
-        frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         depositarButton.setBackground(new java.awt.Color(51, 51, 51));
         depositarButton.setFont(new java.awt.Font("Segoe UI", 1, 18));

@@ -48,9 +48,10 @@ public class ConfirmacaoTransferencia {
         this.valor = valor;
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
-    @SuppressWarnings("unchecked")
+
     private void initComponents() {
         frame = new javax.swing.JFrame();
         jLabel12 = new javax.swing.JLabel();

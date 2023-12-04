@@ -15,6 +15,7 @@ public class Transferencia {
     public Transferencia() {
         initComponents();
         this.frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
     }
 
     private void initComponents() {

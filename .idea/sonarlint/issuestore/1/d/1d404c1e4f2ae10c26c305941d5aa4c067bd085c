@@ -1,0 +1,32 @@
+
+_
+java:S11920"IDefine a constant instead of duplicating this literal "Segoe UI" 6 times.(Î«‡Í
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+l
+java:S1450"WRemove the "jButton1" field and declare it as a local variable in the relevant methods.(©ÛÓo
+r
+java:S1450"WRemove the "jButton2" field and declare it as a local variable in the relevant methods.(éâá‘ıÿÿÿÿ
+l
+java:S1450"WRemove the "jButton5" field and declare it as a local variable in the relevant methods.(î­ª1
+m
+java:S1450"WRemove the "jButton6" field and declare it as a local variable in the relevant methods.(ü›À
+l
+java:S1450"VRemove the "jLabel4" field and declare it as a local variable in the relevant methods.(Œ“®ñ
+q
+java:S1450"VRemove the "jLabel7" field and declare it as a local variable in the relevant methods.(ı“†üÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel8" field and declare it as a local variable in the relevant methods.(£É´»
+q
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(Áµ¡¹ıÿÿÿÿ
+v
+java:S1450"[Remove the "jScrollPane1" field and declare it as a local variable in the relevant methods.(ê¼¿Çıÿÿÿÿ
+l
+java:S1450"VRemove the "jTable1" field and declare it as a local variable in the relevant methods.(¾£ÜÑ
+I
+java:S1135"2Complete the task associated to this TODO comment.(ßêöã
+F
+java:S1197¤"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+S
+java:S1612¥"7Replace this lambda with method reference 'Banco::new'.(Ïûğüÿÿÿÿ
+C
+java:S1068".Remove this unused "mainWindow" private field.(ÚÂ–k

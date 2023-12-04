@@ -16,15 +16,17 @@ public class Extrato {
     public Extrato() {
         extratoFrame = new ExtratoFrame();
         initComponents();
+
     }
 
     private void initComponents() {
         JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(extratoFrame.getScrollPane());
 
         frame.pack();
         frame.setVisible(true);
+        frame.setResizable(false);
     }
 
     public static void main(String args[]) {
@@ -74,8 +76,6 @@ class ExtratoFrame {
         for (int i = 0; i < acoes.length; i++) {
             linhas[i][0] = acoes[i];
         }
-        
-        //    linhas.Map(el -> System.out.println(el));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
                 linhas,

@@ -1,0 +1,31 @@
+
+l
+java:S1192:"QDefine a constant instead of duplicating this literal "NÃºmero da conta" 3 times.(„¡Ñÿÿÿÿÿ
+d
+java:S1192="IDefine a constant instead of duplicating this literal "Segoe UI" 8 times.(şÚšıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+m	java:S116"YRename this field "ContaTextField" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¢ºn
+s	java:S116"YRename this field "SenhaTextField" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤¶Íûÿÿÿÿ
+l
+java:S1450"WRemove the "jButton1" field and declare it as a local variable in the relevant methods.(©ÛÓo
+r
+java:S1450"WRemove the "jButton2" field and declare it as a local variable in the relevant methods.(éâá‘ıÿÿÿÿ
+r
+java:S1450"\Remove the "jButtonVoltar" field and declare it as a local variable in the relevant methods.(œ¿ù
+q
+java:S1450"VRemove the "jLabel1" field and declare it as a local variable in the relevant methods.(Ó“©©ıÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel2" field and declare it as a local variable in the relevant methods.(¹ñÌ
+l
+java:S1450"VRemove the "jLabel3" field and declare it as a local variable in the relevant methods.(­®è’
+q
+java:S1450"VRemove the "jLabel5" field and declare it as a local variable in the relevant methods.(Œ÷ì•úÿÿÿÿ
+q
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(Áµ¡¹ıÿÿÿÿ
+i	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»÷„§ÿÿÿÿÿ
+N
+java:S1135±"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+N
+java:S1135µ"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+`
+java:S3252Í"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
