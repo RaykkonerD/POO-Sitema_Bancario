@@ -15,7 +15,7 @@ public class Banco {
     private JPanel jPanel1;
     private JLabel jLabel7;
     private JLabel jLabel8;
-    private JLabel jLabel4;  // Adicionando jLabel4 ao código
+    private JLabel jLabel4;
     private JButton jButton5;
     private JButton jButton2;
     private JButton jButton6;
