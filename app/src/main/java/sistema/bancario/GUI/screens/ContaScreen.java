@@ -34,6 +34,7 @@ public class ContaScreen {
 
     public ContaScreen() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     private void initComponents() {
@@ -73,7 +74,17 @@ public class ContaScreen {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("R$ " + (Controller.getInstance().getContaEmSessao().getSaldo()/100.0));
+        new Thread(() -> {
+                while (true) {
+                        jLabel3.setText("R$ " + (Controller.getInstance().getContaEmSessao().getSaldo()/100.0));
+                        try {
+                                Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                                e.printStackTrace();
+                        }
+                }
+        }).start();
+        
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14));
@@ -281,16 +292,14 @@ public class ContaScreen {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+        new Extrato();
     }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         new Sacar();
     }
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
         this.frame.setVisible(false);
         new Transferencia();
     }

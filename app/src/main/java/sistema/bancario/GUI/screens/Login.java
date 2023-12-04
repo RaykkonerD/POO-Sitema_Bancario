@@ -26,6 +26,7 @@ public class Login {
 
     public Login() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     public Login(JFrame mainWindow) {

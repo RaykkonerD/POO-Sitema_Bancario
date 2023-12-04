@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextPane;
+import java.util.Arrays;
+
+import sistema.bancario.Controller;
 
 public class Extrato {
 
@@ -65,10 +68,17 @@ class ExtratoFrame {
 
         jScrollPane2.setViewportView(jTextPane1);
 
+        String[] acoes = Controller.getInstance().getContaEmSessao().getExtrato().getExtrato().split("\n");
+        Object[][] linhas = new Object[acoes.length][1];
+
+        for (int i = 0; i < acoes.length; i++) {
+            linhas[i][0] = acoes[i];
+        }
+        
+        //    linhas.Map(el -> System.out.println(el));
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {""}
-                },
+                linhas,
                 new String[]{
                         "Extrato"
                 }

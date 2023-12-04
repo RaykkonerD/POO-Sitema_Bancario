@@ -37,6 +37,7 @@ public class AcessarConta {
 
     public AcessarConta() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     private void initComponents() {

@@ -14,6 +14,7 @@ public class Transferencia {
 
     public Transferencia() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     private void initComponents() {
@@ -207,10 +208,15 @@ public class Transferencia {
         Conta conta = Controller.getInstance().getBanco(jComboBox1.getSelectedItem().toString())
                 .getConta(Integer.parseInt(NomeTextField2.getText()));
         if (conta == null) {
-            new ErrorDialog(frame, "Conta não encontrada." + NomeTextField2.getText());
+            new ErrorDialog(frame, "Conta não encontrada.");
         } else {
-            this.frame.setVisible(false);
-            new ConfirmacaoTransferencia(conta, jComboBox1.getSelectedItem().toString());
+               try {
+                        Double valor = Double.parseDouble(NomeTextField1.getText());
+                        this.frame.dispose();
+                        new ConfirmacaoTransferencia(conta, jComboBox1.getSelectedItem().toString(), valor);
+               } catch (NumberFormatException e){
+                        new ErrorDialog(frame, "Valor Inválido!");
+               }
         }
     }
 

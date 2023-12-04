@@ -23,7 +23,10 @@ public class Banco {
 
     public Banco() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
+
+
 
     private void initComponents() {
         frame = new JFrame();

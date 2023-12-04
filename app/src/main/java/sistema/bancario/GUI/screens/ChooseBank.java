@@ -18,6 +18,7 @@ public class ChooseBank {
 
     public ChooseBank() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     private void initComponents() {

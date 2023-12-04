@@ -24,6 +24,7 @@ public class CriarConta {
 
     public CriarConta() {
         initComponents();
+        this.frame.setLocationRelativeTo(null);
     }
 
     private void initComponents() {
