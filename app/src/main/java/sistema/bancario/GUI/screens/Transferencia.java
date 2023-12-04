@@ -12,9 +12,6 @@ import java.util.Objects;
 public class Transferencia {
     private JFrame frame;
 
-    /**
-     * Creates new form Transferencia
-     */
     public Transferencia() {
         initComponents();
     }
