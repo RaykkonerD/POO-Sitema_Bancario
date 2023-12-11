@@ -1,6 +1,8 @@
 package sistema.bancario.models;
 
 import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
+
 import java.io.Serializable;
 
 public abstract class Conta implements ContaIF, Serializable {
@@ -73,15 +75,21 @@ public abstract class Conta implements ContaIF, Serializable {
     }
 
     @Override
-    public void depositar(int valor){
-        this.saldo += valor;
-        extrato.addDeposito(valor);
+    public void depositar(int valor) throws ValorInvalidoException {
+        if(valor <= 0){
+            throw new ValorInvalidoException();
+        } else {
+            this.saldo += valor;
+            extrato.addDeposito(valor);
+        }
     }
 
     @Override
-    public void sacar(int valor) throws SaldoInsuficienteException {
+    public void sacar(int valor) throws SaldoInsuficienteException, ValorInvalidoException {
         if(valor > this.saldo){
             throw new SaldoInsuficienteException();
+        } else if(valor <= 0){
+            throw new ValorInvalidoException();
         } else {
             this.saldo -= valor;
             extrato.addSaque(valor);
@@ -89,7 +97,7 @@ public abstract class Conta implements ContaIF, Serializable {
     }
 
 	@Override
-	public abstract void transferir(Conta contaDestino, int valor);
+	public abstract void transferir(Conta contaDestino, int valor) throws ValorInvalidoException;
 
     @Override
     public abstract void aplicarTaxa();

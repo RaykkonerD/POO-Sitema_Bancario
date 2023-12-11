@@ -4,9 +4,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 import sistema.bancario.Controller;
 import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
+
+import java.awt.*;
 
 public class Sacar {
 
@@ -82,6 +86,8 @@ public class Sacar {
             new ErrorDialog(frame, "Valor inválido!");
         } catch (SaldoInsuficienteException e){
             new ErrorDialog(frame, "Saldo insuficiente!");
+        } catch (ValorInvalidoException e) {
+            jTextField1.setBorder(new LineBorder(Color.RED));
         }
     }
 

@@ -5,6 +5,7 @@ import javax.swing.*;
 import sistema.bancario.Controller;
 import sistema.bancario.GUI.components.ErrorDialog;
 import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
 import sistema.bancario.models.Conta;
 
 import java.awt.event.ActionEvent;
@@ -205,6 +206,8 @@ public class ConfirmacaoTransferencia {
                 new ContaScreen();
         } catch(SaldoInsuficienteException e){
                 new ErrorDialog(frame, "Saldo Insuficiente!");
+        } catch (ValorInvalidoException e) {
+            new ErrorDialog(frame, "Valor inválido!");
         }
     }
     

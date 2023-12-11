@@ -22,15 +22,15 @@ java:S1450"XRemove the "mainPanel" field and declare it as a local variable in
 _
 java:S3252r"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
 h	java:S100{"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò­ÚÉûÿÿÿÿ
-P
-java:S2209~"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ
+W
+java:S2209~"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8¸åµÎÅ1
 i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œœ×©øÿÿÿÿ
-Q
-java:S2209„"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ
+X
+java:S2209„"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8ÈåµÎÅ1
 d	java:S100‡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Ü¹Ä
-Q
-java:S2209Š"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ
+X
+java:S2209Š"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8ÊåµÎÅ1
 S
 java:S1612"<Replace this lambda with method reference 'ChooseBank::new'.(¨’§Ù
-j
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(˜êÌ
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(˜êÌ8ËåµÎÅ1

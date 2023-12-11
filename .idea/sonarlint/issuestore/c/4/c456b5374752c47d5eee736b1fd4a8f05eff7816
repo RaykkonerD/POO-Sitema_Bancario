@@ -1,64 +1,64 @@
 
 _
-java:S1192G"IDefine a constant instead of duplicating this literal "Segoe UI" 9 times.(„À“›
+java:S1192H"IDefine a constant instead of duplicating this literal "Segoe UI" 9 times.(„À“›
 C
-java:S1604P"(Make this anonymous inner class a lambda(²Íßƒıÿÿÿÿ
+java:S1604Q"(Make this anonymous inner class a lambda(²Íßƒıÿÿÿÿ
 C
-java:S1604]"(Make this anonymous inner class a lambda(Åûÿ¾øÿÿÿÿ
+java:S1604^"(Make this anonymous inner class a lambda(Åûÿ¾øÿÿÿÿ
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
-n	java:S116"YRename this field "NomeTextField1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù“¥
-n	java:S116"YRename this field "NomeTextField2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üÿ½á
+n	java:S116"YRename this field "NomeTextField1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù“¥
+n	java:S116"YRename this field "NomeTextField2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üÿ½á
 m
-java:S1450"WRemove the "jButton6" field and declare it as a local variable in the relevant methods.(á®İş
+java:S1450"WRemove the "jButton6" field and declare it as a local variable in the relevant methods.(á®İş
 s
-java:S1450"]Remove the "jButtonVoltar4" field and declare it as a local variable in the relevant methods.(º™•¿
+java:S1450"]Remove the "jButtonVoltar4" field and declare it as a local variable in the relevant methods.(º™•¿
 m
-java:S1450"WRemove the "jLabel12" field and declare it as a local variable in the relevant methods.(¶“¡
+java:S1450"WRemove the "jLabel12" field and declare it as a local variable in the relevant methods.(¶“¡
 r
-java:S1450"WRemove the "jLabel13" field and declare it as a local variable in the relevant methods.(ÑİĞİıÿÿÿÿ
+java:S1450"WRemove the "jLabel13" field and declare it as a local variable in the relevant methods.(ÑİĞİıÿÿÿÿ
 r
-java:S1450"WRemove the "jLabel14" field and declare it as a local variable in the relevant methods.(ÖóœÍıÿÿÿÿ
+java:S1450"WRemove the "jLabel14" field and declare it as a local variable in the relevant methods.(ÖóœÍıÿÿÿÿ
 r
-java:S1450"WRemove the "jLabel15" field and declare it as a local variable in the relevant methods.(³şâçøÿÿÿÿ
+java:S1450"WRemove the "jLabel15" field and declare it as a local variable in the relevant methods.(³şâçøÿÿÿÿ
 r
-java:S1450"WRemove the "jLabel16" field and declare it as a local variable in the relevant methods.(š¼ª¯üÿÿÿÿ
+java:S1450"WRemove the "jLabel16" field and declare it as a local variable in the relevant methods.(š¼ª¯üÿÿÿÿ
 m
-java:S1450"WRemove the "jLabel17" field and declare it as a local variable in the relevant methods.(„Ç›Ä
+java:S1450"WRemove the "jLabel17" field and declare it as a local variable in the relevant methods.(„Ç›Ä
 l
-java:S1450"WRemove the "jLabel18" field and declare it as a local variable in the relevant methods.(†«=
+java:S1450 "WRemove the "jLabel18" field and declare it as a local variable in the relevant methods.(†«=
 q
-java:S1450!"VRemove the "jLabel6" field and declare it as a local variable in the relevant methods.(¸ôÂøÿÿÿÿ
+java:S1450""VRemove the "jLabel6" field and declare it as a local variable in the relevant methods.(¸ôÂøÿÿÿÿ
 q
-java:S1450&"VRemove the "jPanel2" field and declare it as a local variable in the relevant methods.(õ òçüÿÿÿÿ
+java:S1450'"VRemove the "jPanel2" field and declare it as a local variable in the relevant methods.(õ òçüÿÿÿÿ
 y
-java:S1450'"^Remove the "jPasswordField1" field and declare it as a local variable in the relevant methods.(À£§ÿÿÿÿÿ
+java:S1450("^Remove the "jPasswordField1" field and declare it as a local variable in the relevant methods.(À£§ÿÿÿÿÿ
 F
-java:S1172É"*Remove this unused method parameter "evt".(ªÆÚìøÿÿÿÿ
+java:S1172Ê"*Remove this unused method parameter "evt".(ªÆÚìøÿÿÿÿ
 F
-java:S1172Ó"*Remove this unused method parameter "evt".(ëèµØúÿÿÿÿ
+java:S1172Ö"*Remove this unused method parameter "evt".(ëèµØúÿÿÿÿ
 H
-java:S1068"2Remove this unused "NomeTextField1" private field.(Ù“¥
+java:S1068"2Remove this unused "NomeTextField1" private field.(Ù“¥
 H
-java:S1068"2Remove this unused "NomeTextField2" private field.(Üÿ½á
+java:S1068"2Remove this unused "NomeTextField2" private field.(Üÿ½á
 G
-java:S1068",Remove this unused "jButton5" private field.(â¦Î©ûÿÿÿÿ
+java:S1068",Remove this unused "jButton5" private field.(â¦Î©ûÿÿÿÿ
 M
-java:S1068"2Remove this unused "jButtonVoltar3" private field.(ï‚ôıÿÿÿÿ
+java:S1068"2Remove this unused "jButtonVoltar3" private field.(ï‚ôıÿÿÿÿ
 D
-java:S1068".Remove this unused "jComboBox1" private field.(ëõ«­
+java:S1068".Remove this unused "jComboBox1" private field.(ëõ«­
 G
-java:S1068",Remove this unused "jLabel10" private field.(¼õò†şÿÿÿÿ
+java:S1068",Remove this unused "jLabel10" private field.(¼õò†şÿÿÿÿ
 G
-java:S1068",Remove this unused "jLabel11" private field.(‰Ó‚©øÿÿÿÿ
+java:S1068",Remove this unused "jLabel11" private field.(‰Ó‚©øÿÿÿÿ
 A
-java:S1068 "+Remove this unused "jLabel5" private field.(ó Ù®
+java:S1068!"+Remove this unused "jLabel5" private field.(ó Ù®
 A
-java:S1068""+Remove this unused "jLabel7" private field.(×ê˜Ÿ
+java:S1068#"+Remove this unused "jLabel7" private field.(×ê˜Ÿ
 A
-java:S1068#"+Remove this unused "jLabel8" private field.(å»«¢
+java:S1068$"+Remove this unused "jLabel8" private field.(å»«¢
 F
-java:S1068$"+Remove this unused "jLabel9" private field.(Ì’óĞşÿÿÿÿ
+java:S1068%"+Remove this unused "jLabel9" private field.(Ì’óĞşÿÿÿÿ
 F
-java:S1068%"+Remove this unused "jPanel1" private field.(´œ½ÿÿÿÿÿ
+java:S1068&"+Remove this unused "jPanel1" private field.(´œ½ÿÿÿÿÿ
 E
-java:S1068("/Remove this unused "jTextField1" private field.(’É´š
+java:S1068)"/Remove this unused "jTextField1" private field.(’É´š

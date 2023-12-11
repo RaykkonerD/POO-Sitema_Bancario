@@ -4,9 +4,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
 
 import sistema.bancario.Controller;
 import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
+
+import java.awt.*;
 
 public class Depositar {
 
@@ -73,6 +77,8 @@ public class Depositar {
             this.frame.dispose();
         } catch (NumberFormatException e){
             new ErrorDialog(frame, "Valor inválido!");
+        } catch (ValorInvalidoException e) {
+            valorTextField.setBorder(new LineBorder(Color.RED));
         }
     }
 

@@ -1,5 +1,6 @@
 package sistema.bancario;
 import sistema.bancario.exceptions.UsuarioExistenteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
 import sistema.bancario.models.Banco;
 import sistema.bancario.models.Usuario;
 import sistema.bancario.models.Conta;
@@ -118,17 +119,17 @@ public class Controller {
         return getBanco(banco).getConta(numero);
     }
 
-	public void depositar(Double valor) {
+	public void depositar(Double valor) throws ValorInvalidoException {
 		getContaEmSessao().depositar((int) (valor * 100));
 		this.bancoDeDados.write();
 	} 
 
-	public void sacar(Double valor) {
+	public void sacar(Double valor) throws ValorInvalidoException {
 		getContaEmSessao().sacar((int) (valor * 100));
 		this.bancoDeDados.write();
 	} 
 
-	public void transferencia(Conta contaDestino, Double valor) {
+	public void transferencia(Conta contaDestino, Double valor) throws ValorInvalidoException {
 		getContaEmSessao().transferir(contaDestino, (int) (valor * 100));
 		this.bancoDeDados.write();
 	}
