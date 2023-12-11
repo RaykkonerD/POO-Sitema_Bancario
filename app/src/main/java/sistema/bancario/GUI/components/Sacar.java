@@ -24,7 +24,6 @@ public class Sacar {
         frame.setResizable(false);
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
         frame = new JFrame();
         jButton2 = new JButton();

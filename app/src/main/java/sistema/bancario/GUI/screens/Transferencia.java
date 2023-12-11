@@ -6,7 +6,6 @@ import sistema.bancario.Controller;
 import sistema.bancario.GUI.components.ErrorDialog;
 import sistema.bancario.models.Conta;
 
-import java.awt.*;
 import java.util.Objects;
 
 public class Transferencia {

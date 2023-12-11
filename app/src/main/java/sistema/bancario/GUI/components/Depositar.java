@@ -7,7 +7,6 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import sistema.bancario.Controller;
-import sistema.bancario.exceptions.SaldoInsuficienteException;
 import sistema.bancario.exceptions.ValorInvalidoException;
 
 import java.awt.*;
@@ -24,7 +23,6 @@ public class Depositar {
         frame.setResizable(false);
     }
 
-    @SuppressWarnings("unchecked")
     private void initComponents() {
         frame = new JFrame();
         depositarButton = new JButton();

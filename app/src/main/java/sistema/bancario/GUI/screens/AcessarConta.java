@@ -3,14 +3,12 @@ package sistema.bancario.GUI.screens;
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 import sistema.bancario.Controller;
 import sistema.bancario.GUI.components.ErrorDialog;
-import sistema.bancario.models.Conta;
 
 public class AcessarConta {
 

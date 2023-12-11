@@ -1,6 +1,5 @@
 package sistema.bancario.GUI.screens;
 
-import sistema.bancario.GUI.screens.*;
 import sistema.bancario.Controller;
 import javax.swing.*;
 import java.awt.event.ActionEvent;

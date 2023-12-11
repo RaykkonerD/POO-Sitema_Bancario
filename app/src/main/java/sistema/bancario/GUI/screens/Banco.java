@@ -19,7 +19,6 @@ public class Banco {
     private JButton jButton5;
     private JButton jButton2;
     private JButton jButton6;
-    private JFrame mainWindow;
 
     public Banco() {
         initComponents();

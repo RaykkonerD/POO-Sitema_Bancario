@@ -1,6 +1,5 @@
 package sistema.bancario.validators;
 import sistema.bancario.Controller;
-import sistema.bancario.models.Banco;
 
 public class AccountValidator implements Validator<Integer> {
 	private final Controller controlador;
