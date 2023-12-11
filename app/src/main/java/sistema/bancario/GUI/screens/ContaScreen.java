@@ -100,7 +100,7 @@ public class ContaScreen {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14));
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText(Controller.getInstance().getBanco().getNome());
+        jLabel8.setText(Controller.getInstance().getBanco().getNome() + "    ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
