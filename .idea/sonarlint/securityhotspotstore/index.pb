@@ -43,3 +43,5 @@ y
 Iapp/src/main/java/sistema/bancario/exceptions/ValorInvalidoException.java,0\c\0ce920123adefe8bd08470a8180c1bd3876725d9
 l
 <app/src/main/java/sistema/bancario/models/ContaPoupanca.java,1\9\195ccb704c0f91c26a0395729beeacc672141f86
+8
+data.bin,1\f\1fad54ac035ec91235b0a9493729bce14e3cc17f
