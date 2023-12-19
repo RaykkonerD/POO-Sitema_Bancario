@@ -1,0 +1,35 @@
+
+_
+java:S1192."IDefine a constant instead of duplicating this literal "Segoe UI" 7 times.(žà¶Ô
+X
+java:S4973¨"<Strings and Boxed types should be compared using "equals()".(ú¡ÿÖøÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+b
+java:S1223£"LRename this method to prevent any misunderstanding or make it a constructor.(îÐÎ
+n	java:S116"YRename this field "NomeTextField1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êè´Ù
+r
+java:S1450"WRemove the "jButton2" field and declare it as a local variable in the relevant methods.(éâá‘ýÿÿÿÿ
+t
+java:S1450"^Remove the "jButtonCancelar" field and declare it as a local variable in the relevant methods.(¿¼É«
+r
+java:S1450"WRemove the "jLabel10" field and declare it as a local variable in the relevant methods.(ï¨™îúÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel4" field and declare it as a local variable in the relevant methods.(Œ“®ñ
+q
+java:S1450"VRemove the "jLabel7" field and declare it as a local variable in the relevant methods.(ý“†üÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel8" field and declare it as a local variable in the relevant methods.(£É´»
+k
+java:S1450"VRemove the "jLabel9" field and declare it as a local variable in the relevant methods.(éûÒ.
+q
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(Áµ¡¹ýÿÿÿÿ
+_
+java:S3252,"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+c	java:S100£"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îÐÎ
+S
+java:S6353¤"<Use concise character class syntax '\\d' instead of '[0-9]'.(Ïä«ß
+i	java:S100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚáõÀûÿÿÿÿ
+F
+java:S1197¶"*Move the array designators [] to the type.(¡þÏÖøÿÿÿÿ
+S
+java:S1612·"<Replace this lambda with method reference 'CriarConta::new'.(Ñªÿª

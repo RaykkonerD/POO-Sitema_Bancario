@@ -1,0 +1,14 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+b
+java:S3252"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(×Ð‘÷
+L
+java:S1197 "*Move the array designators [] to the type.(¡þÏÖøÿÿÿÿ8–Áý±Ã1
+I
+java:S1602,",Remove useless curly braces around statement(¤çšÜ8˜Áý±Ã1
+V
+java:S1612,"9Replace this lambda with method reference 'Extrato::new'.(¤çšÜ8˜Áý±Ã1
+\
+java:S1161Z":Add the "@Override" annotation above this method signature(ÍŸÏ†ùÿÿÿÿ8žÁý±Ã1
+O
+java:S1128"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8à¬ý±Ã1

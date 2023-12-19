@@ -5,4 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/resources" type="java-resource" />
     </content>
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="d43bc9b7-8093-4a15-a323-66d53a630746" />
+  </component>
 </module>

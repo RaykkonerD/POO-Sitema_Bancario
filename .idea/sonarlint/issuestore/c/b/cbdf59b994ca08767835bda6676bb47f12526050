@@ -1,0 +1,86 @@
+
+`
+java:S1192W"JDefine a constant instead of duplicating this literal "Segoe UI" 13 times.(«÷
+C
+java:S1604f"(Make this anonymous inner class a lambda(‹ıÉ¼üÿÿÿÿ
+C
+java:S1604n"(Make this anonymous inner class a lambda(„ØÒ²ûÿÿÿÿ
+D
+java:S1604‚"(Make this anonymous inner class a lambda(ÑĞİĞıÿÿÿÿ
+D
+java:S1604¯"(Make this anonymous inner class a lambda(Åûÿ¾øÿÿÿÿ
+?
+java:S1604Æ"(Make this anonymous inner class a lambda(Æšà
+D
+java:S1604¸"(Make this anonymous inner class a lambda(¨í¡§úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+n	java:S116"YRename this field "NomeTextField1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù“¥
+s
+java:S1450"]Remove the "NomeTextField1" field and declare it as a local variable in the relevant methods.(Ù“¥
+r
+java:S1450"WRemove the "jButton5" field and declare it as a local variable in the relevant methods.(â¦Î©ûÿÿÿÿ
+m
+java:S1450 "WRemove the "jButton6" field and declare it as a local variable in the relevant methods.(á®İş
+w
+java:S1450"\Remove the "jButtonVoltar" field and declare it as a local variable in the relevant methods.(åæ´Ìıÿÿÿÿ
+x
+java:S1450%"]Remove the "jButtonVoltar1" field and declare it as a local variable in the relevant methods.(ŠØ¨íıÿÿÿÿ
+o
+java:S1450"YRemove the "jComboBox1" field and declare it as a local variable in the relevant methods.(ëõ«­
+r
+java:S1450"WRemove the "jLabel10" field and declare it as a local variable in the relevant methods.(¼õò†şÿÿÿÿ
+r
+java:S1450"WRemove the "jLabel11" field and declare it as a local variable in the relevant methods.(‰Ó‚©øÿÿÿÿ
+m
+java:S1450"WRemove the "jLabel12" field and declare it as a local variable in the relevant methods.(¶“¡
+r
+java:S1450!"WRemove the "jLabel13" field and declare it as a local variable in the relevant methods.(ÑİĞİıÿÿÿÿ
+r
+java:S1450#"WRemove the "jLabel14" field and declare it as a local variable in the relevant methods.(ÖóœÍıÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel4" field and declare it as a local variable in the relevant methods.(«¢•ã
+l
+java:S1450"VRemove the "jLabel5" field and declare it as a local variable in the relevant methods.(ó Ù®
+l
+java:S1450"VRemove the "jLabel7" field and declare it as a local variable in the relevant methods.(×ê˜Ÿ
+l
+java:S1450"VRemove the "jLabel8" field and declare it as a local variable in the relevant methods.(å»«¢
+q
+java:S1450"VRemove the "jLabel9" field and declare it as a local variable in the relevant methods.(Ì’óĞşÿÿÿÿ
+q
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(´œ½ÿÿÿÿÿ
+q
+java:S1450"VRemove the "jPanel2" field and declare it as a local variable in the relevant methods.(õ òçüÿÿÿÿ
+K
+java:S1874e"0Remove this use of "setLabel"; it is deprecated.(›ÏÃûÿÿÿÿÿ
+i
+java:S6204º"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+F
+java:S1172’"*Remove this unused method parameter "evt".(ßÀ—œùÿÿÿÿ
+N
+java:S1135“"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+d	java:S100–"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»üÏ¡
+A
+java:S1172–"*Remove this unused method parameter "evt".(»üÏ¡
+N
+java:S1135—"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+F
+java:S1172š"*Remove this unused method parameter "evt".(ªÆÚìøÿÿÿÿ
+N
+java:S1135›"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+K
+java:S1874"/Remove this use of "getText"; it is deprecated.(îãŸíøÿÿÿÿ
+A
+java:S1172¬"*Remove this unused method parameter "evt".(˜³™•
+N
+java:S1135­"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+A
+java:S1172°"*Remove this unused method parameter "evt".(Û–†è
+N
+java:S1135±"2Complete the task associated to this TODO comment.(ÜÀ†áûÿÿÿÿ
+F
+java:S1197¶"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+P
+java:S1128":Remove this unused import 'sistema.bancario.models.Conta'.(Ëª÷ö

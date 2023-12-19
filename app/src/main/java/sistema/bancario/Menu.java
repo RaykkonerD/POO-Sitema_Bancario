@@ -19,7 +19,6 @@ import sistema.bancario.models.Usuario;
 
 public class Menu {
 	private Controller controlador;
-	private String[] listaDeBancos = {"Banco do Brasil", "Bradesco", "Nubank"};
 
 	public Controller getControlador(){
 		return this.controlador;
@@ -133,7 +132,7 @@ public class Menu {
 				System.out.print("Número da conta: ");
 				numero = entrada.nextInt();
 			}
-			
+
 			System.out.print("Senha: ");
 			int senha = entrada.nextInt();
 			Conta conta = this.controlador.getConta(this.controlador.getBanco().getNome(), numero, senha);
@@ -171,7 +170,7 @@ public class Menu {
 		} else if(opcao == 2){
 			ValidationContext<Double> vcValor = new ValidationContext(new NonNullOrNegativeValidator());
 			double valor = vcValor.getValidValue("Valor: ", "[ERRO]: Valor inválido.\n", Double.class);
-			
+
 			this.controlador.depositar(valor);
 			System.out.printf("%nDeposito no valor de R$ %.2f realizado com sucesso!%n", valor);
 		} else if(opcao == 3){
@@ -185,7 +184,7 @@ public class Menu {
 				}
 				this.controlador.sacar(valor);
 				System.out.printf("%nSaque no valor de R$ %.2f realizado com sucesso!%n", valor);
-			} catch (Exception e) {
+			} catch (SaldoInsuficienteException e) {
 				System.out.println("\n[ERRO]: Saldo insuficiente!");
 				acoes();
 			}
@@ -230,11 +229,11 @@ public class Menu {
 			} else {
 				ValidationContext<Integer> vcConfirmacao = new ValidationContext(new IntervalValidator(1, 2));
 				int confirmacao = vcConfirmacao.getValidValue("[AVISO]: Encerrar conta? (1 - sim / 2 - voltar): ", "[ERRO]: Opção inválida.\n", Integer.class);
-	
+
 				if(confirmacao == 1){
 					ValidationContext<Integer> vcSenha = new ValidationContext(new AccountPasswordValidator(this.controlador.getContaEmSessao()));
 					int senha = vcSenha.getValidValue("Senha: ", "[ERRO]: Senha inválida.\n", Integer.class);
-					
+
 					this.controlador.encerrarConta();
 					System.out.println("\nConta encerrada com sucesso!\n");
 					this.controlador.setContaEmSessao(null);
@@ -252,7 +251,7 @@ public class Menu {
 
 	public static void main(String[] args) throws Exception {
 		Menu menu = new Menu();
-		menu.controlador = new Controller();
+		menu.setControlador(Controller.getInstance());
 
 		int iBanco = menu.menu("Banco", menu.controlador.getBancoDeDados().getBancos().stream().map(Banco::getNome).toArray(String[]::new));
 

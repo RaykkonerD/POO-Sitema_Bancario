@@ -1,5 +1,7 @@
 package sistema.bancario.models;
 
+import sistema.bancario.exceptions.ValorInvalidoException;
+
 public interface ContaIF {
 	public int getNumero();
 	public void setNumero(int numero);
@@ -12,9 +14,9 @@ public interface ContaIF {
 	public Extrato getExtrato();
 	public void setExtrato(Extrato extrato);
     public double verSaldo();
-    public void transferir(Conta destino, int valor);
-    public void depositar(int valor);
-    public void sacar(int valor);
+    public void transferir(Conta destino, int valor) throws ValorInvalidoException;
+    public void depositar(int valor) throws ValorInvalidoException;
+    public void sacar(int valor) throws ValorInvalidoException;
     public void aplicarTaxa();
 	public String getTipo();
 }

@@ -1,0 +1,16 @@
+
+E
+java:S1604+"(Make this anonymous inner class a lambda(ÿóÎ×8ƒ½›ÎÅ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(âÎÜ8†½›ÎÅ1
+y
+java:S1450"WRemove the "jButton2" field and declare it as a local variable in the relevant methods.(éâá‘ıÿÿÿÿ8š½›ÎÅ1
+x
+java:S1450"VRemove the "jLabel1" field and declare it as a local variable in the relevant methods.(Ó“©©ıÿÿÿÿ8›½›ÎÅ1
+i
+java:S3252""LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(×Ğ‘÷8¡½›ÎÅ1
+L
+java:S1172P"*Remove this unused method parameter "evt".(ÿŞÿĞøÿÿÿÿ8ª½›ÎÅ1
+I
+java:S1602_",Remove useless curly braces around statement(¤çšÜ8­½›ÎÅ1
+T
+java:S1612_"7Replace this lambda with method reference 'Sacar::new'.(¤çšÜ8­½›ÎÅ1

@@ -1,6 +1,7 @@
 package sistema.bancario.models;
 
 import sistema.bancario.exceptions.SaldoInsuficienteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
 
 public class ContaPoupanca extends Conta {
 	public ContaPoupanca(int numero, Usuario usuario, int senhaDeAcesso) {
@@ -21,7 +22,7 @@ public class ContaPoupanca extends Conta {
 	}
 
 	@Override
-	public void transferir(Conta contaDestino, int valor) throws SaldoInsuficienteException {
+	public void transferir(Conta contaDestino, int valor) throws SaldoInsuficienteException, ValorInvalidoException {
 		if (valor > super.getSaldo() || super.getSaldo() == 0) {
 			throw new SaldoInsuficienteException();
 		} else {

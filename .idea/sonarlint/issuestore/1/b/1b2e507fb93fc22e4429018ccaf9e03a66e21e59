@@ -1,0 +1,25 @@
+
+g	java:S112L"FDefine and throw a dedicated exception instead of using a generic one.(Êß¥±ùÿÿÿÿ8ïÌ¨ÎÅ1
+k	java:S117L"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êß¥±ùÿÿÿÿ
+ƒ
+java:S1488±"lImmediately return this expression instead of assigning it to the temporary variable "digitosVerificadores".(Ç½…º
+¯
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Øó´Ÿ
+O
+java:S1117"9Rename "banco" which hides the field declared at line 14.(éĞî
+?
+java:S1940M")Use the opposite operator ("!=") instead.(‡€äİ
+3
+java:S2119X"Save and re-use this "Random".(Â•à*
+4
+java:S2119["Save and re-use this "Random".(¡‘®•
+X
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(¾Éëıÿÿÿÿ
+X
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(¾Éëıÿÿÿÿ
+X
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(¾Éëıÿÿÿÿ
+X
+java:S6353"<Use concise character class syntax '\\d' instead of '[0-9]'.(¾Éëıÿÿÿÿ
+Y
+java:S6353“"=Use concise character class syntax '\\D' instead of '[^0-9]'.(Ğ·ÙŸøÿÿÿÿ

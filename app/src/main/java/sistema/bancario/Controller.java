@@ -1,5 +1,6 @@
 package sistema.bancario;
 import sistema.bancario.exceptions.UsuarioExistenteException;
+import sistema.bancario.exceptions.ValorInvalidoException;
 import sistema.bancario.models.Banco;
 import sistema.bancario.models.Usuario;
 import sistema.bancario.models.Conta;
@@ -13,14 +14,16 @@ public class Controller {
     private String banco;
     private Usuario usuario;
     private Conta contaEmSessao;
+    private static Controller instance;
 
-    public Controller() {
+    private Controller() {
         this.bancoDeDados = new DB();
 
         Thread thread = new Thread(() -> {
             while (true) {
                 for(Banco banco : this.bancoDeDados.getBancos()){
                     banco.passouUmMes();
+                    this.bancoDeDados.write();
                 }
 
                 try {
@@ -32,6 +35,14 @@ public class Controller {
             }
         });
         thread.start();
+    }
+
+    public static Controller getInstance(){
+        if (instance == null) {
+            instance = new Controller();
+        }
+        
+        return instance;
     }
 
     public Usuario getUsuario(){
@@ -108,17 +119,17 @@ public class Controller {
         return getBanco(banco).getConta(numero);
     }
 
-	public void depositar(Double valor) {
+	public void depositar(Double valor) throws ValorInvalidoException {
 		getContaEmSessao().depositar((int) (valor * 100));
 		this.bancoDeDados.write();
 	} 
 
-	public void sacar(Double valor) {
+	public void sacar(Double valor) throws ValorInvalidoException {
 		getContaEmSessao().sacar((int) (valor * 100));
 		this.bancoDeDados.write();
 	} 
 
-	public void transferencia(Conta contaDestino, Double valor) {
+	public void transferencia(Conta contaDestino, Double valor) throws ValorInvalidoException {
 		getContaEmSessao().transferir(contaDestino, (int) (valor * 100));
 		this.bancoDeDados.write();
 	}

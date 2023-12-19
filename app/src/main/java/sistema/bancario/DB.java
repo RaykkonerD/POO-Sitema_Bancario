@@ -1,10 +1,10 @@
 package sistema.bancario;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.List;
+
+import java.util.Optional;
 
 import sistema.bancario.models.Banco;
-import sistema.bancario.models.Conta;
 
 public class DB {
     protected ArrayList<Banco> bancos;
@@ -26,13 +26,8 @@ public class DB {
     }
 
     public Banco getBanco(String nome){
-        for(Banco banco : bancos){
-            if(banco.getNome() == nome){
-                return banco;
-            }
-        }
-
-        return null;
+        Optional<Banco> banco = bancos.stream().filter(b -> b.getNome().equals(nome)).findFirst();
+        return banco.orElse(null);
     }
 
     public ArrayList<Banco> getBancos() {

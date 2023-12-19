@@ -1,5 +1,7 @@
 package sistema.bancario.models;
 
+import sistema.bancario.exceptions.ValorInvalidoException;
+
 public class ContaCorrente extends Conta{
     public ContaCorrente(int numero, Usuario usuario, int senhaDeAcesso) {
         super(numero, usuario, senhaDeAcesso);
@@ -13,7 +15,7 @@ public class ContaCorrente extends Conta{
     }
     
     @Override
-    public void transferir(Conta contaDestino, int valor) {
+    public void transferir(Conta contaDestino, int valor) throws ValorInvalidoException {
         super.setSaldo(super.getSaldo() - valor);
         contaDestino.depositar(valor);
         super.getExtrato().addTransacao(contaDestino, valor);

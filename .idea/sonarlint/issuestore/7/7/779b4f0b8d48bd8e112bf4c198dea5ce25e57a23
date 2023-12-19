@@ -1,0 +1,40 @@
+
+d
+java:S1192."IDefine a constant instead of duplicating this literal "Segoe UI" 3 times.(¨‹¸³úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’øá’
+h	java:S116"SRename this field "BbButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´Ï¹Ò
+m	java:S116"YRename this field "BradescoButton" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úÆÌ1
+r	java:S116"XRename this field "NubankButton1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èÏøÌşÿÿÿÿ
+m
+java:S1450"WRemove the "BbButton" field and declare it as a local variable in the relevant methods.(´Ï¹Ò
+r
+java:S1450"]Remove the "BradescoButton" field and declare it as a local variable in the relevant methods.(úÆÌ1
+w
+java:S1450"\Remove the "NubankButton1" field and declare it as a local variable in the relevant methods.(èÏøÌşÿÿÿÿ
+q
+java:S1450"VRemove the "jLabel1" field and declare it as a local variable in the relevant methods.(Ó“©©ıÿÿÿÿ
+l
+java:S1450"VRemove the "jLabel2" field and declare it as a local variable in the relevant methods.(¹ñÌ
+q
+java:S1450"VRemove the "jPanel1" field and declare it as a local variable in the relevant methods.(Áµ¡¹ıÿÿÿÿ
+m
+java:S1450"XRemove the "mainPanel" field and declare it as a local variable in the relevant methods.(šÈŞ}
+_
+java:S3252t"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+h	java:S100}"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò­ÚÉûÿÿÿÿ
+X
+java:S2209€"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8³èÙĞÅ1
+i	java:S100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œœ×©øÿÿÿÿ
+X
+java:S2209†"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8µèÙĞÅ1
+d	java:S100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•Ü¹Ä
+X
+java:S2209Œ"5Change this instance-reference to a static reference.(ÈÌÇ¡ıÿÿÿÿ8µèÙĞÅ1
+S
+java:S1612"<Replace this lambda with method reference 'ChooseBank::new'.(¨’§Ù
+P
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€é²Å8¹èÙĞÅ1
+S
+java:S1128"6Remove this unused import 'java.io.InputStreamReader'.(ãˆÎÉ8ºèÙĞÅ1
+W
+java:S1128"5Remove this unused import 'java.nio.charset.Charset'.(ü¶ØŸıÿÿÿÿ8ºèÙĞÅ1
